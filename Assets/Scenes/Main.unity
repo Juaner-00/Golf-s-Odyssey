@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"MainCamera","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"VectorSwipe","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"MainCamera","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"VectorSwipe","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"},{"name":"MaxForce","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"ForceMag","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 113803676}
 --- !u!4 &4172480
@@ -495,6 +495,28 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &983503508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8258984528722112213, guid: 22b6cf1099441b4419e3b572197ccf41,
+    type: 3}
+  m_PrefabInstance: {fileID: 6999437952453005318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &983503511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983503508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adf148a19499274795e418631d7db45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TouchSensitivityX: 50
+  TouchSensitivityY: 50
+  TouchXInputMapTo: Mouse X
+  TouchYInputMapTo: Mouse Y
 --- !u!1 &1214314799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,6 +2376,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 113803678}
+    - target: {fileID: 3688077856316303871, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"collection":{"$content":[{"name":"MultiplicadorFuerza","value":{"$content":0.2,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
