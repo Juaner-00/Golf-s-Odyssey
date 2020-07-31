@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: SceneManager
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Reset","summary":"Resetea
+      el nivel al oprimir el bot\u00f3n","pan":{"x":53.61316,"y":265.0677},"zoom":0.4999999,"elements":[{"chainable":false,"member":{"name":"LoadScene","parameterTypes":["System.Int32"],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{"%sceneBuildIndex":{"$content":0,"$type":"System.Int32"}},"position":{"x":-101.0,"y":64.0},"guid":"19f8057f-be70-4a5e-9cff-e5329323c4e6","$version":"A","$type":"Bolt.InvokeMember","$id":"9"},{"coroutine":false,"defaultValues":{"name":{"$content":"Reset","$type":"System.String"}},"position":{"x":-427.0,"y":-1.0},"guid":"e127c8a9-6869-4988-bec7-875b66a55807","$version":"A","$type":"Bolt.BoltUnityEvent","$id":"12"},{"chainable":false,"member":{"name":"GetActiveScene","parameterTypes":[],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{},"position":{"x":-507.0,"y":124.0},"guid":"70feb535-a490-4ed4-9641-4758368d885d","$version":"A","$type":"Bolt.InvokeMember","$id":"14"},{"member":{"name":"buildIndex","parameterTypes":null,"targetType":"UnityEngine.SceneManagement.Scene","targetTypeName":"UnityEngine.SceneManagement.Scene","$version":"A"},"defaultValues":{},"position":{"x":-297.0,"y":138.0},"guid":"9607942b-dc62-4d5d-ac86-b897a8a3037f","$version":"A","$type":"Bolt.GetMember","$id":"17"},{"chainable":false,"member":{"name":"LoadScene","parameterTypes":["System.String"],"targetType":"UnityEngine.SceneManagement.SceneManager","targetTypeName":"UnityEngine.SceneManagement.SceneManager","$version":"A"},"defaultValues":{"%sceneName":{"$content":"Level_1","$type":"System.String"}},"position":{"x":-200.0,"y":456.0},"guid":"3893d4cb-33eb-48aa-a8a4-0828c5a9b1c6","$version":"A","$type":"Bolt.InvokeMember","$id":"20"},{"coroutine":false,"defaultValues":{"name":{"$content":"LoadLevel_1","$type":"System.String"}},"position":{"x":-397.0,"y":455.0},"guid":"e01b56f6-9282-4925-814c-93323d8e56e0","$version":"A","$type":"Bolt.BoltUnityEvent","$id":"23"},{"sourceUnit":{"$ref":"12"},"sourceKey":"trigger","destinationUnit":{"$ref":"9"},"destinationKey":"enter","guid":"85fa5bbf-85b2-481a-beff-64a2fed5ceb5","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"trigger","destinationUnit":{"$ref":"20"},"destinationKey":"enter","guid":"1771c6d9-5a0c-46a4-a022-5d0a883d08bd","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"17"},"destinationKey":"target","guid":"c4fbafa1-db28-4571-9c6a-efef69b856c1","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"value","destinationUnit":{"$ref":"9"},"destinationKey":"%sceneBuildIndex","guid":"bb916722-4a30-45d7-805d-1ec231588a28","$type":"Bolt.ValueConnection"},{"position":{"xMin":-558.2857,"yMin":-60.1428,"xMax":101.2858,"yMax":273.0001},"label":"Cargar
+      la escena actual","comment":null,"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"guid":"d188d9d1-cc2c-4937-87dc-eec2a1af2662","$version":"A","$type":"Ludiq.GraphGroup"},{"position":{"xMin":-441.0,"yMin":394.0,"xMax":-3.0,"yMax":599.0},"label":"Carga
+      el nivel 1","comment":null,"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"guid":"7851c761-ceae-4ab2-82ad-a72e029a9e3b","$version":"A","$type":"Ludiq.GraphGroup"}],"$version":"A"}}'
+    _objectReferences: []

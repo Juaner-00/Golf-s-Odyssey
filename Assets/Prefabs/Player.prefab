@@ -160,7 +160,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -293,9 +293,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1544353907
 MonoBehaviour:
@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 3688077856316303871}
   - component: {fileID: 4173071605240570878}
   - component: {fileID: 1887267352908939584}
+  - component: {fileID: -6140752253699275736}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -601,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"MultiplicadorFuerza","value":{"$content":0.6,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"MultiplicadorFuerza","value":{"$content":0.2,"$type":"System.Single"},"$version":"A"},{"name":"counterStrikes","value":{"$content":0,"$type":"System.Int32"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &4173071605240570878
 MonoBehaviour:
@@ -635,6 +636,18 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 6492df788f0cd0546aa7bb09f4940f55, type: 2}
+--- !u!114 &-6140752253699275736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510777794961761089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 305935433, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8258984528722112213
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2458260794381919337}
   - component: {fileID: 1878874710894875657}
+  - component: {fileID: 983503511}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -703,3 +717,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4524759342681759146}
+--- !u!114 &983503511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258984528722112213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adf148a19499274795e418631d7db45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TouchSensitivityX: 50
+  TouchSensitivityY: 50
+  TouchXInputMapTo: Mouse X
+  TouchYInputMapTo: Mouse Y
