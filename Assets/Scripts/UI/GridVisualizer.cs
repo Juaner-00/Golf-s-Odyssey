@@ -8,31 +8,57 @@ public class GridVisualizer : Editor
 {
     GridManager gridM;
 
+    private bool needRapaint;
+
     private void OnEnable()
     {
         gridM = target as GridManager;
-        gridM.Start();
+        gridM.Init();
     }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         if (GUILayout.Button("Re create grid"))
+        {
             gridM.ResetGrid();
+            needRapaint = true;
+        }
     }
 
     private void OnSceneGUI()
     {
         Event guiEvent = Event.current;
-        if (guiEvent.type == EventType.MouseDown && guiEvent.button == 0)
+
+        Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
+        float drawPlaneHeight = 0;
+        float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
+        Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
+
+
+        if (guiEvent.type == EventType.MouseDown)
         {
-            Debug.Log("Mouse left click");
+            switch (guiEvent.button)
+            {
+                case 0:
+                    gridM.SetState(mousePosition);
+                    needRapaint = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         Draw();
 
         if (guiEvent.type == EventType.Layout)
             HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+
+        if (needRapaint)
+        {
+            HandleUtility.Repaint();
+            needRapaint = false;
+        }
     }
 
     private void Draw()

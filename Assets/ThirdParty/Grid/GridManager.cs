@@ -28,38 +28,28 @@ public class GridManager : MonoBehaviour
 
     public Color canPlaceColor = new Color(0, 1, 0, 0.5f), cantPlaceColor = new Color(1, 0, 0, 0.5f);
 
-    [HideInInspector]
     public Grid grid;
 
-    public void Start()
+    public void Init()
     {
         if (grid == null)
-        {
-            grid = new Grid(width, height, cellSize, originPosition);
-            Debug.Log("Create grid");
-        }
+            ResetGrid();
     }
 
     public void ResetGrid()
     {
+        Debug.Log("ResetGrid");
         grid = new Grid(width, height, cellSize, originPosition);
-        Debug.Log("New grid");
     }
 
-    private void Update()
+    public void SetState(Vector3 position)
     {
-        HandleClickToModifyGrid();
-
-        if (Input.GetMouseButtonDown(1))
-            Debug.Log(grid.GetState(UtilsClass.GetMouseWorldPosition()));
+        grid.SetState(position, !GetState(position));
     }
 
-    private void HandleClickToModifyGrid()
+    public bool GetState(Vector3 position)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            grid.SetState(UtilsClass.GetMouseWorldPosition(), true);
-        }
+        return grid.GetState(position);
     }
 
 }
