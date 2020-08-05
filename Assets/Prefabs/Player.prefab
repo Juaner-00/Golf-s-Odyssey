@@ -84,8 +84,6 @@ GameObject:
   m_Component:
   - component: {fileID: 547552198}
   - component: {fileID: 547552202}
-  - component: {fileID: 547552201}
-  - component: {fileID: 547552200}
   - component: {fileID: 547552199}
   m_Layer: 5
   m_Name: DirectionArrow
@@ -164,38 +162,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &547552201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547552197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"arrowImage","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences:
-    - {fileID: 479199250}
---- !u!114 &547552200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547552197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 07c699853c039e84587438142b00de1e, type: 2}
 --- !u!114 &547552199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,10 +453,8 @@ GameObject:
   - component: {fileID: 8674348206082964377}
   - component: {fileID: 8263302905668647876}
   - component: {fileID: 5227000879515279584}
-  - component: {fileID: 3688077856316303871}
-  - component: {fileID: 4173071605240570878}
-  - component: {fileID: 1887267352908939584}
-  - component: {fileID: -6140752253699275736}
+  - component: {fileID: 5588302197321370153}
+  - component: {fileID: 7852195665638009644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -589,7 +553,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &3688077856316303871
+--- !u!114 &5588302197321370153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -598,13 +562,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510777794961761089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"MultiplicadorFuerza","value":{"$content":0.2,"$type":"System.Single"},"$version":"A"},{"name":"counterStrikes","value":{"$content":0,"$type":"System.Int32"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!114 &4173071605240570878
+  vectorSwipe: {x: 0, y: 0, z: 0}
+--- !u!114 &7852195665638009644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,41 +575,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510777794961761089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Script: {fileID: 11500000, guid: c8a49a422b354394591d1baff987788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 7a498bb45adda0c4aa927c134c77adc3, type: 2}
---- !u!114 &1887267352908939584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4510777794961761089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 6492df788f0cd0546aa7bb09f4940f55, type: 2}
---- !u!114 &-6140752253699275736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4510777794961761089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 305935433, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  multiplicadorFuerza: 0.2
+  maxForce: 100
+  forceMag: 0
 --- !u!1 &8258984528722112213
 GameObject:
   m_ObjectHideFlags: 0
