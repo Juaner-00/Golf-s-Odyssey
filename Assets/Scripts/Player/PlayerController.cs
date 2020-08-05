@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(direction * forceMag, ForceMode.Impulse);
 
             // Aumentar el contador de strikes y llamar el evento
-            OnStrike?.Invoke(++counterStrikes);
+            counterStrikes += 1;
+            OnStrike?.Invoke(counterStrikes);
         }
     }
 }
