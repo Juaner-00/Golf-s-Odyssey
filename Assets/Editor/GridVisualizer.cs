@@ -13,7 +13,6 @@ public class GridVisualizer : Editor
     private void OnEnable()
     {
         grid = target as Grid;
-        grid.Init();
     }
 
     public override void OnInspectorGUI()
@@ -28,50 +27,56 @@ public class GridVisualizer : Editor
 
     private void OnSceneGUI()
     {
-        Event guiEvent = Event.current;
-
-        Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
-        float drawPlaneHeight = 0;
-        float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
-        Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
-
-
-        if (guiEvent.type == EventType.MouseDown)
+        if (grid.gridAsset.gridCells != null)
         {
-            switch (guiEvent.button)
+            Event guiEvent = Event.current;
+
+            Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
+            float drawPlaneHeight = 0;
+            float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
+            Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
+
+
+            if (guiEvent.type == EventType.MouseDown)
             {
-                case 0:
-                    grid.SetState(mousePosition);
-                    needRapaint = true;
-                    break;
-                default:
-                    break;
+                switch (guiEvent.button)
+                {
+                    case 0:
+                        grid.SetState(mousePosition);
+                        needRapaint = true;
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
 
-        Draw();
+            Draw();
 
-        if (guiEvent.type == EventType.Layout)
-            HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+            if (guiEvent.type == EventType.Layout)
+                HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
 
-        if (needRapaint)
-        {
-            HandleUtility.Repaint();
-            needRapaint = false;
+            if (needRapaint)
+            {
+                HandleUtility.Repaint();
+                needRapaint = false;
+            }
         }
     }
 
     private void Draw()
     {
-        for (int x = 0; x < grid.GetWidth(); x++)
+        if (grid.gridAsset.gridCells != null)
         {
-            for (int z = 0; z < grid.GetHeight(); z++)
+            for (int x = 0; x < grid.GetWidth(); x++)
             {
-                Handles.color = (grid.GetState(x, z)) ? grid.canPlaceColor : grid.cantPlaceColor;
-                Handles.CubeHandleCap(GUIUtility.GetControlID(FocusType.Passive),
-                                 grid.GetWorldPosition(x, z) + new Vector3(grid.GetCellSize(), 0, grid.GetCellSize()) * 0.5f,
-                                 Quaternion.identity,
-                                 grid.GetCellSize() * 0.9f, EventType.Repaint);
+                for (int z = 0; z < grid.GetHeight(); z++)
+                {
+                    Handles.color = (grid.GetState(x, z)) ? grid.canPlaceColor : grid.cantPlaceColor;
+                    Handles.CubeHandleCap(GUIUtility.GetControlID(FocusType.Passive),
+                                     grid.GetWorldPosition(x, z) + new Vector3(grid.GetCellSize(), 0, grid.GetCellSize()) * 0.5f,
+                                     Quaternion.identity,
+                                     grid.GetCellSize() * 0.9f, EventType.Repaint);
+                }
             }
         }
     }
