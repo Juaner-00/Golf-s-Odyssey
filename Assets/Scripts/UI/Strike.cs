@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Strike : MonoBehaviour
 {
     [SerializeField]
-    Text strikeText;
+    TextMeshProUGUI strikeText;
 
     PlayerController playerController;
 
