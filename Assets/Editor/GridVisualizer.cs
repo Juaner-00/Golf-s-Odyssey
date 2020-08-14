@@ -6,13 +6,13 @@ using UnityEditor;
 [CustomEditor(typeof(Grid))]
 public class GridVisualizer : Editor
 {
-    Grid grid;
+    Grid gridObj;
 
     private bool needRapaint;
 
     private void OnEnable()
     {
-        grid = target as Grid;
+        gridObj = target as Grid;
     }
 
     public override void OnInspectorGUI()
@@ -20,62 +20,59 @@ public class GridVisualizer : Editor
         base.OnInspectorGUI();
         if (GUILayout.Button("Re create grid"))
         {
-            grid.ReCreate();
+            gridObj.Create();
             needRapaint = true;
         }
     }
 
     private void OnSceneGUI()
     {
-        if (grid.gridAsset.gridCells != null)
+        Event guiEvent = Event.current;
+
+        Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
+        float drawPlaneHeight = 0;
+        float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
+        Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
+
+
+        if (guiEvent.type == EventType.MouseDown)
         {
-            Event guiEvent = Event.current;
-
-            Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
-            float drawPlaneHeight = 0;
-            float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
-            Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
-
-
-            if (guiEvent.type == EventType.MouseDown)
+            switch (guiEvent.button)
             {
-                switch (guiEvent.button)
-                {
-                    case 0:
-                        grid.SetState(mousePosition);
-                        needRapaint = true;
-                        break;
-                    default:
-                        break;
-                }
+                case 0:
+                    gridObj.SetState(mousePosition);
+                    needRapaint = true;
+                    break;
+                default:
+                    break;
             }
+        }
 
-            Draw();
+        Draw();
 
-            if (guiEvent.type == EventType.Layout)
-                HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+        if (guiEvent.type == EventType.Layout)
+            HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
 
-            if (needRapaint)
-            {
-                HandleUtility.Repaint();
-                needRapaint = false;
-            }
+        if (needRapaint)
+        {
+            HandleUtility.Repaint();
+            needRapaint = false;
         }
     }
 
     private void Draw()
     {
-        if (grid.gridAsset.gridCells != null)
+        if (gridObj.GridObj.gridCells != null)
         {
-            for (int x = 0; x < grid.GetWidth(); x++)
+            for (int x = 0; x < gridObj.Width; x++)
             {
-                for (int z = 0; z < grid.GetHeight(); z++)
+                for (int z = 0; z < gridObj.Height; z++)
                 {
-                    Handles.color = (grid.GetState(x, z)) ? grid.canPlaceColor : grid.cantPlaceColor;
+                    Handles.color = (gridObj.GetState(x, z)) ? gridObj.CanPlaceColor : gridObj.CannotPlaceColor;
                     Handles.CubeHandleCap(GUIUtility.GetControlID(FocusType.Passive),
-                                     grid.GetWorldPosition(x, z) + new Vector3(grid.GetCellSize(), 0, grid.GetCellSize()) * 0.5f,
+                                     gridObj.GetWorldPosition(x, z) + new Vector3(gridObj.CellSize, 0, gridObj.CellSize) * 0.5f,
                                      Quaternion.identity,
-                                     grid.GetCellSize() * 0.9f, EventType.Repaint);
+                                     gridObj.CellSize * 0.9f, EventType.Repaint);
                 }
             }
         }
