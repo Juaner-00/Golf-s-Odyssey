@@ -11670,6 +11670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600245780}
+  - component: {fileID: 600245781}
   m_Layer: 0
   m_Name: Boxes
   m_TagString: Bouncers
@@ -11696,6 +11697,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &600245781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600245779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2206993, y: 1.225584, z: 1.083457}
+  m_Center: {x: 0.06557083, y: -2.518919, z: 3.8584886}
 --- !u!1001 &609764762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21006,20 +21020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65811966b3e48ad4a9362cb8b1c4b83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Camera Zoom
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  Channel: 0
-  ZoomMode: 0
-  ZoomFieldOfView: 30
-  ZoomTransitionDuration: 0.05
-  ZoomDuration: 0.1
 --- !u!114 &923933236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21032,12 +21032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Feedbacks:
-  - {fileID: 923933235}
-  - {fileID: 923933239}
-  - {fileID: 923933238}
-  InitializationMode: 2
-  DebugActive: 0
 --- !u!4 &923933237
 Transform:
   m_ObjectHideFlags: 0
@@ -21064,46 +21058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba1d39e1a4e0a142831b5815b528429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Impulse
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-    m_AmplitudeGain: 1
-    m_FrequencyGain: 1
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
-    m_PropagationSpeed: 343
-  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &923933239
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -21116,23 +21070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2ce51367856bd49b72678cc4263225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Sound
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  Sfx: {fileID: 0}
-  RandomSfx: []
-  PlayMethod: 0
-  MinVolume: 1
-  MaxVolume: 1
-  MinPitch: 1
-  MaxPitch: 1
-  SfxAudioMixerGroup: {fileID: 0}
 --- !u!1001 &937512833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27603,6 +27540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233502953}
+  - component: {fileID: 1233502954}
   m_Layer: 0
   m_Name: ----Ground----
   m_TagString: Untagged
@@ -27629,6 +27567,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1233502954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233502952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.670128, y: 0.66311455, z: 3.8070068}
+  m_Center: {x: -4.744526, y: -5.160036, z: 8.684593}
 --- !u!1001 &1234896448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28380,7 +28331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.42
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -28388,7 +28339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8722661
+      value: -0.94800967
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalRotation.z
@@ -28396,7 +28347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.4890315
+      value: -0.31824175
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_RootOrder
@@ -28408,7 +28359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -238.55399
+      value: -217.11299
       objectReference: {fileID: 0}
     - target: {fileID: 4112316252599066, guid: 7e6ea47b2322d6b42b5c2bae17c07bbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -37650,36 +37601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547ab53f5c5bd8f47958e648c03ed7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Channel: 0
-  ZoomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  TestMode: 0
-  TestFieldOfView: 30
-  TestTransitionDuration: 0.1
-  TestDuration: 0.05
-  TestZoomButton: 0
 --- !u!114 &1761828463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41931,7 +41852,7 @@ PrefabInstance:
     - target: {fileID: 683100536365316485, guid: 66551c2c333e686419a8c39d99b2599b,
         type: 3}
       propertyPath: levelName
-      value: Tutorial Level_02
+      value: Tutorial Level_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66551c2c333e686419a8c39d99b2599b, type: 3}
