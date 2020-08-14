@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd82aa7e01bc70b4bb0e1f3b9b0eb821, type: 3}
-  m_Name: GridLevel1
+  m_Script: {fileID: 11500000, guid: e8e4673a521a6c74d855e8bb1ba49119, type: 3}
+  m_Name: GridL1
   m_EditorClassIdentifier: 
+  gridCells: 00010000000100000100010100000000000100010000000100

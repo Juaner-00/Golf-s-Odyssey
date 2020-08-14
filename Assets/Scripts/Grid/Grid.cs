@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-
 public class Grid : MonoBehaviour
 {
+    [SerializeField]
+    GridObject gridObj;
+
     [SerializeField]
     int height = 10, width = 10;
 
@@ -14,44 +14,13 @@ public class Grid : MonoBehaviour
     [SerializeField]
     Vector3 originPosition = new Vector3();
 
-    public Color canPlaceColor = new Color(0, 1, 0, 0.5f), cantPlaceColor = new Color(1, 0, 0, 0.5f);
+    [SerializeField]
+    Color canPlaceColor = new Color(0, 1, 0, 0.5f), cannotPlaceColor = new Color(1, 0, 0, 0.5f);
 
 
-    public GridAsset gridAsset;
-
-
-    public void Init()
+    public void Create()
     {
-        if (gridAsset.gridCells == null)
-        {
-            gridAsset.gridCells = new bool[width, height];
-            Debug.Log("Init");
-        }
-    }
-
-    public void ReCreate()
-    {
-        gridAsset.gridCells = new bool[width, height];
-    }
-
-    public int GetWidth()
-    {
-        return width;
-    }
-
-    public int GetHeight()
-    {
-        return height;
-    }
-
-    public float GetCellSize()
-    {
-        return cellSize;
-    }
-
-    public bool[,] GetGridCells()
-    {
-        return gridAsset.gridCells;
+        gridObj.gridCells = new bool[width * height];
     }
 
     public Vector3 GetWorldPosition(int x, int z)
@@ -67,8 +36,15 @@ public class Grid : MonoBehaviour
 
     public void SetState(int x, int z)
     {
-        if (x >= 0 && z >= 0 && x < gridAsset.gridCells.GetLength(0) && z < gridAsset.gridCells.GetLength(1))
-            gridAsset.gridCells[x, z] = !GetState(x, z);
+        if (x >= 0 && z >= 0 && x < width && z < height)
+            try
+            {
+                gridObj.gridCells[x + z * width] = !GetState(x, z);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.LogError("Debe recrear el grid");
+            }
     }
 
     public void SetState(Vector3 worldPosition)
@@ -80,8 +56,19 @@ public class Grid : MonoBehaviour
 
     public bool GetState(int x, int z)
     {
-        if (x >= 0 && z >= 0 && x < gridAsset.gridCells.GetLength(0) && z < gridAsset.gridCells.GetLength(1))
-            return gridAsset.gridCells[x, z];
+        if (x >= 0 && z >= 0 && x < width && z < height)
+        {
+            try
+            {
+                return gridObj.gridCells[x + z * width];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.LogError("Debe recrear el grid");
+
+                return false;
+            }
+        }
         else
             return false;
     }
@@ -93,4 +80,11 @@ public class Grid : MonoBehaviour
         return GetState(x, z);
     }
 
+    // Accesores
+    public int Height { get => height; }
+    public int Width { get => width; }
+    public float CellSize { get => cellSize; }
+    public GridObject GridObj { get => gridObj; }
+    public Color CanPlaceColor { get => canPlaceColor; }
+    public Color CannotPlaceColor { get => cannotPlaceColor; }
 }
