@@ -17,21 +17,21 @@ public class Grid : MonoBehaviour
     public Color canPlaceColor = new Color(0, 1, 0, 0.5f), cantPlaceColor = new Color(1, 0, 0, 0.5f);
 
 
-    private bool[,] gridArray;
+    public GridAsset gridAsset;
 
 
     public void Init()
     {
-        if (gridArray == null)
+        if (gridAsset.gridCells == null)
         {
+            gridAsset.gridCells = new bool[width, height];
             Debug.Log("Init");
-            gridArray = new bool[width, height];
         }
     }
 
     public void ReCreate()
     {
-        gridArray = new bool[width, height];
+        gridAsset.gridCells = new bool[width, height];
     }
 
     public int GetWidth()
@@ -49,9 +49,9 @@ public class Grid : MonoBehaviour
         return cellSize;
     }
 
-    public bool[,] GetGridArray()
+    public bool[,] GetGridCells()
     {
-        return gridArray;
+        return gridAsset.gridCells;
     }
 
     public Vector3 GetWorldPosition(int x, int z)
@@ -67,8 +67,8 @@ public class Grid : MonoBehaviour
 
     public void SetState(int x, int z)
     {
-        if (x >= 0 && z >= 0 && x < gridArray.GetLength(0) && z < gridArray.GetLength(1))
-            gridArray[x, z] = !GetState(x, z);
+        if (x >= 0 && z >= 0 && x < gridAsset.gridCells.GetLength(0) && z < gridAsset.gridCells.GetLength(1))
+            gridAsset.gridCells[x, z] = !GetState(x, z);
     }
 
     public void SetState(Vector3 worldPosition)
@@ -80,8 +80,8 @@ public class Grid : MonoBehaviour
 
     public bool GetState(int x, int z)
     {
-        if (x >= 0 && z >= 0 && x < gridArray.GetLength(0) && z < gridArray.GetLength(1))
-            return gridArray[x, z];
+        if (x >= 0 && z >= 0 && x < gridAsset.gridCells.GetLength(0) && z < gridAsset.gridCells.GetLength(1))
+            return gridAsset.gridCells[x, z];
         else
             return false;
     }

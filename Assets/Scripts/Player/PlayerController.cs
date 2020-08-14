@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public float forceMag;
+    public bool isStoped;
 
     public event OnStrikeEvent OnStrike;
     public delegate void OnStrikeEvent(int count);
@@ -39,19 +40,24 @@ public class PlayerController : MonoBehaviour
         // Clamp a la fuerza
         forceMag = inputManager.vectorSwipe.y * multiplicadorFuerza;
         forceMag = Mathf.Clamp(forceMag, 0, maxForce);
+
+        //Poner true si está quieto, sino falso
+        isStoped = (rb.velocity.sqrMagnitude < 0.1f) ? true : false;
     }
 
     private void Shoot(object sender, EventArgs e)
     {
         // Si está quieto y se le aplica fuerza
-        if (rb.velocity.sqrMagnitude < 0.1f && forceMag > 0)
+        if (isStoped && forceMag > 0)
         {
             // Vector dirección
             Vector3 direction = Vector3.ProjectOnPlane(cameraTrans.forward, Vector3.up).normalized;
             rb.AddForce(direction * forceMag, ForceMode.Impulse);
 
             // Aumentar el contador de strikes y llamar el evento
-            OnStrike?.Invoke(++counterStrikes);
+            counterStrikes += 1;
+            OnStrike?.Invoke(counterStrikes);
         }
     }
 }
+
