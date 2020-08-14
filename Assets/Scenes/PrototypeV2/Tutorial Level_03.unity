@@ -27128,7 +27128,12 @@ PrefabInstance:
     - target: {fileID: 5227000879515279584, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852195665638009644, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: maxForce
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7899862957660322707, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
