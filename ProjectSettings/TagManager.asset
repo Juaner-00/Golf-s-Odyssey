@@ -7,6 +7,10 @@ TagManager:
   - Escudo
   - Enviroment
   - Hole
+  - Mirror
+  - FxTemporaire
+  - Enemy
+  - Bouncers
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - 
   - post
-  - 
+  - Player
   - 
   - 
   - 

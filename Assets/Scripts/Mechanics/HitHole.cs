@@ -12,8 +12,15 @@ public class HitHole : MonoBehaviour
     [SerializeField]
 
     Vector3 offset = new Vector3(0, 0, 0);
+
     [SerializeField]
+
     float time;
+
+    [SerializeField]
+
+    _SceneManager nextScene;
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -21,13 +28,13 @@ public class HitHole : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
-            Invoke("Reset", time);
+            Invoke("SceneChanger", time);
         }
     }
 
-    private void Reset()
+    private void SceneChanger()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        nextScene.LoadLevel();
 
     }
 }
