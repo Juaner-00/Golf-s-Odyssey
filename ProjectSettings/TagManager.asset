@@ -8,6 +8,9 @@ TagManager:
   - Enviroment
   - Hole
   - Mirror
+  - FxTemporaire
+  - Enemy
+  - Bouncers
   layers:
   - Default
   - TransparentFX
