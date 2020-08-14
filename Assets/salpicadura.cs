@@ -8,12 +8,17 @@ public class salpicadura : MonoBehaviour {
     [SerializeField]
 
     Vector3 offset = new Vector3 (0, 0, 0);
+
     [SerializeField]
+
     GameObject ballSpill;
 
-    void OnCollisionEnter (Collision collisionInfo) {
-        if (collisionInfo.collider.CompareTag ("Escudo")) {
-            Instantiate (waterSpill, ballSpill.GetComponent<GameObject>().transform.position + offset, Quaternion.identity);
+  
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Instantiate(waterSpill, ballSpill.transform.position + offset, Quaternion.identity);
         }
     }
 }

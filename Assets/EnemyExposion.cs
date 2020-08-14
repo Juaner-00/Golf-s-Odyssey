@@ -5,18 +5,20 @@ using UnityEngine;
 public class EnemyExposion : MonoBehaviour
 {
     public GameObject explo;
-
-    private void Start()
-    {
-        explo = GetComponent<GameObject>();
-    }
+    public Vector3 offset;
+  
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag( "Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Invoke("explo",0);
-            
-            Destroy(gameObject);
+            Instantiate(explo, transform.position + offset, Quaternion.identity);
+            Invoke("DeathEnemy", 0);
         }
+      
+    }
+
+    void DeathEnemy()
+    {
+        Destroy(gameObject);
     }
 }
