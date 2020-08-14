@@ -37576,7 +37576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 2
+  bounceForce: 1
 --- !u!1 &1761828461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8258984528722112213, guid: 22b6cf1099441b4419e3b572197ccf41,

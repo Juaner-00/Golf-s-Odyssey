@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3826,8 +3826,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0554943, y: 1, z: 19.18649}
-  m_Center: {x: 6.5016346, y: 0, z: -9.494831}
+  m_Size: {x: 1.0554943, y: 1, z: 14.257196}
+  m_Center: {x: 6.5016346, y: 0, z: -11.959477}
 --- !u!65 &175715580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19804,20 +19804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65811966b3e48ad4a9362cb8b1c4b83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Camera Zoom
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  Channel: 0
-  ZoomMode: 0
-  ZoomFieldOfView: 30
-  ZoomTransitionDuration: 0.05
-  ZoomDuration: 0.1
 --- !u!114 &923933236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19830,12 +19816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Feedbacks:
-  - {fileID: 923933235}
-  - {fileID: 923933239}
-  - {fileID: 923933238}
-  InitializationMode: 2
-  DebugActive: 0
 --- !u!4 &923933237
 Transform:
   m_ObjectHideFlags: 0
@@ -19862,46 +19842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba1d39e1a4e0a142831b5815b528429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Impulse
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-    m_AmplitudeGain: 1
-    m_FrequencyGain: 1
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
-    m_PropagationSpeed: 343
-  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &923933239
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -19914,23 +19854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2ce51367856bd49b72678cc4263225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 0
-  Label: Sound
-  Timing:
-    InitialDelay: 0
-    CooldownDuration: 0
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-  DebugActive: 0
-  Sfx: {fileID: 0}
-  RandomSfx: []
-  PlayMethod: 0
-  MinVolume: 1
-  MaxVolume: 1
-  MinPitch: 1
-  MaxPitch: 1
-  SfxAudioMixerGroup: {fileID: 0}
 --- !u!1001 &937512833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35732,7 +35655,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760139559}
-  m_LocalRotation: {x: -0.31399256, y: 1.7763568e-14, z: -2.0872193e-14, w: 0.9494255}
+  m_LocalRotation: {x: -0.31399256, y: 1.4210855e-14, z: -3.0642155e-14, w: 0.9494255}
   m_LocalPosition: {x: -0.0000003028322, y: -2.5511825, z: 12.180781}
   m_LocalScale: {x: 1.1428571, y: 1.1428572, z: 1.1428572}
   m_Children:
@@ -35904,7 +35827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 2
+  bounceForce: 1
 --- !u!1 &1761828461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8258984528722112213, guid: 22b6cf1099441b4419e3b572197ccf41,
@@ -35923,36 +35846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547ab53f5c5bd8f47958e648c03ed7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Channel: 0
-  ZoomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  TestMode: 0
-  TestFieldOfView: 30
-  TestTransitionDuration: 0.1
-  TestDuration: 0.05
-  TestZoomButton: 0
 --- !u!114 &1761828463
 MonoBehaviour:
   m_ObjectHideFlags: 0
