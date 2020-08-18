@@ -27128,7 +27128,12 @@ PrefabInstance:
     - target: {fileID: 5227000879515279584, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852195665638009644, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: maxForce
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7899862957660322707, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
@@ -37576,7 +37581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 1
+  bounceForce: 3
 --- !u!1 &1761828461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8258984528722112213, guid: 22b6cf1099441b4419e3b572197ccf41,
