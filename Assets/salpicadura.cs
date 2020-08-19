@@ -2,23 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class salpicadura : MonoBehaviour {
-    [SerializeField]
-    private GameObject waterSpill;
-    [SerializeField]
+public class salpicadura : MonoBehaviour
+{
+    [SerializeField] private GameObject waterSpill;
 
-    Vector3 offset = new Vector3 (0, 0, 0);
+    [SerializeField] private Vector3 offset = new Vector3(0, 0, 0);
 
-    [SerializeField]
-
-    GameObject ballSpill;
-
-  
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(waterSpill, ballSpill.transform.position + offset, Quaternion.identity);
+            Instantiate(waterSpill, other.transform.position + offset, Quaternion.identity);
         }
     }
 }

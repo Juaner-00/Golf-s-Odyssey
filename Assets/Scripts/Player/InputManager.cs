@@ -55,7 +55,8 @@ public class InputManager : MonoBehaviour
                     posIni = touch.position;
                 }
                 // Setear el vector posFin a la posición del touch
-                else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                else if ((touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary) &&
+                Mathf.Abs(touch.deltaPosition.y) > Mathf.Abs(touch.deltaPosition.x) * 1.5f)
                 {
                     posFin = touch.position;
                     vectorSwipe = CalcularDistancia();
@@ -72,6 +73,6 @@ public class InputManager : MonoBehaviour
 
     Vector3 CalcularDistancia()
     {
-        return (posIni - posFin)/Screen.height;
+        return (posIni - posFin) / Screen.height;
     }
 }
