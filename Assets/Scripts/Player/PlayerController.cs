@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float multiplicadorFuerza = 100f;
+    float multiplicadorFuerza = 0.2f;
 
     public float maxForce = 100f;
 

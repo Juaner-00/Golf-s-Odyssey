@@ -72,6 +72,6 @@ public class InputManager : MonoBehaviour
 
     Vector3 CalcularDistancia()
     {
-        return (posIni - posFin)/Screen.height;
+        return posIni - posFin;
     }
 }
