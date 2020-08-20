@@ -18,52 +18,32 @@ MonoBehaviour:
   container:
     items:
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 11400000, guid: f7e27257afe315541ab4ddfaf1352254, type: 2}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1
     - id: 0
-      item:
-        name: 
-        id: 0
-      amount: 0
+      item: {fileID: 0}
+      available: 1

@@ -25,7 +25,7 @@ public class DisplayInventory : MonoBehaviour
 
     #region DISPLAY
 
-    private void Start()
+    public void Start()
     {
         cam = Camera.main;
         inventory.OnChange += UpdateDisplay;
@@ -33,7 +33,7 @@ public class DisplayInventory : MonoBehaviour
         CreateSlots();
     }
 
-    private void UpdateDisplay()
+    public void UpdateDisplay()
     {
         foreach (KeyValuePair<GameObject, InventorySlot> slot in itemsDisplay)
         {
@@ -47,6 +47,11 @@ public class DisplayInventory : MonoBehaviour
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
             }
+
+            if (slot.Value.Available == AvailableType.Enable)
+                slot.Key.GetComponent<Button>().interactable = true;
+            else
+                slot.Key.GetComponent<Button>().interactable = false;
         }
     }
 

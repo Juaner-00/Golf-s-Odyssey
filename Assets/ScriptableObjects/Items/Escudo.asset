@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Escudo
   m_EditorClassIdentifier: 
   id: 0
-  uiDisplay: {fileID: 0}
-  prefab: {fileID: 0}
+  uiDisplay: {fileID: 21300000, guid: 309ad2fb71e42f24dadfa1d222be83a1, type: 3}
+  prefab: {fileID: 6033392437130005702, guid: 4e59a57ec7112924e969aeabf8cb4700, type: 3}
   cost: 0
-  description: 
+  description: Escudo redondo que permite rebotar en su superficie
