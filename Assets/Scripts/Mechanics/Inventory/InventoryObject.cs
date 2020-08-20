@@ -6,22 +6,19 @@ using System.IO;
 using System.Runtime.Serialization;
 
 [CreateAssetMenu(fileName = "new Inventory", menuName = "Inventory System/Inventory")]
-public class InventoryObject : ScriptableObject
+public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     [SerializeField] private string savePath;
     [SerializeField] private ItemDBObject database;
-    [SerializeField] private int maxCapacity;
-    [SerializeField] private Inventory container;
+    [SerializeField] private List<InventorySlot> container = new List<InventorySlot>();
 
     public event OnInventoryEvent OnChange;
     public delegate void OnInventoryEvent();
 
-    private int countObj;
-
 
     public void AddItem(ItemObject item, AvailableType available)
     {
-        foreach (InventorySlot slot in container.Items)
+        foreach (InventorySlot slot in container)
             if (slot.ID == item.ID)
                 return;
 
@@ -31,30 +28,9 @@ public class InventoryObject : ScriptableObject
         OnChange?.Invoke();
     }
 
-    private InventorySlot SetEmptySlot(ItemObject item, AvailableType available)
+    private void SetEmptySlot(ItemObject item, AvailableType available)
     {
-        foreach (InventorySlot slot in container.Items)
-            if (slot.ID <= -1)
-            {
-                slot.UpdateSlot(item, item.ID, available);
-                return slot;
-            }
-        return null;
-    }
-
-    public bool CanAddItem(ItemObject item)
-    {
-        // Puede añadir un item si hay un espacio libre
-        if (countObj < maxCapacity)
-            return true;
-        // Ver si tiene el objeto
-        else
-            foreach (InventorySlot slot in container.Items)
-                if (slot.Item.ID == item.ID)
-                    return true;
-
-        // Si no hay espacio o ningún objeto igual
-        return false;
+        container.Add(new InventorySlot(item, item.ID, available));
     }
 
     public void MoveItem(InventorySlot slot1, InventorySlot slot2)
@@ -68,8 +44,17 @@ public class InventoryObject : ScriptableObject
     [ContextMenu("Clear")]
     public void Clear()
     {
-        container = new Inventory(maxCapacity);
-        countObj = 0;
+        container = new List<InventorySlot>();
+    }
+
+    public void OnBeforeSerialize()
+    {
+    }
+
+    public void OnAfterDeserialize()
+    {
+        foreach (InventorySlot slot in container)
+            slot.Item = database.IDItems[slot.ID];
     }
 
     #region LOAD/SAVE   
@@ -101,40 +86,27 @@ public class InventoryObject : ScriptableObject
 
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
-            for (int i = 0; i < container.Items.Length; i++)
-                container.Items[i].UpdateSlot(newContainer.Items[i].Item, newContainer.Items[i].ID, newContainer.Items[i].Available);
+            List<InventorySlot> newContainer = (List<InventorySlot>)formatter.Deserialize(stream);
+            for (int i = 0; i < container.Count; i++)
+                container[i].UpdateSlot(newContainer[i].Item, newContainer[i].ID, newContainer[i].Available);
             stream.Close();
 
             OnChange?.Invoke();
         }
     }
 
+
     #endregion
 
     // Accesores
-    public Inventory Container { get => container; }
+    public List<InventorySlot> Container { get => container; }
     public ItemDBObject Database { get => database; }
-}
-
-
-[System.Serializable]
-public class Inventory
-{
-    [SerializeField] private InventorySlot[] items = new InventorySlot[4];
-
-    public Inventory(int maxCapacity)
-    {
-        items = new InventorySlot[maxCapacity];
-    }
-
-    public InventorySlot[] Items { get => items; }
 }
 
 public enum AvailableType
 {
-    Enable,
-    Disable
+    Disable,
+    Enable
 }
 
 [System.Serializable]

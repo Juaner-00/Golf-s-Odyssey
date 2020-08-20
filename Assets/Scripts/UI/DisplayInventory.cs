@@ -37,21 +37,18 @@ public class DisplayInventory : MonoBehaviour
     {
         foreach (KeyValuePair<GameObject, InventorySlot> slot in itemsDisplay)
         {
-            if (slot.Value.ID >= 0)
-            {
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.Database.IDItems[slot.Value.Item.ID].UIDisplay;
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
-            }
-            else
-            {
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
-                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
-            }
+            slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.Database.IDItems[slot.Value.ID].UIDisplay;
 
             if (slot.Value.Available == AvailableType.Enable)
+            {
+                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
                 slot.Key.GetComponent<Button>().interactable = true;
+            }
             else
+            {
+                slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(0.8f, 0.8f, 0.8f, 0.8f);
                 slot.Key.GetComponent<Button>().interactable = false;
+            }
         }
     }
 
@@ -59,7 +56,7 @@ public class DisplayInventory : MonoBehaviour
     {
         itemsDisplay = new Dictionary<GameObject, InventorySlot>();
 
-        for (int i = 0; i < inventory.Container.Items.Length; i++)
+        for (int i = 0; i < inventory.Container.Count; i++)
         {
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
@@ -70,8 +67,9 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
-            itemsDisplay.Add(obj, inventory.Container.Items[i]);
+            itemsDisplay.Add(obj, inventory.Container[i]);
         }
+        UpdateDisplay();
     }
 
     #endregion
