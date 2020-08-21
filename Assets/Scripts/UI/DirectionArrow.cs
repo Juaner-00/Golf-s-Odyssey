@@ -26,8 +26,11 @@ public class DirectionArrow : MonoBehaviour
 
     private void Update()
     {
-        sliderArrow.value = playerController.forceMag;
-        arrowImage.color = gradiente.Evaluate(sliderArrow.normalizedValue);
+        if (PlayerController.isStoped)
+        {
+            sliderArrow.value = playerController.forceMag;
+            arrowImage.color = gradiente.Evaluate(sliderArrow.normalizedValue);
+        }
     }
 
 }

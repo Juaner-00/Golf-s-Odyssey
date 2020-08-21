@@ -21,13 +21,10 @@ public class DisplayInventory : MonoBehaviour
 
     private Dictionary<GameObject, InventorySlot> itemsDisplay = new Dictionary<GameObject, InventorySlot>();
 
-    private Camera cam;
-
     #region DISPLAY
 
     public void Start()
     {
-        cam = Camera.main;
         inventory.OnChange += UpdateDisplay;
 
         CreateSlots();
@@ -61,11 +58,7 @@ public class DisplayInventory : MonoBehaviour
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragBegin(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            obj.GetComponent<Button>().onClick.AddListener(delegate { ButtonOnClick(obj); });
 
             itemsDisplay.Add(obj, inventory.Container[i]);
         }
@@ -74,74 +67,17 @@ public class DisplayInventory : MonoBehaviour
 
     #endregion
 
-    private void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
-    {
-        EventTrigger trigger = obj.GetComponent<EventTrigger>();
-        var eventrigger = new EventTrigger.Entry();
-        eventrigger.eventID = type;
-        eventrigger.callback.AddListener(action);
-        trigger.triggers.Add(eventrigger);
-    }
-
     private Vector3 GetPosition(int i)
     {
         return new Vector3(xStart + xSpaceBetweenItems * (i % numberOfColumns), yStart - ySpaceBetweenItems * (i / numberOfColumns), 0f);
     }
 
-    #region DRAG_ACTIONS
+    #region BUTTON_ACTIONS
 
-    private void OnDragBegin(GameObject obj)
+    private void ButtonOnClick(GameObject obj)
     {
-        var mouseObj = new GameObject();
-        var rt = mouseObj.AddComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(50, 50);
-        mouseObj.transform.SetParent(transform.parent);
-
-        if (itemsDisplay[obj].ID >= 0)
-        {
-            var img = mouseObj.AddComponent<Image>();
-            img.sprite = inventory.Database.IDItems[itemsDisplay[obj].ID].UIDisplay;
-            img.raycastTarget = false;
-            img.preserveAspect = true;
-        }
-        mouseItem.Obj = mouseObj;
-        mouseItem.Slot = itemsDisplay[obj];
-    }
-
-    private void OnDrag(GameObject obj)
-    {
-        if (mouseItem.Obj != null)
-            mouseItem.Obj.GetComponent<RectTransform>().position = Input.mousePosition;
-    }
-
-    private void OnDragEnd(GameObject obj)
-    {
-        if (mouseItem.HoverObject)
-            inventory.MoveItem(itemsDisplay[obj], itemsDisplay[mouseItem.HoverObject]);
-        else
-        {
-            Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
-            GameObject prefab = mouseItem.Slot.Item.Prefab;
-            if (prefab)
-                Instantiate(prefab, pos, Quaternion.identity);
-            UpdateDisplay();
-        }
-
-        Destroy(mouseItem.Obj);
-        mouseItem.Slot = null;
-    }
-
-    private void OnEnter(GameObject obj)
-    {
-        mouseItem.HoverObject = obj;
-        if (itemsDisplay.ContainsKey(obj))
-            mouseItem.HoverSlot = itemsDisplay[obj];
-    }
-
-    private void OnExit(GameObject obj)
-    {
-        mouseItem.HoverObject = null;
-        mouseItem.HoverSlot = null;
+        BuildingPlacement.Instance.SetObject(itemsDisplay[obj].Item.Prefab);
+        MenuManager.Instance.OpenUI();
     }
 
     #endregion
@@ -151,12 +87,6 @@ public class DisplayInventory : MonoBehaviour
 public class MouseItem
 {
     private GameObject obj;
-    private InventorySlot slot;
-    private InventorySlot hoverSlot;
-    private GameObject hoverObject;
 
     public GameObject Obj { get => obj; set => obj = value; }
-    public InventorySlot Slot { get => slot; set => slot = value; }
-    public InventorySlot HoverSlot { get => hoverSlot; set => hoverSlot = value; }
-    public GameObject HoverObject { get => hoverObject; set => hoverObject = value; }
 }

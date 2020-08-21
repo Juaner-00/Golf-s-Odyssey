@@ -18,6 +18,17 @@ public class Grid : MonoBehaviour
     Color canPlaceColor = new Color(0, 1, 0, 0.5f), cannotPlaceColor = new Color(1, 0, 0, 0.5f);
 
 
+    private static Grid instance;
+    public static Grid Instance { get => instance; }
+
+    private void Start()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     public void Create()
     {
         gridObj.gridCells = new bool[width * height];
@@ -32,6 +43,13 @@ public class Grid : MonoBehaviour
     {
         x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
         z = Mathf.FloorToInt((worldPosition - originPosition).z / cellSize);
+    }
+
+    public Vector3 Snap(Vector3 worldPos)
+    {
+        float x = Mathf.Round((worldPos - originPosition).x / cellSize) * cellSize + cellSize / 2;
+        float z = Mathf.Round((worldPos - originPosition).z / cellSize) * cellSize + cellSize / 2;
+        return new Vector3(x, worldPos.y, z);
     }
 
     public void SetState(int x, int z)
