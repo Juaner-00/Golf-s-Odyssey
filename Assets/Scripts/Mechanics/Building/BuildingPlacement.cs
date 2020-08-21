@@ -27,23 +27,24 @@ public class BuildingPlacement : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        // cam.transform.position += grid.GetOffset();
     }
 
     private void Update()
     {
-        if (isBuilding)
+        /* if (isBuilding)
+        { */
+        if (Input.GetMouseButton(0))
         {
-            if (Input.GetMouseButton(0))
-            {
-                SetPosition(0);
-            }
-            else if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Moved)
-                    SetPosition(1);
-            }
+            SetPosition(0);
         }
+        else if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+                SetPosition(1);
+        }
+        /* } */
         // if (building != null)
         // {
         //     Ray mouseRay = cam.ScreenPointToRay(Input.mousePosition);
@@ -57,30 +58,36 @@ public class BuildingPlacement : MonoBehaviour
 
     private void SetPosition(int i)
     {
-        float posY;
-        RaycastHit hit;
-
-        Ray ray = cam.ScreenPointToRay(virtualCamera.position);
-
-        if (Physics.Raycast(ray, out hit, 50, layerPlaceable))
-            posY = hit.point.y;
-        else
-            posY = 0;
-
+        // Mover la cámara
         if (i == 0)
             virtualCamera.position += InputManager.deltaMousePos;
         else
             virtualCamera.position += InputManager.deltaTouchPos;
 
-        Vector3 newPos = grid.Snap(virtualCamera.position);
-        newPos.y = posY;
-        building.transform.position = newPos;
+        if (isBuilding)
+        {
+            float posY;
+            RaycastHit hit;
+
+            Ray ray = cam.ScreenPointToRay(virtualCamera.position);
+
+            if (Physics.Raycast(ray, out hit, 50, layerPlaceable))
+                posY = hit.point.y;
+            else
+                posY = 0;
+
+            // Mover el objeto a la posicion del Raycast o a 0 (en y)
+            Vector3 newPos = grid.Snap(virtualCamera.position - grid.GetOffset()) + grid.GetOffset();
+            newPos.y = posY;
+            building.transform.position = newPos;
+        }
     }
 
     public void SetObject(GameObject obj)
     {
         building = Instantiate(obj, Vector3.zero, Quaternion.identity);
         isBuilding = true;
+        SetPosition(0);
     }
 
     public void SetBuild()

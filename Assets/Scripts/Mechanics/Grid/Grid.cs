@@ -47,9 +47,14 @@ public class Grid : MonoBehaviour
 
     public Vector3 Snap(Vector3 worldPos)
     {
-        float x = Mathf.Round((worldPos - originPosition).x / cellSize) * cellSize + cellSize / 2;
-        float z = Mathf.Round((worldPos - originPosition).z / cellSize) * cellSize + cellSize / 2;
+        float x = Mathf.Round((worldPos - originPosition).x / cellSize) * cellSize;
+        float z = Mathf.Round((worldPos - originPosition).z / cellSize) * cellSize;
         return new Vector3(x, worldPos.y, z);
+    }
+
+    public Vector3 GetOffset()
+    {
+        return new Vector3(cellSize / 2, 0, cellSize / 2);
     }
 
     public void SetState(int x, int z)
