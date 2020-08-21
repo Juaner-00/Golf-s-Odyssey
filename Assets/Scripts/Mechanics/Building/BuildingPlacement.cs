@@ -90,8 +90,23 @@ public class BuildingPlacement : MonoBehaviour
         SetPosition(0);
     }
 
-    public void SetBuild()
+    public void SetBuild(Vector3 pos, GameObject obj)
     {
-        isBuilding = false;
+        if (grid.GetState(pos))
+        {
+            grid.SetState(pos);
+            if (obj == building)
+                isBuilding = false;
+        }
+    }
+
+    public void DeleteBuild(Vector3 pos, GameObject obj)
+    {
+        if (!grid.GetState(pos))
+        {
+            grid.SetState(pos);
+            if (obj == building)
+                isBuilding = false;
+        }
     }
 }
