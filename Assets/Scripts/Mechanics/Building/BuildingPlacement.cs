@@ -27,6 +27,7 @@ public class BuildingPlacement : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        // cam.transform.position += grid.GetOffset();
     }
 
     private void Update()
