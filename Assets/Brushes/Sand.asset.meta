@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 565c2d4db042c5b4489410ba81ea37e9
+<<<<<<< Updated upstream:Assets/Brushes/Sand.asset.meta
+guid: 78c92aa15d8ecff4dbe6b362718ed67d
 NativeFormatImporter:
+=======
+guid: 71d4e86a55c8bbb4980870645f957e1e
+folderAsset: yes
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/EmaceArt_LavaPlant.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

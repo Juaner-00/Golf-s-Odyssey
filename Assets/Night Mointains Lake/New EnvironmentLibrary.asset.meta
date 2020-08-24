@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 2de2f4d5d3a5f794ba33f529827246e8
+<<<<<<< Updated upstream:Assets/Night Mointains Lake/New EnvironmentLibrary.asset.meta
+guid: 716f2a4439045f74e8067534542d6615
 NativeFormatImporter:
+=======
+guid: 13e93c2766f8df640bb703a43e2a9d63
+folderAsset: yes
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/EmaceArt_LavaPlant/Info.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
