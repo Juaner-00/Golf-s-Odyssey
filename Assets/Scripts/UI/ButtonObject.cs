@@ -18,7 +18,7 @@ public class ButtonObject : MonoBehaviour
 
     public void Place()
     {
-        BuildingPlacement.Instance.SetBuild();
+        BuildingPlacement.Instance.SetBuild(transform.parent.position, transform.parent.gameObject);
     }
 
     public void Rotate()
@@ -28,7 +28,7 @@ public class ButtonObject : MonoBehaviour
 
     public void Cancel()
     {
-        BuildingPlacement.Instance.SetBuild();
+        BuildingPlacement.Instance.DeleteBuild(transform.parent.position, transform.parent.gameObject);
         Destroy(transform.parent.gameObject);
     }
 }
