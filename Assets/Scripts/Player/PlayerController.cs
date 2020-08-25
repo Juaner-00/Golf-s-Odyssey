@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         InputManager.OnShoot -= Shoot;
     }
 
+
     void Update()
     {
         // Clamp a la fuerza
