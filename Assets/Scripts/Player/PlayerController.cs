@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float multiplicadorFuerza = 100f;
+    float multiplicadorFuerza = 0.2f;
 
     public float maxForce = 100f;
 
     [HideInInspector]
     public float forceMag;
-    public bool isStoped;
+    public static bool isStoped;
 
     public event OnStrikeEvent OnStrike;
     public delegate void OnStrikeEvent(int count);
