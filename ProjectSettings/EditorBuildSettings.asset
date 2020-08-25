@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Tutorial Level_01.unity
     guid: e8695ead66ca7b1488e63c38b1f8c435
-  - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_02.unity
-    guid: 71329a2bdd3cf524286758b696410e59
-  - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_03.unity
-    guid: 2129c148dadcb0c4ca917828eb5ac258
-  - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_04.unity
-    guid: dc7f1e70356b10140923a02d708d36c7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

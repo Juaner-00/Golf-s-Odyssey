@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4974015893711786}
   - component: {fileID: 205882578504869550}
+  - component: {fileID: 6544738366755200875}
   m_Layer: 0
   m_Name: spear_short_metal_LOD_setup
   m_TagString: Enviroment
@@ -219,6 +220,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23197007759534932}
   m_Enabled: 1
+--- !u!65 &6544738366755200875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658120859653712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 0.96, z: 0.19}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1778256280007218
 GameObject:
   m_ObjectHideFlags: 0
