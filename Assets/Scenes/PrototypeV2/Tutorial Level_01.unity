@@ -20577,9 +20577,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 760755685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
+  m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceForce: 0
 --- !u!4 &760755694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4823208723231808107, guid: 22b6cf1099441b4419e3b572197ccf41,
@@ -49355,9 +49356,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.2797446
+  m_Height: 1.323801
   m_Direction: 1
-  m_Center: {x: 0, y: 0.13987231, z: 0}
+  m_Center: {x: 0, y: 0.16190052, z: 0}
 --- !u!1001 &1850622447
 PrefabInstance:
   m_ObjectHideFlags: 0
