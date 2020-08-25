@@ -11,6 +11,8 @@ public class BallBounceScript : MonoBehaviour
     Vector3 lastVelocity;
 
     public float bounceForce;
+
+    
     // Start is called before the first frame update
     private void Awake()
     {
