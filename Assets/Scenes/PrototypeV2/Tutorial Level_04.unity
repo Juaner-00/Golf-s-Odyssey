@@ -45,7 +45,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -19453,7 +19453,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -19571,7 +19571,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 760755685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &760755694 stripped
@@ -27672,6 +27672,7 @@ GameObject:
   - component: {fileID: 1069554147}
   - component: {fileID: 1069554146}
   - component: {fileID: 1069554145}
+  - component: {fileID: 1069554151}
   m_Layer: 0
   m_Name: 'Grass '
   m_TagString: Untagged
@@ -27718,8 +27719,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5954425, y: 1, z: 2.5443754}
-  m_Center: {x: 0.546116, y: 0, z: -2.190246}
+  m_Size: {x: 3.5954425, y: 1, z: 7.096752}
+  m_Center: {x: 0.546116, y: 0, z: -4.4664345}
 --- !u!65 &1069554147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27731,8 +27732,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6201324, y: 1, z: 2.5974455}
-  m_Center: {x: 4.591383, y: 0, z: -2.2167811}
+  m_Size: {x: 6.958881, y: 1, z: 6.0791674}
+  m_Center: {x: 2.9220088, y: 0, z: -4.976333}
 --- !u!65 &1069554148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27757,8 +27758,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.5056243, y: 1, z: 16.538149}
-  m_Center: {x: 2.501207, y: 0, z: -10.0001135}
+  m_Size: {x: 8.157722, y: 1, z: 7.3004913}
+  m_Center: {x: 2.8272567, y: 0, z: -14.618942}
 --- !u!156049354 &1069554150
 Grid:
   m_ObjectHideFlags: 0
@@ -27771,6 +27772,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 1
+--- !u!65 &1069554151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069554143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5457296, y: 1.7288752, z: 1.5338817}
+  m_Center: {x: 2.5134864, y: 0.36443758, z: -0.5702747}
 --- !u!1001 &1072001589
 PrefabInstance:
   m_ObjectHideFlags: 0
