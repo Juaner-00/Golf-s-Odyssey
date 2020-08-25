@@ -28,9 +28,13 @@ public class PlayerController : MonoBehaviour
         cameraTrans = Camera.main.transform;
     }
 
-    void Start()
+    void OnEnable()
     {
         InputManager.OnShoot += Shoot;
+    }
+    void OnDisable()
+    {
+        InputManager.OnShoot -= Shoot;
     }
 
     void Update()
