@@ -24,8 +24,17 @@ public class _SceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
     public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Pinicio");
+    }
+    public void MapMenu()
+    {
+        SceneManager.LoadScene("MapLvls");
+    }
+
+
+    public void LoadMainM()
     {
         SceneManager.LoadScene("MainMenu");
     }
