@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 10
+  bounceForce: 0
 --- !u!136 &4381696
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -240,6 +240,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4381693}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4381698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513fd2730dff1b94593f01ed7e41f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explo: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &9063642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19571,9 +19585,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 760755685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceForce: 0
 --- !u!4 &760755694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4823208723231808107, guid: 22b6cf1099441b4419e3b572197ccf41,

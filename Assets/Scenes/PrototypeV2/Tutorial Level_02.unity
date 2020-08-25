@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 10
+  bounceForce: 0
 --- !u!136 &4381696
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -384,6 +384,20 @@ CapsuleCollider:
   m_Height: 2.4753933
   m_Direction: 1
   m_Center: {x: 0.076125264, y: 0.8965597, z: 0.05386913}
+--- !u!114 &4381697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513fd2730dff1b94593f01ed7e41f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explo: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &17769646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22889,9 +22903,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 760755685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2ff59e3ad1ddb499c81e500ee1b743, type: 3}
+  m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceForce: 0
 --- !u!4 &760755694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4823208723231808107, guid: 22b6cf1099441b4419e3b572197ccf41,
@@ -56750,9 +56765,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 1.2983906
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.14919531, z: 0}
 --- !u!1001 &2138726107
 PrefabInstance:
   m_ObjectHideFlags: 0
