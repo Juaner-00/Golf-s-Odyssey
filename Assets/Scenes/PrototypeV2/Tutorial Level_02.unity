@@ -3402,6 +3402,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5588302197321370153, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: device
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7899862957660322707, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_FollowOffset.y
