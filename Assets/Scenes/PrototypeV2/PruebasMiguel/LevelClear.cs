@@ -34,6 +34,10 @@ public class LevelClear : MonoBehaviour
     [SerializeField]
     LevelClearManager levelClearedManager;
 
+    [SerializeField] GameObject star1;
+    [SerializeField] GameObject star2;
+    [SerializeField] GameObject star3;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,23 +72,31 @@ public class LevelClear : MonoBehaviour
 
         if( count != 0 )
         {
-            if (count < 3)
+            if (count < 4)
             {
                 scoreTotal = 300;
+
+                star1.SetActive(true);
+                star2.SetActive(true);
+                star3.SetActive(true);
             }
 
             else
 
-            if (count < 6)
+            if (count < 7)
             {
                 scoreTotal = 200;
+
+                star1.SetActive(true);
+                star2.SetActive(true);
             }
 
             else
 
-            if (count >= 6)
+            if (count >= 7)
             {
                 scoreTotal = 100;
+                star1.SetActive(true);
             }
         }
 

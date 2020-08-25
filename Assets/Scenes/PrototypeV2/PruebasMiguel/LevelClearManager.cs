@@ -8,7 +8,7 @@ public class LevelClearManager : MonoBehaviour
     [SerializeField] GameObject levelDialog;
     [SerializeField] TextMeshProUGUI levelClear;
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] TextMeshProUGUI countStrikes;
+    [SerializeField] TextMeshProUGUI countStrikes;   
 
 
     public void ShowLevelDialog(string status, string score, string cStrikes)

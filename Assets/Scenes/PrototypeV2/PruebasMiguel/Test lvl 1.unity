@@ -11232,7 +11232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &579462869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12899,7 +12899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &666838850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42108,6 +42108,9 @@ MonoBehaviour:
   scoreText: {fileID: 865603180}
   nextScene: {fileID: 0}
   levelClearedManager: {fileID: 1066661392}
+  star1: {fileID: 579462868}
+  star2: {fileID: 2106447486}
+  star3: {fileID: 666838849}
 --- !u!1 &2038813312
 GameObject:
   m_ObjectHideFlags: 0
@@ -43091,7 +43094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106447487
 RectTransform:
   m_ObjectHideFlags: 0
