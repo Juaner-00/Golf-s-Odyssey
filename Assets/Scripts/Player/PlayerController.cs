@@ -19,33 +19,31 @@ public class PlayerController : MonoBehaviour
 
     int counterStrikes;
 
-    InputManager inputManager;
     Rigidbody rb;
     Transform cameraTrans;
 
     private void Awake()
     {
-        inputManager = GetComponent<InputManager>();
         rb = GetComponent<Rigidbody>();
         cameraTrans = Camera.main.transform;
     }
 
     void Start()
     {
-        inputManager.OnShoot += Shoot;
+        InputManager.OnShoot += Shoot;
     }
 
     void Update()
     {
         // Clamp a la fuerza
-        forceMag = inputManager.vectorSwipe.y * multiplicadorFuerza;
+        forceMag = InputManager.vectorSwipe.y * multiplicadorFuerza;
         forceMag = Mathf.Clamp(forceMag, 0, maxForce);
 
         //Poner true si está quieto, sino falso
         isStoped = (rb.velocity.sqrMagnitude < 0.1f) ? true : false;
     }
 
-    private void Shoot(object sender, EventArgs e)
+    private void Shoot()
     {
         // Si está quieto y se le aplica fuerza
         if (isStoped && forceMag > 0)

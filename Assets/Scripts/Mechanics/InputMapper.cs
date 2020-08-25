@@ -17,7 +17,7 @@ public class InputMapper : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            if (axisName == TouchXInputMapTo && Mathf.Abs(touch.deltaPosition.x) > Mathf.Abs(touch.deltaPosition.y) * 1.5f)
+            if (axisName == TouchXInputMapTo && InputManager.SwipeType == SwipeType.Horizontal)
                 return touch.deltaPosition.x / TouchSensitivityX;
         }
         return Input.GetAxis(axisName);
