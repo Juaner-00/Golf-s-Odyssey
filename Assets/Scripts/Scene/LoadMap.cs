@@ -23,7 +23,7 @@ public class LoadMap : MonoBehaviour
     public void salir()
     {
         Application.Quit();
-        Debug.Log("HOLI");
+        
     }
 
    

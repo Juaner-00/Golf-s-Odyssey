@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a49a422b354394591d1baff987788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplicadorFuerza: 50
-  maxForce: 80
+  multiplicadorFuerza: 30
+  maxForce: 60
   forceMag: 0
 --- !u!1 &8258984528722112213
 GameObject:
