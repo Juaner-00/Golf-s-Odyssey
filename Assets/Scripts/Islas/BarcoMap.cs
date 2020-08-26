@@ -11,7 +11,7 @@ public class BarcoMap : MonoBehaviour
     private Vector3 targetPosition;
     private bool isMoving = false;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +23,14 @@ public class BarcoMap : MonoBehaviour
     {
        if(Input.GetMouseButton(0))
        {
-            setTargetPosition();
+            setTargetPosition(Input.mousePosition);
        }
+        if (Input.touchCount > 0)
+        {
+            Touch presionar  = Input.GetTouch(0);
+            setTargetPosition(presionar.position);
+            
+        }
        if (isMoving)
        {
             Move();
@@ -47,9 +53,10 @@ public class BarcoMap : MonoBehaviour
             transform.Translate(0, -0.03f, 0);
         }*/
     }
-    void setTargetPosition()
+    void setTargetPosition(Vector3 posicion)
     {
-        targetPosition = Camera.main.ViewportToScreenPoint(Input.mousePosition);
+        
+        targetPosition = Camera.main.ViewportToScreenPoint(posicion);
         targetPosition.z = transform.position.z;
         isMoving = true;
 
