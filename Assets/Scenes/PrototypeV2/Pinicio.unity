@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 912576021}
-        m_MethodName: salir
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -475,9 +475,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912576022}
-  - component: {fileID: 912576021}
   - component: {fileID: 912576024}
   - component: {fileID: 912576023}
+  - component: {fileID: 912576021}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -494,9 +494,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 912576020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b342111c055aad44ab1160e813f6563, type: 3}
+  m_Script: {fileID: 11500000, guid: c479540fc062b3d4f88f925419ad6282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: MapLvls
+  level1Name: 
 --- !u!4 &912576022
 Transform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1080,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 912576021}
-        m_MethodName: nextScene
+        m_MethodName: LoadLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
