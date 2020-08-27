@@ -6,18 +6,11 @@ using UnityEngine.SceneManagement;
 public class _SceneManager : MonoBehaviour
 {
     [SerializeField]
-    string levelName;
-    [SerializeField]
-    string level1Name = "Tutorial Level_01";
+    string nextLevelName;
 
-    public void LoadLevel()
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene(levelName);
-    }
-
-    public void LoadLevel1()
-    {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(nextLevelName);
     }
 
     public void Reset()
@@ -33,16 +26,9 @@ public class _SceneManager : MonoBehaviour
         SceneManager.LoadScene("MapLvls");
     }
 
-
-    public void LoadMainM()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void Quit()
     {
         Application.Quit();
-        
     }
 
 }
