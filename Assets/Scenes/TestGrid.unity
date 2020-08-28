@@ -424,6 +424,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66551c2c333e686419a8c39d99b2599b, type: 3}
+--- !u!1 &387059619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046786189880937623, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 988388170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555955702
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +516,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 152395842476543177, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046786189880937623, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1509341161234472646, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
         type: 3}
       propertyPath: m_Name
@@ -808,6 +824,16 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 555955703}
+    - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
+        type: 3}
+      propertyPath: layerPlaceable.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
+        type: 3}
+      propertyPath: buildBtn
+      value: 
+      objectReference: {fileID: 387059619}
     - target: {fileID: 6586051952444841052, guid: 2c55e411f836a6942871cecdb9c762ec,
         type: 3}
       propertyPath: m_Name

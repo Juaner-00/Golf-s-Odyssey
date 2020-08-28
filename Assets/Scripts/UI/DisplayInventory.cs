@@ -76,7 +76,7 @@ public class DisplayInventory : MonoBehaviour
 
     private void ButtonOnClick(GameObject obj)
     {
-        BuildingPlacement.Instance.SetObject(itemsDisplay[obj].Item.Prefab);
+        BuildingPlacement.Instance.InstanciateObject(itemsDisplay[obj].Item.Prefab);
         MenuManager.Instance.OpenUI();
     }
 
