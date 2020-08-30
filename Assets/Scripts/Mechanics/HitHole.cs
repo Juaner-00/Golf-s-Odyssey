@@ -23,8 +23,6 @@ public class HitHole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         if (other.CompareTag("Player"))
         {
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
@@ -34,7 +32,6 @@ public class HitHole : MonoBehaviour
 
     private void SceneChanger()
     {
-        nextScene.LoadLevel();
-
+        nextScene.LoadNextLevel();
     }
 }
