@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BuildingPlacement : MonoBehaviour
 {
+    [SerializeField] GameObject buildBtn;
     [SerializeField] Transform virtualCamera;
     [SerializeField] LayerMask layerPlaceable;
     private GameObject building;
@@ -13,6 +14,8 @@ public class BuildingPlacement : MonoBehaviour
     private static BuildingPlacement instance;
 
     public static BuildingPlacement Instance { get => instance; }
+    public bool IsBuilding { get => isBuilding; }
+    public LayerMask LayerPlaceable { get => layerPlaceable; }
 
     private void Awake()
     {
@@ -32,8 +35,6 @@ public class BuildingPlacement : MonoBehaviour
 
     private void Update()
     {
-        /* if (isBuilding)
-        { */
         if (Input.GetMouseButton(0))
         {
             SetPosition(0);
@@ -44,16 +45,6 @@ public class BuildingPlacement : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
                 SetPosition(1);
         }
-        /* } */
-        // if (building != null)
-        // {
-        //     Ray mouseRay = cam.ScreenPointToRay(Input.mousePosition);
-        //     float drawPlaneHeight = 0;
-        //     float distToDrawPlane = (drawPlaneHeight - mouseRay.origin.y) / mouseRay.direction.y;
-        //     Vector3 mousePosition = mouseRay.GetPoint(distToDrawPlane);
-
-        //     building.transform.position = mousePosition;
-        // }
     }
 
     private void SetPosition(int i)
@@ -83,11 +74,21 @@ public class BuildingPlacement : MonoBehaviour
         }
     }
 
-    public void SetObject(GameObject obj)
+    public void InstanciateObject(GameObject obj)
     {
         building = Instantiate(obj, Vector3.zero, Quaternion.identity);
         isBuilding = true;
         SetPosition(0);
+        buildBtn.SetActive(false);
+    }
+
+    public void SetObject(Vector3 pos, GameObject obj)
+    {
+        grid.SetState(pos);
+        building = obj;
+        isBuilding = true;
+        // SetPosition(0);
+        buildBtn.SetActive(false);
     }
 
     public void SetBuild(Vector3 pos, GameObject obj)
@@ -96,17 +97,24 @@ public class BuildingPlacement : MonoBehaviour
         {
             grid.SetState(pos);
             if (obj == building)
+            {
                 isBuilding = false;
+                buildBtn.SetActive(true);
+            }
         }
+    }
+
+    public bool CanPlace(Vector3 pos)
+    {
+        return grid.GetState(pos) ? true : false;
     }
 
     public void DeleteBuild(Vector3 pos, GameObject obj)
     {
-        if (!grid.GetState(pos))
+        if (obj == building)
         {
-            grid.SetState(pos);
-            if (obj == building)
-                isBuilding = false;
+            isBuilding = false;
+            buildBtn.SetActive(true);
         }
     }
 }

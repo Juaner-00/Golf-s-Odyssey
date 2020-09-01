@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8025099308209986009}
   - component: {fileID: 5240525325972417811}
   - component: {fileID: 7764612418387020172}
-  m_Layer: 0
+  - component: {fileID: 2438564565850361515}
+  m_Layer: 10
   m_Name: EscudoGriego2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +95,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.4, y: 0.23, z: 6.56}
   m_Center: {x: 0, y: 0.14, z: 0.91}
+--- !u!114 &2438564565850361515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033392437130005702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b5fad8862809b4d98c7ec14522c8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5773814890005132523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +114,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6408968444499842684}
     m_Modifications:
+    - target: {fileID: 285937382039832753, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2438564565850361515}
+    - target: {fileID: 285937382039832753, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410631344967151300, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027115090693299520, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409059305073231148, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2438564565850361515}
+    - target: {fileID: 5409059305073231148, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Place
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408225308417452135, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2438564565850361515}
+    - target: {fileID: 7408225308417452135, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Cancel
+      objectReference: {fileID: 0}
     - target: {fileID: 7830338280541278520, guid: 51b3c91cc44731a43a00a50ec456a519,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,12 +259,23 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8231373982812803680, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8553532386621925993, guid: 51b3c91cc44731a43a00a50ec456a519,
         type: 3}
       propertyPath: m_Name
       value: ButtonsObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8553532386621925993, guid: 51b3c91cc44731a43a00a50ec456a519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6671458620566270502, guid: 51b3c91cc44731a43a00a50ec456a519, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 51b3c91cc44731a43a00a50ec456a519, type: 3}
 --- !u!224 &4362375196281382355 stripped
 RectTransform:
