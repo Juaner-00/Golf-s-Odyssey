@@ -51,14 +51,14 @@ public class ButtonObject : MonoBehaviour
     {
         if (isPlaced)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0))
                 CheckClick(Input.mousePosition);
 
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
 
-                if (touch.phase == TouchPhase.Ended)
+                if (touch.phase == TouchPhase.Began)
                     CheckClick(touch.position);
             }
         }

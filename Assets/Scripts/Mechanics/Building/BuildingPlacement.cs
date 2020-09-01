@@ -87,7 +87,7 @@ public class BuildingPlacement : MonoBehaviour
         grid.SetState(pos);
         building = obj;
         isBuilding = true;
-        SetPosition(0);
+        // SetPosition(0);
         buildBtn.SetActive(false);
     }
 

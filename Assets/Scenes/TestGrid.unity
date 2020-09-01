@@ -821,19 +821,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
         type: 3}
-      propertyPath: virtualCamera
-      value: 
-      objectReference: {fileID: 555955703}
-    - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
-        type: 3}
-      propertyPath: layerPlaceable.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
-        type: 3}
       propertyPath: buildBtn
       value: 
       objectReference: {fileID: 387059619}
+    - target: {fileID: 6586051952444841051, guid: 2c55e411f836a6942871cecdb9c762ec,
+        type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 555955703}
     - target: {fileID: 6586051952444841052, guid: 2c55e411f836a6942871cecdb9c762ec,
         type: 3}
       propertyPath: m_Name
