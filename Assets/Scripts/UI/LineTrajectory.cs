@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class LineTrajectory : MonoBehaviour
 {
-    public int rayCount = 2;
-    public LineRenderer line;
+    [SerializeField] int rayCount = 2;
 
+    LineRenderer line;
 
-    private void Start()
+    private void Awake()
     {
         line = GetComponent<LineRenderer>();
     }
+
     private void Update()
     {
         CastRay(transform.position, transform.forward);
