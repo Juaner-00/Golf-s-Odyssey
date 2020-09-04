@@ -7,9 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class RayBeam : MonoBehaviour
 {
-
-    public int reflections;
-    public float maxLenght;
+    [SerializeField] int reflections;
+    [SerializeField] float maxLenght;
+    [SerializeField] LayerMask bouncers;
 
     private LineRenderer lineRenderer;
     private Ray ray;
@@ -35,7 +35,7 @@ public class RayBeam : MonoBehaviour
 
         for (int i = 0; i <= reflections; i++)
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))
+            if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength, bouncers))
             {
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);

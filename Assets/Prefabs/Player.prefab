@@ -445,6 +445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reflections: 2
   maxLenght: 15
+  bouncers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &105656533644093029
 GameObject:
   m_ObjectHideFlags: 0
