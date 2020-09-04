@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 2
-  maxLenght: 10
+  maxLenght: 15
 --- !u!1 &105656533644093029
 GameObject:
   m_ObjectHideFlags: 0
