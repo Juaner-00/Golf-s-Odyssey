@@ -7,9 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class RayBeam : MonoBehaviour
 {
-
-    public int reflections;
-    public float maxLenght;
+    [SerializeField] int reflections;
+    [SerializeField] float maxLenght;
+    [SerializeField] LayerMask bouncers;
 
     private LineRenderer lineRenderer;
     private Ray ray;
@@ -21,6 +21,7 @@ public class RayBeam : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+
     private void Update()
     {
         ray = new Ray(transform.position, transform.forward);
@@ -30,27 +31,29 @@ public class RayBeam : MonoBehaviour
 
         float remainingLength = maxLenght;
 
-        for (int i = 0; i < reflections; i++)
+        lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
+
+        for (int i = 0; i <= reflections; i++)
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))
+            if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength, bouncers))
             {
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
-                remainingLength -= Vector3.Distance(ray.origin, hit.point);
-                ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
-
-                lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
 
                 if (hit.collider.CompareTag("Bouncers"))
                 {
-                    lineRenderer.positionCount += 1;
-                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
+                    remainingLength -= Vector3.Distance(ray.origin, hit.point);
+                    ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
                 }
                 else
-                {
                     break;
-                }
             }
+            else
+            {
+                lineRenderer.positionCount += 1;
+                lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
+            }
+
         }
 
     }
