@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class DirectionArrow : MonoBehaviour
 {
-    public Gradient gradiente;
-
+    [SerializeField] Gradient gradiente;
 
     Image arrowImage;
     Slider sliderArrow;
@@ -31,6 +30,8 @@ public class DirectionArrow : MonoBehaviour
             sliderArrow.value = playerController.forceMag;
             arrowImage.color = gradiente.Evaluate(sliderArrow.normalizedValue);
         }
+        else
+            sliderArrow.value = 0;
     }
 
 }

@@ -16,11 +16,14 @@ public class Strike : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
-    void Start()
+    void OnEnable()
     {
         playerController.OnStrike += UpdateStrikeUI;
     }
-
+    void OnDisable()
+    {
+        playerController.OnStrike -= UpdateStrikeUI;
+    }
     void UpdateStrikeUI(int counterText)
     {
         strikeText.text = counterText.ToString();
