@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
+using System;
 
-public class HitHole : MonoBehaviour
+public class LevelClear : MonoBehaviour
 {
     [SerializeField]
 
@@ -21,11 +22,12 @@ public class HitHole : MonoBehaviour
     [SerializeField]
 
     TextMeshProUGUI strikeText;
+    
+      [SerializeField]
 
-    [SerializeField]
+      _SceneManager nextScene;
 
-    _SceneManager nextScene;
-
+   
 
     [SerializeField]
     LevelClearManager levelClearedManager;
@@ -40,33 +42,43 @@ public class HitHole : MonoBehaviour
     int limite2Star_inf;
     [SerializeField]
     int limite2Star_sup;
+    [SerializeField]
+    int limite1Star_inf;
+    
 
 
     private void OnTriggerEnter(Collider other)
     {
+        //scoreText.text = strikeText.text.ToString();
+
+        
         if (other.CompareTag("Player"))
         {
-            Instantiate(obStar, transform.position + offset, Quaternion.identity);
-            Invoke("ShowVictoryPanel", time);
+
+            Invoke("ShowVictoryPanel", 1);
         }
     }
+
+    
+
 
     private void SceneChanger()
     {
         nextScene.LoadNextLevel();
+
     }
 
-    private void CalculateScore(TextMeshProUGUI strikeCount)
+    private int CalculateScore(TextMeshProUGUI strikeCount)
     {
-
+        int scoreTotal = 0;
 
         int count = int.Parse(strikeCount.text);
 
-        if (count != 0)
+        if( count != 0 )
         {
             if (count <= limite3Star_sup)
             {
-
+                
                 star1.SetActive(true);
                 star2.SetActive(true);
                 star3.SetActive(true);
@@ -76,22 +88,25 @@ public class HitHole : MonoBehaviour
 
             if (count >= limite2Star_inf && count <= limite2Star_sup)
             {
-
+                
                 star1.SetActive(true);
                 star2.SetActive(true);
             }
 
             else
 
-            if (count > limite2Star_sup)
+            if (count >= limite1Star_inf)
             {
-
+               
                 star1.SetActive(true);
             }
         }
 
+        return scoreTotal;
+        
+        
 
-
+           
     }
 
     private void ShowVictoryPanel()
@@ -99,7 +114,8 @@ public class HitHole : MonoBehaviour
         CalculateScore(strikeText);
 
         Instantiate(obStar, transform.position + offset, Quaternion.identity);
-      
+        //Invoke("SceneChanger", time);
+
         levelClearedManager.ShowLevelDialog("Level Cleared", strikeText.text.ToString());
     }
 }
