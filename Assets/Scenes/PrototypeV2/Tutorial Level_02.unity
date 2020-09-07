@@ -101,7 +101,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 4d2a420374a714249a1b1b2782022f9a,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14013,7 +14013,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d06b77a1362fe634db12d0b280fbff81, type: 2}
+  - {fileID: 2100000, guid: 7fc80c0ddf63557499c2c8a049bcb9d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22508,18 +22508,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 741395638}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &743954744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8815574553672952185, guid: 80dc98160c4bc064085e4d431c205711,
-    type: 3}
-  m_PrefabInstance: {fileID: 532168335}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2f58b1501edf145bc6def343425db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &743954745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8815574553672952166, guid: 80dc98160c4bc064085e4d431c205711,
@@ -57314,14 +57302,12 @@ MonoBehaviour:
   offset: {x: 0, y: 2, z: 0}
   time: 1
   strikeText: {fileID: 418792588}
-  nextScene: {fileID: 1998114979}
-  levelClearedManager: {fileID: 743954744}
   star1: {fileID: 2126125787}
   star2: {fileID: 1508552730}
   star3: {fileID: 831246520}
   limite3Star_sup: 2
   limite2Star_inf: 3
-  limite2Star_sup: 3
+  limite2Star_sup: 4
 --- !u!136 &2137918288
 CapsuleCollider:
   m_ObjectHideFlags: 0
