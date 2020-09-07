@@ -23,7 +23,7 @@ public class InputMapper : MonoBehaviour
                 if (axisName == TouchXInputMapTo && InputManager.SwipeType == SwipeType.Horizontal)
                     return touch.deltaPosition.x / TouchSensitivityX;
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(0) && InputManager.SwipeType == SwipeType.Horizontal)
                 return Input.GetAxis(axisName);
         }
         return 0;

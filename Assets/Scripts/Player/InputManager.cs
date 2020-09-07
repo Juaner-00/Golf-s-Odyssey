@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     Vector3 posIni;
     Vector3 posFin;
 
-    Vector3 panStart;
+    Vector3 mPos;
 
     public static event InputEvent OnShoot;
     public delegate void InputEvent();
@@ -43,26 +43,47 @@ public class InputManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     posIni = Input.mousePosition;
-                    panStart = cam.ScreenToWorldPoint(posIni);
+                    posFin = posIni;
                 }
                 // Setear el vector posFin al mantener el botón del mouse
                 else if (Input.GetMouseButton(0))
                 {
+                    if (deltaMousePos.sqrMagnitude > 0)
+                    {
+                        if (!hasMoved)
+                        {
+                            // Saber hacia cuál dirección mueve primero
+                            if (Mathf.Abs(deltaMousePos.y) >= Mathf.Abs(deltaMousePos.x))
+                                swipeType = SwipeType.Vertival;
+                            else
+                                swipeType = SwipeType.Horizontal;
+
+                            hasMoved = true;
+                        }
+
+                        if (swipeType == SwipeType.Vertival)
+                            vectorSwipe = CalcularDistancia();
+                    }
+
+                    deltaMousePos = posFin - Input.mousePosition;
                     posFin = Input.mousePosition;
-                    deltaMousePos = panStart - cam.ScreenToWorldPoint(posFin);
-                    vectorSwipe = CalcularDistancia();
+
                 }
                 // Activar el evento si se soltó el botón del mouse
                 else if (Input.GetMouseButtonUp(0))
                 {
-                    OnShoot?.Invoke();
                     vectorSwipe = Vector3.zero;
                     deltaMousePos = Vector3.zero;
+                    hasMoved = false;
+
+                    if (swipeType == SwipeType.Vertival)
+                    {
+                        OnShoot?.Invoke();
+                    }
                 }
             }
             else
             {
-
                 // Touch
                 if (Input.touchCount > 0)
                 {
@@ -72,7 +93,7 @@ public class InputManager : MonoBehaviour
                     if (touch.phase == TouchPhase.Began)
                     {
                         posIni = touch.position;
-                        panStart = cam.ScreenToWorldPoint(posIni);
+                        posFin = posIni;
                     }
                     // Setear el vector posFin a la posición del touch
                     else if (touch.phase == TouchPhase.Moved)
@@ -89,12 +110,7 @@ public class InputManager : MonoBehaviour
                         }
 
                         if (swipeType == SwipeType.Vertival)
-                        {
-                            posFin = touch.position;
-                            deltaTouchPos = panStart - cam.ScreenToWorldPoint(posFin);
                             vectorSwipe = CalcularDistancia();
-                        }
-
 
                     }
                     // Activar el evento si soltó el touch
@@ -106,7 +122,6 @@ public class InputManager : MonoBehaviour
 
                         if (swipeType == SwipeType.Vertival)
                         {
-                            Debug.Log("OnShoot");
                             OnShoot?.Invoke();
                         }
                     }
