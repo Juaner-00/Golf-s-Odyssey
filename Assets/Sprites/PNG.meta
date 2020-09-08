@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/PrototypeV2/PruebasMiguel/NewGameResources.meta
+guid: d02ca8b5d5398c3479ba9024b85cbd7f
+=======
 guid: ab4b98d174bed0f4bb3532e79e3f9f31
+>>>>>>> master:Assets/Sprites/PNG.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

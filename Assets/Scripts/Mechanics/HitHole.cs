@@ -2,36 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HitHole : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] GameObject obStar;
 
-    GameObject obStar;
+    [SerializeField] Vector3 offset = new Vector3(0, 0, 0);
 
-    [SerializeField]
+    [SerializeField] float time;
 
-    Vector3 offset = new Vector3(0, 0, 0);
+    [SerializeField] TextMeshProUGUI strikeText;
 
-    [SerializeField]
+    [SerializeField] GameObject star1;
+    [SerializeField] GameObject star2;
+    [SerializeField] GameObject star3;
 
-    float time;
+    [SerializeField] int limite3Star_sup;
+    [SerializeField] int limite2Star_inf;
+    [SerializeField] int limite2Star_sup;
 
-    [SerializeField]
 
-    _SceneManager nextScene;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
-            Invoke("SceneChanger", time);
+            Invoke("ShowVictoryPanel", time);
         }
     }
 
     private void SceneChanger()
     {
-        nextScene.LoadNextLevel();
+        _SceneManager.Instance.LoadNextLevel();
+    }
+
+    private void CalculateScore(TextMeshProUGUI strikeCount)
+    {
+        int count = int.Parse(strikeCount.text);
+
+        if (count != 0)
+        {
+            if (count <= limite3Star_sup)
+            {
+                star1.SetActive(true);
+                star2.SetActive(true);
+                star3.SetActive(true);
+            }
+            else if (count >= limite2Star_inf && count <= limite2Star_sup)
+            {
+                star1.SetActive(true);
+                star2.SetActive(true);
+            }
+            else if (count > limite2Star_sup)
+            {
+                star1.SetActive(true);
+            }
+        }
+    }
+
+    private void ShowVictoryPanel()
+    {
+        CalculateScore(strikeText);
+
+        // Instantiate(obStar, transform.position + offset, Quaternion.identity);
+
+        LevelClearManager.Instance.ShowLevelDialog("Level Cleared", strikeText.text.ToString());
     }
 }

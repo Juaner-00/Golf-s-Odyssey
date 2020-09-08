@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject UIMenu;
     [SerializeField] GameObject InventoryMenu;
     [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject DialogMenu;
 
     private static MenuManager instance;
     public static MenuManager Instance { get => instance; }
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
         PauseMenu.SetActive(false);
         UIMenu.SetActive(false);
         InventoryMenu.SetActive(true);
+        DialogMenu.SetActive(false);
     }
 
     public void OpenUI()
@@ -31,6 +33,7 @@ public class MenuManager : MonoBehaviour
         PauseMenu.SetActive(false);
         UIMenu.SetActive(true);
         InventoryMenu.SetActive(false);
+        DialogMenu.SetActive(false);
     }
 
     public void OpenPause()
@@ -38,6 +41,15 @@ public class MenuManager : MonoBehaviour
         PauseMenu.SetActive(true);
         UIMenu.SetActive(false);
         InventoryMenu.SetActive(false);
+        DialogMenu.SetActive(false);
+    }
+
+    public void OpenDialog()
+    {
+        PauseMenu.SetActive(false);
+        UIMenu.SetActive(false);
+        InventoryMenu.SetActive(false);
+        DialogMenu.SetActive(true);
     }
 }
 
