@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -244,27 +244,27 @@ PrefabInstance:
     - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14594874
+      value: 0.30972177
       objectReference: {fileID: 0}
     - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008511068
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000012556246
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -10.800003
       objectReference: {fileID: 0}
     - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.02
+      value: 8.800001
       objectReference: {fileID: 0}
     - target: {fileID: 3722269830441739042, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
@@ -1402,32 +1402,32 @@ PrefabInstance:
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 6.8900003
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.84
+      value: -40.24
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14594874
+      value: 0.30972177
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008511068
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000012556246
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98929214
+      value: 0.95082724
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
@@ -1612,8 +1612,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 224729f2df7ca5f47935961d58c67f55, type: 3}
 --- !u!4 &1702866230 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1979327120242387990, guid: 224729f2df7ca5f47935961d58c67f55,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1702866229}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1780126013
@@ -1825,6 +1824,7 @@ MonoBehaviour:
   obStar: {fileID: 100006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
   offset: {x: 0, y: 2, z: 0}
   time: 2
+  nextScene: {fileID: 0}
 --- !u!136 &1815726524
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2222,6 +2222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337151433646875104, guid: cde482f6318d42c438c3deeafe7ea0b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4337817367478050946, guid: cde482f6318d42c438c3deeafe7ea0b9,
         type: 3}

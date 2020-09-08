@@ -11,6 +11,7 @@ TagManager:
   - FxTemporaire
   - Enemy
   - Bouncers
+  - Axe
   layers:
   - Default
   - TransparentFX
