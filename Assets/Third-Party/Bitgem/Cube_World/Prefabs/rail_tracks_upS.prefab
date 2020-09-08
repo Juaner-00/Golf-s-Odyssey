@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4470205501498324}
   - component: {fileID: 33682164020209520}
   - component: {fileID: 23861181905007630}
-  - component: {fileID: 232734247}
   m_Layer: 0
   m_Name: rail_tracks_upS_LOD1
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &232734247
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162059761893128}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 684436f295eab2646b2c97f907db5080, type: 3}
 --- !u!1 &1344163184950800
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4974718722496460}
   - component: {fileID: 205125980812509560}
-  - component: {fileID: 947627184}
   m_Layer: 0
   m_Name: rail_tracks_upS
   m_TagString: Enviroment
@@ -119,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344163184950800}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -156,20 +140,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23578806154614294}
   m_Enabled: 1
---- !u!64 &947627184
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344163184950800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1658897500601954
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +151,6 @@ GameObject:
   - component: {fileID: 4480265958662696}
   - component: {fileID: 33923356204427990}
   - component: {fileID: 23927217241873132}
-  - component: {fileID: 2056018913}
   m_Layer: 0
   m_Name: rail_tracks_upS_LOD0
   m_TagString: Untagged
@@ -250,20 +219,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2056018913
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658897500601954}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 684436f295eab2646b2c97f907db5080, type: 3}
 --- !u!1 &1774037608874728
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4328323219832594}
   - component: {fileID: 33833375173211798}
   - component: {fileID: 23174866888107918}
-  - component: {fileID: 5156381822029303699}
   m_Layer: 0
   m_Name: rail_tracks_tile_up_half_LOD0
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5156381822029303699
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091061250416340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3f15da97bd78df849b6fb350dfc6d675, type: 3}
 --- !u!1 &1130517335239960
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +90,6 @@ GameObject:
   - component: {fileID: 4003492656182238}
   - component: {fileID: 33554132367609106}
   - component: {fileID: 23757208575058220}
-  - component: {fileID: 8743842273770636740}
   m_Layer: 0
   m_Name: rail_tracks_tile_up_half_LOD1
   m_TagString: Untagged
@@ -174,20 +158,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8743842273770636740
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130517335239960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 3f15da97bd78df849b6fb350dfc6d675, type: 3}
 --- !u!1 &1132178566104876
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +169,6 @@ GameObject:
   - component: {fileID: 4495331470029538}
   - component: {fileID: 33814932647255598}
   - component: {fileID: 23866064726715676}
-  - component: {fileID: 2502456611640486612}
   m_Layer: 0
   m_Name: rail_tracks_tile_up_half_LOD2
   m_TagString: Untagged
@@ -268,20 +237,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2502456611640486612
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132178566104876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 3f15da97bd78df849b6fb350dfc6d675, type: 3}
 --- !u!1 &1995013938283892
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4351811928859882}
   - component: {fileID: 205854717859740134}
-  - component: {fileID: 5631588172135763210}
   m_Layer: 0
   m_Name: rail_tracks_tile_up_half
   m_TagString: Enviroment
@@ -307,7 +261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995013938283892}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -344,17 +298,3 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23866064726715676}
   m_Enabled: 1
---- !u!64 &5631588172135763210
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995013938283892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}

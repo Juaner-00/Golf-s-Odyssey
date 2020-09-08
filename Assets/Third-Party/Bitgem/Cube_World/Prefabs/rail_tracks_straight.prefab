@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4142138456065104}
   - component: {fileID: 205676536376244136}
-  - component: {fileID: 5640124341686953871}
   m_Layer: 0
   m_Name: rail_tracks_straight
   m_TagString: Enviroment
@@ -25,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002815308598508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -62,20 +61,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23085161537563478}
   m_Enabled: 1
---- !u!64 &5640124341686953871
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002815308598508}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1029063203570608
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +72,6 @@ GameObject:
   - component: {fileID: 4675699895502500}
   - component: {fileID: 33423220768002006}
   - component: {fileID: 23085161537563478}
-  - component: {fileID: 1351243323657048007}
   m_Layer: 0
   m_Name: rail_tracks_straight_LOD2
   m_TagString: Untagged
@@ -156,20 +140,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1351243323657048007
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029063203570608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: c8c32b70fc398f44fba0f588d56a640d, type: 3}
 --- !u!1 &1331185074346486
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +151,6 @@ GameObject:
   - component: {fileID: 4538075956270642}
   - component: {fileID: 33782233670521114}
   - component: {fileID: 23461477006812666}
-  - component: {fileID: 6744981858277480005}
   m_Layer: 0
   m_Name: rail_tracks_straight_LOD0
   m_TagString: Untagged
@@ -250,20 +219,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6744981858277480005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331185074346486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c8c32b70fc398f44fba0f588d56a640d, type: 3}
 --- !u!1 &1672979866305644
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +230,6 @@ GameObject:
   - component: {fileID: 4692827467770286}
   - component: {fileID: 33152451975759994}
   - component: {fileID: 23946074396416134}
-  - component: {fileID: 2074746060113842693}
   m_Layer: 0
   m_Name: rail_tracks_straight_LOD1
   m_TagString: Untagged
@@ -344,17 +298,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2074746060113842693
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672979866305644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: c8c32b70fc398f44fba0f588d56a640d, type: 3}

@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 4381696}
   - component: {fileID: 5083337779551897775}
   - component: {fileID: 989158576394634093}
-  - component: {fileID: 2129529547}
   m_Layer: 0
   m_Name: dummy_1
   m_TagString: Bouncers
@@ -277,7 +276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!205 &205074043316763930
@@ -335,7 +334,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &989158576394634093
 MonoBehaviour:
@@ -351,18 +350,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explo: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
   offset: {x: 0, y: 0, z: 0}
---- !u!114 &2129529547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963519979866558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370795fa72122c74284ad41d4f9704ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetLocation: {x: 5.22, y: 0.5, z: -11.67188}
-  _moveDuration: 1
-  _moveEease: 25
