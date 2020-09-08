@@ -43,6 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2f58b1501edf145bc6def343425db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDialog: {fileID: 0}
   levelClear: {fileID: 0}
   countStrikes: {fileID: 0}
