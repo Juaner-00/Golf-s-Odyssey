@@ -32566,6 +32566,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1049149127}
     m_Modifications:
+    - target: {fileID: 711740815, guid: 97ca8bc31cc265649879010ef78c3633, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5defd4bf7f67a4b4ca3679b0e3859470, type: 3}
     - target: {fileID: 3536244426693069954, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: VirtualCamera
@@ -35009,6 +35013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588302197321370153, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: device
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
