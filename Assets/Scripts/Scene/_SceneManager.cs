@@ -8,9 +8,6 @@ public class _SceneManager : MonoBehaviour
     [SerializeField]
     string nextLevelName;
 
-    private static _SceneManager instance;
-    public static _SceneManager Instance { get => instance; }
-
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(nextLevelName);

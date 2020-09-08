@@ -5,19 +5,25 @@ using TMPro;
 
 public class Strike : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI strikeText;
+    [SerializeField]
+    TextMeshProUGUI strikeText;
 
+    PlayerController playerController;
+
+
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
     void OnEnable()
     {
-        PlayerController.OnStrike += UpdateStrikeUI;
+        playerController.OnStrike += UpdateStrikeUI;
     }
-
     void OnDisable()
     {
-        PlayerController.OnStrike -= UpdateStrikeUI;
+        playerController.OnStrike -= UpdateStrikeUI;
     }
-
     void UpdateStrikeUI(int counterText)
     {
         strikeText.text = counterText.ToString();

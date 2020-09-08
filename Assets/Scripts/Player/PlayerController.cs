@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float forceMag;
     public static bool isStoped;
 
-    public static event OnStrikeEvent OnStrike;
+    public event OnStrikeEvent OnStrike;
     public delegate void OnStrikeEvent(int count);
 
     int counterStrikes;
@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
     {
         InputManager.OnShoot += Shoot;
     }
-
     void OnDisable()
     {
         InputManager.OnShoot -= Shoot;
     }
+
 
     void Update()
     {

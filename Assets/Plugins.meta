@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Plugins.meta
 guid: a0fb92c57aac99f489378cddd9e4e9ed
-=======
-guid: dfc3dddc9cb575242910d4e5464d49ca
->>>>>>> master:Assets/Third-Party/NewGameResources/UI/MainMenu.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

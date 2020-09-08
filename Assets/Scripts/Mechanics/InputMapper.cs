@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class InputMapper : MonoBehaviour
 {
-    [SerializeField] float TouchSensitivityX = 50f;
+    public float TouchSensitivityX = 50f;
 
-    [SerializeField] string TouchXInputMapTo = "Mouse X";
-
+    public string TouchXInputMapTo = "Mouse X";
 
     void Start()
     {
@@ -15,17 +14,12 @@ public class InputMapper : MonoBehaviour
 
     private float GetInputAxis(string axisName)
     {
-        if (!LevelClearManager.Instance.HasClear)
+        if (Input.touchCount > 0)
         {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (axisName == TouchXInputMapTo && InputManager.SwipeType == SwipeType.Horizontal)
-                    return touch.deltaPosition.x / TouchSensitivityX;
-            }
-            else if (Input.GetMouseButton(0) && InputManager.SwipeType == SwipeType.Horizontal)
-                return Input.GetAxis(axisName);
+            Touch touch = Input.GetTouch(0);
+            if (axisName == TouchXInputMapTo && InputManager.SwipeType == SwipeType.Horizontal)
+                return touch.deltaPosition.x / TouchSensitivityX;
         }
-        return 0;
+        return Input.GetAxis(axisName);
     }
 }
