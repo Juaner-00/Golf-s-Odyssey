@@ -101,13 +101,15 @@ public class InputManager : MonoBehaviour
                         if (!hasMoved)
                         {
                             // Saber hacia cuál dirección mueve primero
-                            if (Mathf.Abs(touch.deltaPosition.y) >= Mathf.Abs(touch.deltaPosition.x))
+                            if (Mathf.Abs(touch.deltaPosition.y)*1.5f >= Mathf.Abs(touch.deltaPosition.x))
                                 swipeType = SwipeType.Vertival;
                             else
                                 swipeType = SwipeType.Horizontal;
 
                             hasMoved = true;
                         }
+
+                        posFin = touch.position;
 
                         if (swipeType == SwipeType.Vertival)
                             vectorSwipe = CalcularDistancia();
