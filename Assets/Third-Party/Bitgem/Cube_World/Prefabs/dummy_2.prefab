@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23484268835072074}
   m_Layer: 0
   m_Name: dummy_2_LOD1
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,9 +89,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4496682267578344}
   - component: {fileID: 205275970070031292}
+  - component: {fileID: 2076396534}
+  - component: {fileID: 1462059169}
   m_Layer: 0
   m_Name: dummy_2
-  m_TagString: Enviroment
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,9 +105,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393700610744320}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9816, y: 1.9816, z: 1.9816}
   m_Children:
   - {fileID: 4981962647354142}
   - {fileID: 4322036677181238}
@@ -140,6 +142,34 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23814907218769214}
   m_Enabled: 1
+--- !u!136 &2076396534
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393700610744320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.0539615
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5269805, z: 0}
+--- !u!136 &1462059169
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393700610744320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.0712042
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5356014, z: 0}
 --- !u!1 &1732702312277610
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +183,7 @@ GameObject:
   - component: {fileID: 23095097265581458}
   m_Layer: 0
   m_Name: dummy_2_LOD0
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +262,7 @@ GameObject:
   - component: {fileID: 23814907218769214}
   m_Layer: 0
   m_Name: dummy_2_LOD2
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
