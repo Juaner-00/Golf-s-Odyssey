@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4217716373630998}
   - component: {fileID: 33614733178397478}
   - component: {fileID: 23814797065740210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: block_stone1_3_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4217716373630998
 Transform:
@@ -90,12 +90,12 @@ GameObject:
   - component: {fileID: 4516756213142958}
   - component: {fileID: 33632558494511428}
   - component: {fileID: 23132732100409326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: block_stone1_3_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4516756213142958
 Transform:
@@ -168,12 +168,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4334349256308696}
   - component: {fileID: 205236827368903238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stone_cube_3
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4334349256308696
 Transform:
@@ -182,7 +182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261312191591634}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -230,12 +230,12 @@ GameObject:
   - component: {fileID: 4722438520487514}
   - component: {fileID: 33701796143051750}
   - component: {fileID: 23946595120134656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: block_stone1_3_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4722438520487514
 Transform:

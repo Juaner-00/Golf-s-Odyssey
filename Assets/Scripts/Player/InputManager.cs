@@ -28,7 +28,23 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
+
         cam = Camera.main;
+        int i = 0;
+#if UNITY_EDITOR
+
+        i = 1;
+        device = DeviceType.PC;
+        Debug.Log("PC");
+#endif
+
+#if UNITY_ANDROID
+        if (i == 0)
+        {
+            device = DeviceType.Movil;
+            Debug.Log("Gonomovil");
+        }
+#endif
     }
 
     void Update()
@@ -101,7 +117,11 @@ public class InputManager : MonoBehaviour
                         if (!hasMoved)
                         {
                             // Saber hacia cuál dirección mueve primero
+<<<<<<< Updated upstream
                             if (Mathf.Abs(touch.deltaPosition.y) >= Mathf.Abs(touch.deltaPosition.x))
+=======
+                            if (Mathf.Abs(touch.deltaPosition.y) * 1.5f >= Mathf.Abs(touch.deltaPosition.x))
+>>>>>>> Stashed changes
                                 swipeType = SwipeType.Vertival;
                             else
                                 swipeType = SwipeType.Horizontal;

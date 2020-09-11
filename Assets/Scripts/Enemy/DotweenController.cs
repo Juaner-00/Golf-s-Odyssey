@@ -6,6 +6,11 @@ using DG.Tweening.Core;
 
 public class DotweenController : MonoBehaviour
 {
+
+
+    AnimationCurve holi;
+   
+
     [SerializeField]
     private Vector3 _targetLocation = Vector3.zero;
    
@@ -26,6 +31,7 @@ public class DotweenController : MonoBehaviour
         transform.DOMove(_targetLocation, _moveDuration).SetEase(_moveEease).SetLoops(-1, LoopType.Yoyo);
  
     }
+
    
 
 }

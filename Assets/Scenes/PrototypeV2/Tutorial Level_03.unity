@@ -7283,9 +7283,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_Name
       value: Dummy Obstacle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
+      propertyPath: m_TagString
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7293,7 +7309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50045323
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18294,8 +18310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetLocation: {x: 0.33, y: 0.5, z: -6.57}
-  _moveDuration: 1
-  _moveEease: 31
+  _moveDuration: 1.5
+  _moveEease: 4
 --- !u!54 &666649859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33038,41 +33054,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.30972183
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1e-45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.95082724
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -13.499999
-      objectReference: {fileID: 0}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
@@ -34152,9 +34133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370795fa72122c74284ad41d4f9704ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetLocation: {x: 5, y: 0.5, z: -11.67188}
-  _moveDuration: 2.5
-  _moveEease: 31
+  _targetLocation: {x: 5, y: 0.5, z: -11.38}
+  _moveDuration: 2
+  _moveEease: 4
 --- !u!114 &1304550256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36799,8 +36780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetLocation: {x: 0.33, y: 0.5, z: -8.28}
-  _moveDuration: 2
-  _moveEease: 31
+  _moveDuration: 1
+  _moveEease: 4
 --- !u!114 &1427713438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39895,13 +39876,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dummy Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50045323
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51126,7 +51111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50045323
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: a0e78ccb4ddfbfe42b4d500406e7353a, type: 3}
       propertyPath: m_LocalPosition.z
