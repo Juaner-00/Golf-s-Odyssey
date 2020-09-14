@@ -3924,6 +3924,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7592456159605588831, guid: 80647bdd8960e954ab1eac6a70ea47ef,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 2768ca00744927a4fb302b53076c0422,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
 --- !u!4 &173000427 stripped
@@ -4818,7 +4824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4475393341881806, guid: 064f6e8a5255265429c93d66258bce16, type: 3}
       propertyPath: m_RootOrder
-      value: 377
+      value: 374
       objectReference: {fileID: 0}
     - target: {fileID: 4475393341881806, guid: 064f6e8a5255265429c93d66258bce16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11201,25 +11207,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1465506529}
     m_Modifications:
-    - target: {fileID: 1129768417495064, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442135657578126, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1647644854613672, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 1859024359650604, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
       propertyPath: m_Name
       value: canopy_block_1_LOD_setup
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859024359650604, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4735750008736798, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20563,25 +20553,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1465506529}
     m_Modifications:
-    - target: {fileID: 1366051737383094, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1429925847986882, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1695958718380648, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 1918382452803414, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
       propertyPath: m_Name
       value: canopy_block_2_LOD_setup
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918382452803414, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4190501292780032, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30733,6 +30707,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7592456159605588831, guid: 80647bdd8960e954ab1eac6a70ea47ef,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 2768ca00744927a4fb302b53076c0422,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
 --- !u!4 &1144415031 stripped
@@ -36026,7 +36006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4190501292780032, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
       propertyPath: m_RootOrder
-      value: 380
+      value: 375
       objectReference: {fileID: 0}
     - target: {fileID: 4190501292780032, guid: 6a32aae44cbb4154fa7b8c7fc2bd09f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36687,25 +36667,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1465506529}
     m_Modifications:
-    - target: {fileID: 1129768417495064, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442135657578126, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1647644854613672, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 1859024359650604, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
       propertyPath: m_Name
       value: canopy_block_1_LOD_setup
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859024359650604, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4735750008736798, guid: 80647bdd8960e954ab1eac6a70ea47ef, type: 3}
       propertyPath: m_LocalPosition.x
