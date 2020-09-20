@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Pinicio.unity
     guid: 99acb5a6a7b95ad459a8be59572bcdc0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypeV2/Tutorial Level_01.unity
     guid: 03c12e8e19894dd499fc8185ad47da37
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypeV2/Tutorial Level_02.unity
     guid: c5088a4b077409c4fa0d55c378af2cef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypeV2/Tutorial Level_03.unity
     guid: 07d384cfe16bb4541be8ac69467a87f0
   - enabled: 1
@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Tutorial Level_06.unity
     guid: 799dae20e7d0fb4488bddbd19d45deeb
+  - enabled: 1
+    path: Assets/Scenes/ProBuilderLevels/Level1.unity
+    guid: 73b3be12c8977a54c8fb33aee7f258ec
+  - enabled: 1
+    path: Assets/Scenes/ProBuilderLevels/Level2.unity
+    guid: fdd2f9ca869961248840eca6e4c21a8d
+  - enabled: 1
+    path: Assets/Scenes/ProBuilderLevels/Level3.unity
+    guid: b6f523d4fe386294fbffe257369eeab8
+  - enabled: 1
+    path: Assets/Scenes/ProBuilderLevels/Level4.unity
+    guid: 011f8c981408c064a93c9e568375c8c4
+  - enabled: 1
+    path: Assets/Scenes/ProBuilderLevels/Level7.unity
+    guid: 99bc7b5a185e0684b81d1e0ebd28e7b0
   m_configObjects: {}
