@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Pinicio.unity
+    path: Assets/Scenes/LEVELS/Pinicio.unity
     guid: 99acb5a6a7b95ad459a8be59572bcdc0
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_01.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_01.unity
     guid: 03c12e8e19894dd499fc8185ad47da37
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_02.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_02.unity
     guid: c5088a4b077409c4fa0d55c378af2cef
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_03.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_03.unity
     guid: 07d384cfe16bb4541be8ac69467a87f0
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_04.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_04.unity
     guid: 29e99fdff6b49de469b24d2b71f1e172
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_05.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_05.unity
     guid: e217149092289fa4788c2f6116b76555
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_06.unity
+    path: Assets/Scenes/LEVELS/Tutorial Level_06.unity
     guid: 799dae20e7d0fb4488bddbd19d45deeb
   m_configObjects: {}

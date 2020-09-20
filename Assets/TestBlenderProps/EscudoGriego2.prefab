@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7764612418387020172}
   - component: {fileID: 2438564565850361515}
   - component: {fileID: 1109963562}
-  - component: {fileID: 108096234}
   m_Layer: 10
   m_Name: EscudoGriego2
   m_TagString: Untagged
@@ -124,21 +123,6 @@ MonoBehaviour:
   forceMultY: 1.5
   forceMultX: 1
   forceMultZ: 0.7
---- !u!114 &108096234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033392437130005702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19b9a93883dcd646b7c4250dd03cff6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceMultY: 1
-  forceMultX: 0.4
-  forceMultZ: 0.8
 --- !u!1001 &5773814890005132523
 PrefabInstance:
   m_ObjectHideFlags: 0

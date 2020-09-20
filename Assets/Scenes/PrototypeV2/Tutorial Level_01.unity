@@ -3076,6 +3076,22 @@ PrefabInstance:
       propertyPath: gradiente.key0.b
       value: 0.113725476
       objectReference: {fileID: 0}
+    - target: {fileID: 1544353905, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544353905, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.4674363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544353905, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.1410623
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544353905, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5e-44
+      objectReference: {fileID: 0}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
@@ -3139,7 +3155,7 @@ PrefabInstance:
     - target: {fileID: 5588302197321370153, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: device
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
