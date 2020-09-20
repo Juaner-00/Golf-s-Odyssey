@@ -3076,6 +3076,11 @@ PrefabInstance:
       propertyPath: gradiente.key0.b
       value: 0.113725476
       objectReference: {fileID: 0}
+    - target: {fileID: 2458260794381919337, guid: 22b6cf1099441b4419e3b572197ccf41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.666666
+      objectReference: {fileID: 0}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
@@ -3089,7 +3094,7 @@ PrefabInstance:
     - target: {fileID: 4823208723231808107, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.98
+      value: -7.2
       objectReference: {fileID: 0}
     - target: {fileID: 4823208723231808107, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
@@ -27577,6 +27582,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 466fc12ae4568a34fb7189e88c1fc637, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.029044444
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 466fc12ae4568a34fb7189e88c1fc637, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.0077111106
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 466fc12ae4568a34fb7189e88c1fc637, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.08117777
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 466fc12ae4568a34fb7189e88c1fc637, type: 3}
 --- !u!1001 &1100318138
@@ -30767,7 +30784,7 @@ PrefabInstance:
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.58
+      value: -2.7999997
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
