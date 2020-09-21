@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4822314979143510}
   - component: {fileID: 205185985576422332}
+  - component: {fileID: 24340816}
   m_Layer: 0
   m_Name: sandstone_block_slope_straight
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069463367953480}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -61,6 +62,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23010027547908300}
   m_Enabled: 1
+--- !u!64 &24340816
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069463367953480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6a395ff7f84d0dc45b1e0d2929ac071b, type: 3}
 --- !u!1 &1323374732035288
 GameObject:
   m_ObjectHideFlags: 0

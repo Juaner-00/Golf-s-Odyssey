@@ -29,6 +29,15 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        int i = 0;
+#if UNITY_EDITOR
+        i = 1;
+        device = DeviceType.PC;
+#endif
+#if UNITY_ANDROID
+        if (i != 1)
+            device = DeviceType.Movil;
+#endif
     }
 
     void Update()
@@ -101,7 +110,7 @@ public class InputManager : MonoBehaviour
                         if (!hasMoved)
                         {
                             // Saber hacia cuál dirección mueve primero
-                            if (Mathf.Abs(touch.deltaPosition.y)*1.5f >= Mathf.Abs(touch.deltaPosition.x))
+                            if (Mathf.Abs(touch.deltaPosition.y) * 1.5f >= Mathf.Abs(touch.deltaPosition.x))
                                 swipeType = SwipeType.Vertival;
                             else
                                 swipeType = SwipeType.Horizontal;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4502537139779274}
   - component: {fileID: 33557821175399476}
   - component: {fileID: 23023778914320278}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sandstone_block_slope_corner_conv_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4298314618301308}
   - component: {fileID: 205024578830273966}
-  m_Layer: 0
+  - component: {fileID: 1931941286}
+  m_Layer: 10
   m_Name: sandstone_block_slope_corner_conv
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220148799173894}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -140,6 +141,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23054232059287668}
   m_Enabled: 1
+--- !u!64 &1931941286
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220148799173894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 37b1ec378c2c6214baad180f9b727ea5, type: 3}
 --- !u!1 &1297293213613136
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +166,7 @@ GameObject:
   - component: {fileID: 4589167310412360}
   - component: {fileID: 33193434644884548}
   - component: {fileID: 23054232059287668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sandstone_block_slope_corner_conv_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +245,7 @@ GameObject:
   - component: {fileID: 4501233459554428}
   - component: {fileID: 33366592369799004}
   - component: {fileID: 23048240043254710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sandstone_block_slope_corner_conv_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
