@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] float porcentajeALosBordes = 30f;
+
     public static Vector3 VectorSwipe { get; private set; }
+    public static Vector3 Direction { get; private set; }
     public static Vector3 deltaMousePos;
     public static Vector3 deltaTouchPos;
 
@@ -26,10 +29,13 @@ public class InputManager : MonoBehaviour
     private static SwipeType swipeType;
     public static SwipeType SwipeType { get => swipeType; }
     public static float Angle { get; private set; }
+    public static float DistTurn { get; private set; }
 
     private void Start()
     {
         camTrans = Camera.main.transform;
+
+        posIni = posFin = new Vector2(Screen.width, Screen.height) / 2;
 
         bool i = false;
 #if UNITY_EDITOR
@@ -93,18 +99,27 @@ public class InputManager : MonoBehaviour
                     }
                 }
             }
+
+            // Distancia a los bordes
+            if (posFin.x / Screen.width < porcentajeALosBordes / 100)
+                DistTurn = -((porcentajeALosBordes / 100) - posFin.x / Screen.width);
+            else if ((1 - posFin.x / Screen.width) < porcentajeALosBordes / 100)
+                DistTurn = (porcentajeALosBordes / 100) - (1 - posFin.x / Screen.width);
+            else
+                DistTurn = 0;
+
         }
 
         //Rotación
-        Vector3 forward = Vector3.ProjectOnPlane(camTrans.forward, Vector3.up).normalized;
-        Angle = Vector3.SignedAngle(InputManager.VectorSwipe, forward, Vector3.up) + 180;
+        Angle = Vector3.SignedAngle(VectorSwipe, Vector3.forward, Vector3.up) + 180;
+        float angle = Angle - camTrans.localEulerAngles.y;
+        Direction = new Vector3(Mathf.Sin(angle * Mathf.PI / 180), 0, Mathf.Cos(angle * Mathf.PI / 180 + (float)Math.PI));
     }
 
     void CalcularDistancia()
     {
         Vector3 swipe = (posIni - posFin) / Screen.height;
         VectorSwipe = new Vector3(swipe.x, 0, swipe.y);
-        print(VectorSwipe);
     }
 }
 

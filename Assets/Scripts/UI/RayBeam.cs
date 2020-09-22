@@ -25,14 +25,14 @@ public class RayBeam : MonoBehaviour
     {
         if (!LevelClearManager.Instance.HasClear)
         {
-            ray = new Ray(transform.position, InputManager.VectorSwipe);
+            ray = new Ray(transform.position, InputManager.Direction);
 
             lineRenderer.positionCount = 1;
             lineRenderer.SetPosition(0, transform.position);
 
             float remainingLength = maxLenght;
 
-            // lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
+            lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
 
             for (int i = 0; i <= reflections; i++)
             {

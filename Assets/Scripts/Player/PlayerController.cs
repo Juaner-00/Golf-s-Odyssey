@@ -52,9 +52,7 @@ public class PlayerController : MonoBehaviour
         if (isStoped)
         {
             // Vector dirección
-            // Vector3 direction = Vector3.ProjectOnPlane(cameraTrans.forward, Vector3.up).normalized;
-            Vector3 direction = InputManager.VectorSwipe.normalized;
-            rb.AddForce(direction * forceMag, ForceMode.Impulse);
+            rb.AddForce(InputManager.Direction.normalized * forceMag, ForceMode.Impulse);
 
             // Aumentar el contador de strikes y llamar el evento
             counterStrikes += 1;
