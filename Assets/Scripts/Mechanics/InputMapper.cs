@@ -15,17 +15,14 @@ public class InputMapper : MonoBehaviour
 
     private float GetInputAxis(string axisName)
     {
-        // if (!LevelClearManager.Instance.HasClear)
-        // {
-        //     if (Input.touchCount > 0)
-        //     {
-        //         Touch touch = Input.GetTouch(0);
-        //         if (axisName == TouchXInputMapTo && InputManager.SwipeType == SwipeType.Horizontal)
-        //             return touch.deltaPosition.x / TouchSensitivityX;
-        //     }
-        //     else if (Input.GetMouseButton(0) && InputManager.SwipeType == SwipeType.Horizontal)
-        //         return Input.GetAxis(axisName);
-        // }
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            return InputManager.DistTurn * TouchSensitivityX / 100;
+        }
+        else if (Input.GetMouseButton(0))
+            return InputManager.DistTurn * TouchSensitivityX / 100;
+
         return 0;
     }
 }

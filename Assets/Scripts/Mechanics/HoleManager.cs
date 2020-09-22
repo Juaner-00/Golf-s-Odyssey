@@ -17,8 +17,5 @@ public class HoleManager : MonoBehaviour
         Vector3 pos = floor.transform.position;
         hole.transform.position = pos;
         floor.SetActive(false);
-
-        print("Grass " + pos);
-        print("Hole " + hole.transform.position);
     }
 }

@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 2
-  maxLenght: 15
+  maxLenght: 7
   bouncers:
     serializedVersion: 2
     m_Bits: 1024
@@ -737,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porcentajeALosBordes: 25
   device: 1
 --- !u!114 &7852195665638009644
 MonoBehaviour:
@@ -793,7 +794,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8258984528722112213}
-  m_LocalRotation: {x: 0.30972183, y: 1e-45, z: -0, w: 0.95082724}
+  m_LocalRotation: {x: 0.30972183, y: -0, z: -0, w: 0.95082724}
   m_LocalPosition: {x: 0, y: 14.666666, z: -17.999996}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -850,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0d643db0c377545820c5044057bcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchSensitivityX: 50
+  TouchSensitivityX: 160
   TouchXInputMapTo: Mouse X
 --- !u!114 &1761828462
 MonoBehaviour:
