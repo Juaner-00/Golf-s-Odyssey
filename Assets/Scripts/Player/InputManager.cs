@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
     public static event InputEvent OnShoot;
     public delegate void InputEvent();
 
-    private Camera cam;
+    private Transform camTrans;
 
     [SerializeField]
     private DeviceType device;
@@ -25,10 +25,11 @@ public class InputManager : MonoBehaviour
 
     private static SwipeType swipeType;
     public static SwipeType SwipeType { get => swipeType; }
+    public static float Angle { get; private set; }
 
     private void Start()
     {
-        cam = Camera.main;
+        camTrans = Camera.main.transform;
 
         bool i = false;
 #if UNITY_EDITOR
@@ -41,111 +42,11 @@ public class InputManager : MonoBehaviour
 #endif
     }
 
-    // void Update()
-    // {
-    //     if (!LevelClearManager.Instance.HasClear)
-    //     {
-    //         if (device == DeviceType.PC)
-    //         {
-    //             // Mouse
-
-    //             // Setear el vector posIni a la posición del mouse
-    //             if (Input.GetMouseButtonDown(0))
-    //             {
-    //                 posIni = Input.mousePosition;
-    //                 posFin = posIni;
-    //             }
-    //             // Setear el vector posFin al mantener el botón del mouse
-    //             else if (Input.GetMouseButton(0))
-    //             {
-    //                 if (deltaMousePos.sqrMagnitude > 0)
-    //                 {
-    //                     if (!hasMoved)
-    //                     {
-    //                         // Saber hacia cuál dirección mueve primero
-    //                         if (Mathf.Abs(deltaMousePos.y) >= Mathf.Abs(deltaMousePos.x))
-    //                             swipeType = SwipeType.Vertival;
-    //                         else
-    //                             swipeType = SwipeType.Horizontal;
-
-    //                         hasMoved = true;
-    //                     }
-
-    //                     if (swipeType == SwipeType.Vertival)
-    //                         vectorSwipe = CalcularDistancia();
-    //                 }
-
-    //                 deltaMousePos = posFin - Input.mousePosition;
-    //                 posFin = Input.mousePosition;
-
-    //             }
-    //             // Activar el evento si se soltó el botón del mouse
-    //             else if (Input.GetMouseButtonUp(0))
-    //             {
-    //                 vectorSwipe = Vector3.zero;
-    //                 deltaMousePos = Vector3.zero;
-    //                 hasMoved = false;
-
-    //                 if (swipeType == SwipeType.Vertival)
-    //                 {
-    //                     OnShoot?.Invoke();
-    //                 }
-    //             }
-    //         }
-    //         else
-    //         {
-    //             // Touch
-    //             if (Input.touchCount > 0)
-    //             {
-    //                 Touch touch = Input.GetTouch(0);
-
-    //                 // Setear el vector posIni a la posición del touch
-    //                 if (touch.phase == TouchPhase.Began)
-    //                 {
-    //                     posIni = touch.position;
-    //                     posFin = posIni;
-    //                 }
-    //                 // Setear el vector posFin a la posición del touch
-    //                 else if (touch.phase == TouchPhase.Moved)
-    //                 {
-    //                     if (!hasMoved)
-    //                     {
-    //                         // Saber hacia cuál dirección mueve primero
-    //                         if (Mathf.Abs(touch.deltaPosition.y)*1.5f >= Mathf.Abs(touch.deltaPosition.x))
-    //                             swipeType = SwipeType.Vertival;
-    //                         else
-    //                             swipeType = SwipeType.Horizontal;
-
-    //                         hasMoved = true;
-    //                     }
-
-    //                     posFin = touch.position;
-
-    //                     if (swipeType == SwipeType.Vertival)
-    //                         vectorSwipe = CalcularDistancia();
-
-    //                 }
-    //                 // Activar el evento si soltó el touch
-    //                 else if (touch.phase == TouchPhase.Ended)
-    //                 {
-    //                     vectorSwipe = Vector3.zero;
-    //                     deltaTouchPos = Vector3.zero;
-    //                     hasMoved = false;
-
-    //                     if (swipeType == SwipeType.Vertival)
-    //                     {
-    //                         OnShoot?.Invoke();
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
     private void Update()
     {
         if (!LevelClearManager.Instance.HasClear)
         {
+            //* Mouse
             if (device == DeviceType.PC)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -166,7 +67,37 @@ public class InputManager : MonoBehaviour
                     VectorSwipe = Vector3.zero;
                 }
             }
+
+            //* Touch
+            else
+            {
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        posIni = Input.mousePosition;
+                        posFin = posIni;
+                    }
+
+                    if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                    {
+                        CalcularDistancia();
+                        posFin = Input.mousePosition;
+                    }
+
+                    if (touch.phase == TouchPhase.Ended)
+                    {
+                        OnShoot?.Invoke();
+                        VectorSwipe = Vector3.zero;
+                    }
+                }
+            }
         }
+
+        //Rotación
+        Vector3 forward = Vector3.ProjectOnPlane(camTrans.forward, Vector3.up).normalized;
+        Angle = Vector3.SignedAngle(InputManager.VectorSwipe, forward, Vector3.up) + 180;
     }
 
     void CalcularDistancia()
