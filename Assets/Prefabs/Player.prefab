@@ -384,7 +384,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.14655298
+        value: 0.35634607
         inSlope: 0
         outSlope: -145.37755
         tangentMode: 1
@@ -396,8 +396,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.21568625, g: 0.972549, b: 0.48844296, a: 1}
-      key1: {r: 0.113725476, g: 0.9529412, b: 0.8855499, a: 1}
+      key0: {r: 1, g: 0.2028302, b: 0.50620186, a: 1}
+      key1: {r: 0.48282716, g: 0.113725476, b: 0.9529412, a: 1}
       key2: {r: 0.7276712, g: 0.9529412, b: 0.113725476, a: 0}
       key3: {r: 0.7276712, g: 0.9529412, b: 0.113725476, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  device: 0
+  device: 1
 --- !u!114 &7852195665638009644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a81eae7b2ace42b8fc55ecc8e3854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 0
+  bounceForce: 2
 --- !u!1 &8258984528722112213
 GameObject:
   m_ObjectHideFlags: 0
