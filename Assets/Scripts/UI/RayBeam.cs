@@ -32,7 +32,7 @@ public class RayBeam : MonoBehaviour
 
             float remainingLength = maxLenght;
 
-            lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
+            lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
 
             for (int i = 0; i <= reflections; i++)
             {
