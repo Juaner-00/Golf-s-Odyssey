@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class DirectionArrow : MonoBehaviour
 {
     [SerializeField] Gradient gradiente;
+    [SerializeField] RectTransform rot;
 
     Image arrowImage;
     Slider sliderArrow;
     PlayerController playerController;
+
 
     private void Awake()
     {
@@ -32,6 +34,10 @@ public class DirectionArrow : MonoBehaviour
         }
         else
             sliderArrow.value = 0;
+
+        //Rotación
+        Vector3 deg = rot.localEulerAngles;
+        rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle);
     }
 
 }
