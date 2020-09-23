@@ -78,12 +78,12 @@ public class InputManager : MonoBehaviour
                         InRange = true;
                 }
 
-                posFin = Input.mousePosition;
-
                 if (InRange)
                 {
                     if (Input.GetMouseButton(0))
                     {
+                        posFin = Input.mousePosition;
+
                         if (CanShoot)
                             CalcularDistancia();
                         else
@@ -94,12 +94,12 @@ public class InputManager : MonoBehaviour
                     {
                         if (CanShoot)
                         {
-                            OnShoot?.Invoke();
-
                             posIni = posFin = playerPos;
                             VectorSwipe = Vector3.zero;
                             InRange = false;
                             CanShoot = false;
+
+                            OnShoot?.Invoke();
                         }
                     }
                 }
@@ -122,12 +122,12 @@ public class InputManager : MonoBehaviour
                             InRange = true;
                     }
 
-                    posFin = touch.position;
-
                     if (InRange)
                     {
                         if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                         {
+                            posFin = touch.position;
+
                             if (CanShoot)
                                 CalcularDistancia();
                             else
@@ -138,34 +138,54 @@ public class InputManager : MonoBehaviour
                         {
                             if (CanShoot)
                             {
-                                OnShoot?.Invoke();
-
                                 posIni = posFin = playerPos;
                                 VectorSwipe = Vector3.zero;
                                 InRange = false;
                                 CanShoot = false;
+
+                                OnShoot?.Invoke();
                             }
                         }
                     }
                 }
             }
 
-            // if (CanShoot)
-            // {
             // Distancia a los bordes
-            if (posFin.x / Screen.width < porcentajeALosBordes / 100)
-                DistTurn = -((porcentajeALosBordes / 100) - posFin.x / Screen.width);
-            else if ((1 - posFin.x / Screen.width) < porcentajeALosBordes / 100)
-                DistTurn = (porcentajeALosBordes / 100) - (1 - posFin.x / Screen.width);
+            if (CanShoot)
+            {
+                if (posFin.x / Screen.width < porcentajeALosBordes / 100)
+                    DistTurn = -((porcentajeALosBordes / 100) - posFin.x / Screen.width);
+                else if ((1 - posFin.x / Screen.width) < porcentajeALosBordes / 100)
+                    DistTurn = (porcentajeALosBordes / 100) - (1 - posFin.x / Screen.width);
+                else
+                    DistTurn = 0;
+            }
             else
-                DistTurn = 0;
-            // }
+            {
+                float mXPos = playerPos.x;
+
+                if (Input.GetMouseButton(0))
+                    mXPos = Input.mousePosition.x;
+
+                if (Input.touchCount > 0)
+                {
+                    touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                        mXPos = touch.position.x;
+                }
+
+                if (mXPos / Screen.width < porcentajeALosBordes / 100)
+                    DistTurn = -((porcentajeALosBordes / 100) - mXPos / Screen.width);
+                else if ((1 - mXPos / Screen.width) < porcentajeALosBordes / 100)
+                    DistTurn = (porcentajeALosBordes / 100) - (1 - mXPos / Screen.width);
+                else
+                    DistTurn = 0;
+            }
 
             // DeltaMousePos
             currentPos = Input.mousePosition;
             DeltaMousePos = currentPos - lastPos;
             lastPos = currentPos;
-
 
             //Rotación
             Angle = Vector3.SignedAngle(VectorSwipe, Vector3.forward, Vector3.up) + 180;

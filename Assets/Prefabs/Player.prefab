@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porcentajeALosBordes: 25
+  porcentajeALosBordes: 30
   porcentajeALaBola: 7
   device: 1
 --- !u!114 &7852195665638009644
