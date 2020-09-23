@@ -737,7 +737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porcentajeALosBordes: 25
+  porcentajeALosBordes: 30
+  porcentajeALaBola: 7
   device: 1
 --- !u!114 &7852195665638009644
 MonoBehaviour:
@@ -851,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0d643db0c377545820c5044057bcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchSensitivityX: 160
+  sensitivityX: 150
   TouchXInputMapTo: Mouse X
 --- !u!114 &1761828462
 MonoBehaviour:

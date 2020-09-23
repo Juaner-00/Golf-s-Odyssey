@@ -6,36 +6,43 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] float porcentajeALosBordes = 30f;
+    [SerializeField] float porcentajeALaBola = 4f;
 
     public static Vector3 VectorSwipe { get; private set; }
     public static Vector3 Direction { get; private set; }
-    public static Vector3 deltaMousePos;
-    public static Vector3 deltaTouchPos;
+    public static Vector3 DeltaMousePos { get; private set; }
 
     Vector3 posIni;
     Vector3 posFin;
 
-    Vector3 mPos;
+    Vector3 playerPos;
 
     public static event InputEvent OnShoot;
     public delegate void InputEvent();
 
-    private Transform camTrans;
+    private new Camera camera;
 
     [SerializeField]
     private DeviceType device;
-    private bool hasMoved;
 
-    private static SwipeType swipeType;
-    public static SwipeType SwipeType { get => swipeType; }
+    public static bool InRange { get; private set; }
+    public static bool CanShoot { get; private set; }
+
     public static float Angle { get; private set; }
     public static float DistTurn { get; private set; }
 
+    Touch touch;
+
+    Vector3 currentPos, lastPos;
+
     private void Start()
     {
-        camTrans = Camera.main.transform;
+        camera = Camera.main;
 
-        posIni = posFin = new Vector2(Screen.width, Screen.height) / 2;
+        playerPos = camera.WorldToScreenPoint(transform.position);
+        posIni = posFin = playerPos;
+
+        InRange = false;
 
         bool i = false;
 #if UNITY_EDITOR
@@ -52,25 +59,49 @@ public class InputManager : MonoBehaviour
     {
         if (!LevelClearManager.Instance.HasClear)
         {
+            playerPos = camera.WorldToScreenPoint(transform.position);
+
+            float dist = Vector3.Distance(playerPos, posFin) / Screen.height;
+
+            CanShoot = (InRange && dist > porcentajeALaBola / 100);
+
             //* Mouse
             if (device == DeviceType.PC)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
                     posIni = Input.mousePosition;
-                    posFin = posIni;
+
+                    dist = Vector3.Distance(playerPos, posIni) / Screen.height;
+
+                    if (dist <= porcentajeALaBola / 100)
+                        InRange = true;
                 }
 
-                if (Input.GetMouseButton(0))
+                if (InRange)
                 {
-                    CalcularDistancia();
-                    posFin = Input.mousePosition;
-                }
+                    if (Input.GetMouseButton(0))
+                    {
+                        posFin = Input.mousePosition;
 
-                if (Input.GetMouseButtonUp(0))
-                {
-                    OnShoot?.Invoke();
-                    VectorSwipe = Vector3.zero;
+                        if (CanShoot)
+                            CalcularDistancia();
+                        else
+                            VectorSwipe = Vector3.zero;
+                    }
+
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        if (CanShoot)
+                        {
+                            posIni = posFin = playerPos;
+                            VectorSwipe = Vector3.zero;
+                            InRange = false;
+                            CanShoot = false;
+
+                            OnShoot?.Invoke();
+                        }
+                    }
                 }
             }
 
@@ -79,41 +110,88 @@ public class InputManager : MonoBehaviour
             {
                 if (Input.touchCount > 0)
                 {
-                    Touch touch = Input.GetTouch(0);
+                    touch = Input.GetTouch(0);
+
                     if (touch.phase == TouchPhase.Began)
                     {
-                        posIni = Input.mousePosition;
-                        posFin = posIni;
+                        posIni = touch.position;
+
+                        dist = Vector3.Distance(playerPos, posIni) / Screen.height;
+
+                        if (dist <= porcentajeALaBola / 100)
+                            InRange = true;
                     }
 
-                    if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                    if (InRange)
                     {
-                        CalcularDistancia();
-                        posFin = Input.mousePosition;
-                    }
+                        if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                        {
+                            posFin = touch.position;
 
-                    if (touch.phase == TouchPhase.Ended)
-                    {
-                        OnShoot?.Invoke();
-                        VectorSwipe = Vector3.zero;
+                            if (CanShoot)
+                                CalcularDistancia();
+                            else
+                                VectorSwipe = Vector3.zero;
+                        }
+
+                        if (touch.phase == TouchPhase.Ended)
+                        {
+                            if (CanShoot)
+                            {
+                                posIni = posFin = playerPos;
+                                VectorSwipe = Vector3.zero;
+                                InRange = false;
+                                CanShoot = false;
+
+                                OnShoot?.Invoke();
+                            }
+                        }
                     }
                 }
             }
 
             // Distancia a los bordes
-            if (posFin.x / Screen.width < porcentajeALosBordes / 100)
-                DistTurn = -((porcentajeALosBordes / 100) - posFin.x / Screen.width);
-            else if ((1 - posFin.x / Screen.width) < porcentajeALosBordes / 100)
-                DistTurn = (porcentajeALosBordes / 100) - (1 - posFin.x / Screen.width);
+            if (CanShoot)
+            {
+                if (posFin.x / Screen.width < porcentajeALosBordes / 100)
+                    DistTurn = -((porcentajeALosBordes / 100) - posFin.x / Screen.width);
+                else if ((1 - posFin.x / Screen.width) < porcentajeALosBordes / 100)
+                    DistTurn = (porcentajeALosBordes / 100) - (1 - posFin.x / Screen.width);
+                else
+                    DistTurn = 0;
+            }
             else
-                DistTurn = 0;
+            {
+                float mXPos = playerPos.x;
 
+                if (Input.GetMouseButton(0))
+                    mXPos = Input.mousePosition.x;
+
+                if (Input.touchCount > 0)
+                {
+                    touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+                        mXPos = touch.position.x;
+                }
+
+                if (mXPos / Screen.width < porcentajeALosBordes / 100)
+                    DistTurn = -((porcentajeALosBordes / 100) - mXPos / Screen.width);
+                else if ((1 - mXPos / Screen.width) < porcentajeALosBordes / 100)
+                    DistTurn = (porcentajeALosBordes / 100) - (1 - mXPos / Screen.width);
+                else
+                    DistTurn = 0;
+            }
+
+            // DeltaMousePos
+            currentPos = Input.mousePosition;
+            DeltaMousePos = currentPos - lastPos;
+            lastPos = currentPos;
+
+            //Rotación
+            Angle = Vector3.SignedAngle(VectorSwipe, Vector3.forward, Vector3.up) + 180;
+            float angle = Angle - camera.transform.localEulerAngles.y;
+            Direction = new Vector3(Mathf.Sin(angle * Mathf.PI / 180), 0, Mathf.Cos(angle * Mathf.PI / 180 + (float)Math.PI));
         }
-
-        //Rotación
-        Angle = Vector3.SignedAngle(VectorSwipe, Vector3.forward, Vector3.up) + 180;
-        float angle = Angle - camTrans.localEulerAngles.y;
-        Direction = new Vector3(Mathf.Sin(angle * Mathf.PI / 180), 0, Mathf.Cos(angle * Mathf.PI / 180 + (float)Math.PI));
     }
 
     void CalcularDistancia()
@@ -121,12 +199,8 @@ public class InputManager : MonoBehaviour
         Vector3 swipe = (posIni - posFin) / Screen.height;
         VectorSwipe = new Vector3(swipe.x, 0, swipe.y);
     }
-}
 
-public enum SwipeType
-{
-    Horizontal,
-    Vertival
+
 }
 
 public enum DeviceType
