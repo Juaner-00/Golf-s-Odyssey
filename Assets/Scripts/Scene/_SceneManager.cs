@@ -8,30 +8,67 @@ public class _SceneManager : MonoBehaviour
     [SerializeField]
     string nextLevelName;
 
-    private static _SceneManager instance;
-    public static _SceneManager Instance { get => instance; }
+    public static _SceneManager Instance { get; private set; }
+
+    private List<AsyncOperation> levelsLoading = new List<AsyncOperation>();
+
+    private void Awake()
+    {
+        if (Instance != null)
+            Destroy(this);
+        Instance = this;
+    }
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(nextLevelName);
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync(nextLevelName/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
     }
 
     public void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
     }
+
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("Pinicio");
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Pinicio"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
     }
+
     public void MapMenu()
     {
-        SceneManager.LoadScene("MapLvls");
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("MapLvls"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
     }
 
     public void Quit()
     {
+        Debug.Log("Quit");
         Application.Quit();
+    }
+
+    private IEnumerator GetSceneLoadProgress()
+    {
+        foreach (var scene in levelsLoading)
+            while (!scene.isDone)
+                yield return null;
+
+        MenuManager.Instance.CloseLoading();
+        levelsLoading.Clear();
     }
 
 }
