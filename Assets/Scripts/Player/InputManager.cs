@@ -8,7 +8,10 @@ public class InputManager : MonoBehaviour
     [SerializeField] float porcentajeALosBordes = 30f;
     [SerializeField] float porcentajeALaBola = 4f;
 
-    public static Vector3 VectorSwipe { get; private set; }
+    private Vector3 vectorSwipe;
+
+    public static float SwipeDist { get; private set; }
+
     public static Vector3 Direction { get; private set; }
     public static Vector3 DeltaMousePos { get; private set; }
 
@@ -65,6 +68,10 @@ public class InputManager : MonoBehaviour
 
             CanShoot = (InRange && dist > porcentajeALaBola / 100);
 
+            SwipeDist = dist - porcentajeALaBola / 100;
+            if (SwipeDist < 0)
+                SwipeDist = 0;
+
             //* Mouse
             if (device == DeviceType.PC)
             {
@@ -76,6 +83,8 @@ public class InputManager : MonoBehaviour
 
                     if (dist <= porcentajeALaBola / 100)
                         InRange = true;
+                    else
+                        InRange = false;
                 }
 
                 if (InRange)
@@ -87,7 +96,7 @@ public class InputManager : MonoBehaviour
                         if (CanShoot)
                             CalcularDistancia();
                         else
-                            VectorSwipe = Vector3.zero;
+                            vectorSwipe = Vector3.zero;
                     }
 
                     if (Input.GetMouseButtonUp(0))
@@ -95,7 +104,7 @@ public class InputManager : MonoBehaviour
                         if (CanShoot)
                         {
                             posIni = posFin = playerPos;
-                            VectorSwipe = Vector3.zero;
+                            vectorSwipe = Vector3.zero;
                             InRange = false;
                             CanShoot = false;
 
@@ -131,7 +140,7 @@ public class InputManager : MonoBehaviour
                             if (CanShoot)
                                 CalcularDistancia();
                             else
-                                VectorSwipe = Vector3.zero;
+                                vectorSwipe = Vector3.zero;
                         }
 
                         if (touch.phase == TouchPhase.Ended)
@@ -139,7 +148,7 @@ public class InputManager : MonoBehaviour
                             if (CanShoot)
                             {
                                 posIni = posFin = playerPos;
-                                VectorSwipe = Vector3.zero;
+                                vectorSwipe = Vector3.zero;
                                 InRange = false;
                                 CanShoot = false;
 
@@ -188,7 +197,7 @@ public class InputManager : MonoBehaviour
             lastPos = currentPos;
 
             //Rotación
-            Angle = Vector3.SignedAngle(VectorSwipe, Vector3.forward, Vector3.up) + 180;
+            Angle = Vector3.SignedAngle(vectorSwipe, Vector3.forward, Vector3.up) + 180;
             float angle = Angle - camera.transform.localEulerAngles.y;
             Direction = new Vector3(Mathf.Sin(angle * Mathf.PI / 180), 0, Mathf.Cos(angle * Mathf.PI / 180 + (float)Math.PI));
         }
@@ -197,7 +206,7 @@ public class InputManager : MonoBehaviour
     void CalcularDistancia()
     {
         Vector3 swipe = (posIni - posFin) / Screen.height;
-        VectorSwipe = new Vector3(swipe.x, 0, swipe.y);
+        vectorSwipe = new Vector3(swipe.x, 0, swipe.y);
     }
 
 

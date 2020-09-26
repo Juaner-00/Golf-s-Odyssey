@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         isStoped = (rb.velocity.sqrMagnitude < 0.1f) ? true : false;
 
         // Clamp a la fuerza
-        forceMag = Mathf.Abs(InputManager.VectorSwipe.magnitude * multiplicadorFuerza);
+        forceMag = Mathf.Abs(InputManager.SwipeDist * multiplicadorFuerza);
         forceMag = Mathf.Clamp(forceMag, 0, maxForce);
     }
 
