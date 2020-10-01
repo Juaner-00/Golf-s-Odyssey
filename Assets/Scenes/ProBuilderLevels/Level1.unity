@@ -2182,6 +2182,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 547552199, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: safeZone
+      value: 
+      objectReference: {fileID: 1643433005}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
@@ -30037,6 +30041,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4054206997212820, guid: a8fa1c076f83fb94f986f0141a28ac23,
     type: 3}
   m_PrefabInstance: {fileID: 1642986137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1643433005 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1643433005, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 486393401}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1646999889
 PrefabInstance:

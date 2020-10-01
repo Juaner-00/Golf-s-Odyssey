@@ -204,6 +204,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 3
   rot: {fileID: 214872097436416746}
+  safeZone: {fileID: 0}
 --- !u!1 &1544353904
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porcentajeALosBordes: 30
-  porcentajeALaBola: 7
+  porcentajeALaBola: 9
   device: 1
 --- !u!114 &7852195665638009644
 MonoBehaviour:

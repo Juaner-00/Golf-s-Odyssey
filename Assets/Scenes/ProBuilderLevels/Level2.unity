@@ -19049,6 +19049,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 901575156}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &904712931 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1643433005, guid: 1c8c8e16533a3434e8ebb5de9ede9f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 418792587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &917147687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23368,7 +23374,7 @@ PrefabInstance:
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3536244426693070009, guid: 97ca8bc31cc265649879010ef78c3633,
         type: 3}
@@ -24939,6 +24945,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 547552199, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: safeZone
+      value: 
+      objectReference: {fileID: 904712931}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
       propertyPath: m_Name
