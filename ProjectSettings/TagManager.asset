@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Bouncers
   - Axe
+  - SafeZone
   layers:
   - Default
   - TransparentFX
