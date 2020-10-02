@@ -10,6 +10,7 @@ public class DirectionArrow : MonoBehaviour
 
     RectTransform safeZone;
     Image arrowImage;
+    [SerializeField] Image mangoImage;
     Slider sliderArrow;
     PlayerController playerController;
 
@@ -20,6 +21,7 @@ public class DirectionArrow : MonoBehaviour
         sliderArrow = GetComponent<Slider>();
         playerController = FindObjectOfType<PlayerController>();
         arrowImage = GetComponentInChildren<Image>();
+        
         safeZone = GameObject.FindGameObjectWithTag("SafeZone").GetComponent<RectTransform>();
     }
 
@@ -33,10 +35,13 @@ public class DirectionArrow : MonoBehaviour
     {
         if (PlayerController.isStoped)
         {
+           
             sliderArrow.value = playerController.forceMag;
             arrowImage.color = gradiente.Evaluate(sliderArrow.normalizedValue);
-
+            mangoImage.gameObject.transform.position = Input.mousePosition;
             safeZone.position = InputManager.PlayerPos;
+           // mangoImage.gameObject.transform.position = InputManager.PlayerPos;
+          
 
             Vector2 sizeDelta = (size - new Vector2(InputManager.Dist * Screen.height, InputManager.Dist * Screen.height)) * 6;
             safeZone.sizeDelta = sizeDelta.x < 0 ? Vector2.zero : sizeDelta;
@@ -46,6 +51,7 @@ public class DirectionArrow : MonoBehaviour
         {
             sliderArrow.value = 0;
             safeZone.sizeDelta = Vector2.zero;
+           
         }
 
         //Rotación
