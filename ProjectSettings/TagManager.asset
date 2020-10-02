@@ -13,6 +13,7 @@ TagManager:
   - Bouncers
   - Axe
   - SafeZone
+  - Mango
   layers:
   - Default
   - TransparentFX

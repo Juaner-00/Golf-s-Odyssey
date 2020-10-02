@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
     public static Vector3 DeltaMousePos { get; private set; }
 
     Vector3 posIni;
-    Vector3 posFin;
+    public static Vector3 posFin { get; private set; }
 
 
     public static event InputEvent OnShoot;
@@ -113,11 +113,11 @@ public class InputManager : MonoBehaviour
                     {
                         if (CanShoot)
                         {
-                            InRange = false;
                             CanShoot = false;
 
                             OnShoot?.Invoke();
                         }
+                        InRange = false;
                         posIni = posFin = PlayerPos;
                         vectorSwipe = Vector3.zero;
                     }
@@ -160,11 +160,11 @@ public class InputManager : MonoBehaviour
                     {
                         if (CanShoot)
                         {
-                            InRange = false;
                             CanShoot = false;
 
                             OnShoot?.Invoke();
                         }
+                        InRange = false;
                         posIni = posFin = PlayerPos;
                         vectorSwipe = Vector3.zero;
                     }
