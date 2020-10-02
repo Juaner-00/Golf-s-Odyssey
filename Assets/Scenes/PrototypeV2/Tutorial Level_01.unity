@@ -30091,11 +30091,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2152776
+      value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalScale.y
-      value: -0.29
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_SizeDelta.x
@@ -30103,15 +30103,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1544
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalScale.z
-      value: -0.1544735
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479199249, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 294
       objectReference: {fileID: 0}
     - target: {fileID: 479199250, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_Sprite
@@ -30120,7 +30124,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 479199250, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_UseSpriteMesh
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479199250, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_PreserveAspect
@@ -30132,7 +30136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 547552198, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 17.3
+      value: 657
       objectReference: {fileID: 0}
     - target: {fileID: 4510777794961761089, guid: 22b6cf1099441b4419e3b572197ccf41,
         type: 3}
