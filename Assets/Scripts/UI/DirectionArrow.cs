@@ -35,6 +35,8 @@ public class DirectionArrow : MonoBehaviour
 
     private void Update()
     {
+        sliderArrow.maxValue = playerController.maxForce;
+        
         if (PlayerController.isStoped)
         {
             if (InputManager.InRange)

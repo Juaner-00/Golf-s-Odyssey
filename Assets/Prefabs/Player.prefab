@@ -525,8 +525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a49a422b354394591d1baff987788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplicadorFuerza: 100
-  maxForce: 9.5
+  multiplicadorFuerza: 50
+  maxForce: 15
   forceMag: 0
 --- !u!114 &760755686
 MonoBehaviour:
