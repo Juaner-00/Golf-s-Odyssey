@@ -103,10 +103,10 @@ public class InputManager : MonoBehaviour
                     {
                         posFin = Input.mousePosition;
 
-                        if (CanShoot)
+                        // if (CanShoot)
                             CalcularDistancia();
-                        else
-                            vectorSwipe = Vector3.zero;
+                        // else
+                        //     vectorSwipe = Vector3.zero;
                     }
 
                     if (Input.GetMouseButtonUp(0))
@@ -117,6 +117,7 @@ public class InputManager : MonoBehaviour
 
                             OnShoot?.Invoke();
                         }
+
                         InRange = false;
                         posIni = posFin = PlayerPos;
                         vectorSwipe = Vector3.zero;
@@ -150,10 +151,10 @@ public class InputManager : MonoBehaviour
                     {
                         posFin = touch.position;
 
-                        if (CanShoot)
+                        // if (CanShoot)
                             CalcularDistancia();
-                        else
-                            vectorSwipe = Vector3.zero;
+                        // else
+                            // vectorSwipe = Vector3.zero;
                     }
 
                     if (touch.phase == TouchPhase.Ended)
