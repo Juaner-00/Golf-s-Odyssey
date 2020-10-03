@@ -10,6 +10,7 @@ public class RayBeam : MonoBehaviour
     [SerializeField] int reflections;
     [SerializeField] float maxLenght;
     [SerializeField] LayerMask bouncers;
+    [SerializeField] bool alwaysVisible = false;
 
     private LineRenderer lineRenderer;
     private Ray ray;
@@ -32,7 +33,8 @@ public class RayBeam : MonoBehaviour
 
             float remainingLength = maxLenght;
 
-            lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
+            if (!alwaysVisible)
+                lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
 
             for (int i = 0; i <= reflections; i++)
             {
