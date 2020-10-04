@@ -43578,6 +43578,8 @@ MonoBehaviour:
   limite3Star_sup: 1
   limite2Star_inf: 2
   limite2Star_sup: 3
+  limite1Star_inf: 0
+  limite1Star_sup: 0
 --- !u!136 &1628596520
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51222,6 +51224,16 @@ PrefabInstance:
       propertyPath: star3
       value: 
       objectReference: {fileID: 529657107}
+    - target: {fileID: 3083467571964396189, guid: 865aa0b8455993141a81a72fc110101a,
+        type: 3}
+      propertyPath: limite1Star_inf
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083467571964396189, guid: 865aa0b8455993141a81a72fc110101a,
+        type: 3}
+      propertyPath: limite1Star_sup
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 865aa0b8455993141a81a72fc110101a, type: 3}
 --- !u!1 &1794730714 stripped
