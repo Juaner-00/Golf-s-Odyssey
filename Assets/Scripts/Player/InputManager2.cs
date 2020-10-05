@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager2 : MonoBehaviour
 {
     [SerializeField] float porcentajeALosBordes = 30f;
     [SerializeField] public float porcentajeALaBola = 4f;
@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour
 
     Vector3 currentPos, lastPos;
 
-    public static InputManager Instance { get; private set; }
+    public static InputManager2 Instance { get; private set; }
 
     private void Awake()
     {
@@ -170,7 +170,6 @@ public class InputManager : MonoBehaviour
             }
         }
 
-
         // Distancia a los bordes
         if (CanShoot)
         {
@@ -222,10 +221,4 @@ public class InputManager : MonoBehaviour
     }
 
 
-}
-
-public enum DeviceType
-{
-    PC,
-    Movil
 }

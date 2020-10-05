@@ -19,13 +19,36 @@ public class _SceneManager : MonoBehaviour
         Instance = this;
     }
 
-    public void LoadNextLevel()
+    public void LoadSystem1()
     {
         MenuManager.Instance.OpenLoading();
-        levelsLoading.Add(SceneManager.LoadSceneAsync(nextLevelName/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.LoadSceneAsync("System1"/* , LoadSceneMode.Additive */));
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
+    }
+
+    public void LoadSystem2()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("System2"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
+    public void LoadSystem3()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("System3"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
+    public void LoadNextLevel()
+    {
+
     }
 
     public void Reset()
@@ -40,7 +63,7 @@ public class _SceneManager : MonoBehaviour
     public void LoadMainMenu()
     {
         MenuManager.Instance.OpenLoading();
-        levelsLoading.Add(SceneManager.LoadSceneAsync("Pinicio"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.LoadSceneAsync("MainMenu"/* , LoadSceneMode.Additive */));
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
