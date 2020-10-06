@@ -19,10 +19,10 @@ public class InputMapper2 : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             if (axisName == TouchXInputMapTo && InputManager2.SwipeType == SwipeType.Horizontal)
-                return touch.deltaPosition.x / TouchSensitivityX;
+                return touch.deltaPosition.x * TouchSensitivityX / 1000;
         }
         else if (Input.GetMouseButton(0) && InputManager2.SwipeType == SwipeType.Horizontal)
-            return Input.GetAxis(axisName);
+            return InputManager2.DeltaMousePos.x * TouchSensitivityX / 1000;
 
         return 0;
     }

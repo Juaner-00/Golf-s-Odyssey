@@ -25,8 +25,12 @@ public class InputManager2 : MonoBehaviour
 
     private static SwipeType swipeType;
     public static SwipeType SwipeType { get => swipeType; }
+    public static Vector3 DeltaMousePos { get; private set; }
 
     public static InputManager2 Instance { get; private set; }
+
+    Vector3 currentPos, lastPos;
+
     private void Awake()
     {
         if (Instance != null)
@@ -69,7 +73,7 @@ public class InputManager2 : MonoBehaviour
                     if (!hasMoved)
                     {
                         // Saber hacia cuál dirección mueve primero
-                        if (Mathf.Abs(deltaMousePos.y) >= Mathf.Abs(deltaMousePos.x))
+                        if (Mathf.Abs(deltaMousePos.y) >= Mathf.Abs(deltaMousePos.x) * 1.5f)
                             swipeType = SwipeType.Vertival;
                         else
                             swipeType = SwipeType.Horizontal;
@@ -143,6 +147,10 @@ public class InputManager2 : MonoBehaviour
                 }
             }
         }
+        // DeltaMousePos
+        currentPos = Input.mousePosition;
+        DeltaMousePos = currentPos - lastPos;
+        lastPos = currentPos;
 
     }
 
