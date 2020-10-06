@@ -10,7 +10,6 @@ public class RayBeam2 : MonoBehaviour
     [SerializeField] int reflections;
     [SerializeField] float maxLenght;
     [SerializeField] LayerMask bouncers;
-    [SerializeField] bool alwaysVisible = false;
 
     private LineRenderer lineRenderer;
     private Ray ray;
@@ -22,17 +21,17 @@ public class RayBeam2 : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
+
     private void Update()
     {
-        ray = new Ray(transform.position, InputManager2.Direction);
+        ray = new Ray(transform.position, transform.forward);
 
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, transform.position);
 
         float remainingLength = maxLenght;
 
-        if (!alwaysVisible)
-            lineRenderer.enabled = (InputManager2.CanShoot) ? true : false;
+        lineRenderer.enabled = (Input.GetMouseButton(0) || Input.touchCount > 0) ? true : false;
 
         for (int i = 0; i <= reflections; i++)
         {
@@ -54,6 +53,7 @@ public class RayBeam2 : MonoBehaviour
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
             }
+
         }
 
     }
