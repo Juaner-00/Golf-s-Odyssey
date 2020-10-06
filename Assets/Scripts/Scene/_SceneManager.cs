@@ -46,9 +46,18 @@ public class _SceneManager : MonoBehaviour
         StartCoroutine(GetSceneLoadProgress());
     }
 
+    public void LoadSystem3_2()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("System3.2"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
     public void LoadNextLevel()
     {
-
+        LoadSystem1();
     }
 
     public void Reset()

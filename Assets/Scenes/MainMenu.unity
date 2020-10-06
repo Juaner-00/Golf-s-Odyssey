@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 208750637}
   - component: {fileID: 208750636}
   - component: {fileID: 208750635}
+  - component: {fileID: 208750639}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -333,6 +334,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &208750639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208750634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bba1ee3b7f05149835369252de42b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIMenu: {fileID: 0}
+  InventoryMenu: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  DialogMenu: {fileID: 0}
+  LoadingMenu: {fileID: 880543621}
 --- !u!1 &462078100
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +749,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740153444}
   m_CullTransparentMesh: 0
+--- !u!1 &880543621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 418770269776872773, guid: 3d9a987fdf2dfb44fa8f354b1ba5f182,
+    type: 3}
+  m_PrefabInstance: {fileID: 2052420100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1369889021
 GameObject:
   m_ObjectHideFlags: 0

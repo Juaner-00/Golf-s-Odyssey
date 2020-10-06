@@ -14,14 +14,13 @@ public class DirectionArrow3 : MonoBehaviour, IPointerUpHandler
     [SerializeField] TextMeshProUGUI forceText;
     [SerializeField] Color disableColor;
 
-    [SerializeField] Slider sliderArrow;
+    public Slider sliderArrow;
     PlayerController3 playerController;
 
     Vector2 size;
     Vector2 sizeMango;
 
     public static DirectionArrow3 Instance { get; private set; }
-    public float Value { get => sliderArrow.value; }
 
     public static event SliderEvent OnRelease;
     public delegate void SliderEvent(float value);
@@ -57,16 +56,20 @@ public class DirectionArrow3 : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        OnRelease?.Invoke(sliderArrow.value);
-        sliderArrow.value = 0;
-
-        SetColor(gradiente.Evaluate(sliderArrow.normalizedValue));
+        Release();
     }
 
+    public void Release()
+    {
+        OnRelease?.Invoke(sliderArrow.value);
+        sliderArrow.value = 0;
+        SetColor(gradiente.Evaluate(sliderArrow.normalizedValue));
+    }
     private void SetColor(Color color)
     {
         gradientImage.color = color;
-        dotImage.color = color;
+        if (dotImage)
+            dotImage.color = color;
         forceText.color = color;
     }
 
