@@ -138,11 +138,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909946519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bda643e439735d4283200f858098cd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b2a2cec89888a42bf00ca3256df4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 2
-  maxLenght: 10
+  maxLenght: 5
   bouncers:
     serializedVersion: 2
     m_Bits: 1024
@@ -507,12 +507,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510777794961761089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60a63d931400d7946b7762ea8ac0f145, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d7fa65bb4062541919593a956605bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   porcentajeALosBordes: 30
   porcentajeALaBola: 9
-  device: 1
+  device: 0
 --- !u!114 &7852195665638009644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510777794961761089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a49a422b354394591d1baff987788e, type: 3}
+  m_Script: {fileID: 11500000, guid: b88d38e0c11a710448ae1da7607107e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicadorFuerza: 50
@@ -953,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4827680309154024839}
-  - component: {fileID: 2037445507061229167}
+  - component: {fileID: 1649869007}
   m_Layer: 5
   m_Name: container2
   m_TagString: Untagged
@@ -981,7 +981,7 @@ RectTransform:
   m_AnchoredPosition: {x: 2.14e-43, y: 0}
   m_SizeDelta: {x: 22.92981, y: 30.331726}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2037445507061229167
+--- !u!114 &1649869007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -990,30 +990,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 8059735950001228481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f479e999b9bd94f86b3527d9ec57d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f6af6b186219254c907f79a5e739cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gradiente:
     serializedVersion: 2
-    key0: {r: 1, g: 0.01010348, b: 0, a: 1}
-    key1: {r: 0.84313726, g: 0.5692065, b: 0, a: 1}
-    key2: {r: 0.04889083, g: 1, b: 0, a: 0}
+    key0: {r: 0.266347, g: 0.9056604, b: 0.2007832, a: 1}
+    key1: {r: 0.9245283, g: 0.8386635, b: 0.18752226, a: 1}
+    key2: {r: 0.9056604, g: 0.14951938, b: 0.14951938, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 31418
-    ctime2: 61680
+    ctime1: 32189
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 31997
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -1021,9 +1021,10 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
+    m_NumAlphaKeys: 3
   rot: {fileID: 4827680309154024839}
   arrowImage: {fileID: 2487071750351316765}
+  sliderArrow: {fileID: 2521216495404186153}
 --- !u!1 &8258984528722112213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,9 +1035,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2458260794381919337}
   - component: {fileID: 1878874710894875657}
-  - component: {fileID: 374042680818353207}
   - component: {fileID: 1761828462}
   - component: {fileID: 8384654968944835465}
+  - component: {fileID: 1649869003}
   m_Layer: 9
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1051,7 +1052,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8258984528722112213}
-  m_LocalRotation: {x: 0.30972183, y: -1e-45, z: -0, w: 0.95082724}
+  m_LocalRotation: {x: 0.30972183, y: 1e-45, z: -0, w: 0.95082724}
   m_LocalPosition: {x: 0, y: 22, z: -26.999998}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -1096,20 +1097,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4524759342681759146}
---- !u!114 &374042680818353207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258984528722112213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0d643db0c377545820c5044057bcc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivityX: 150
-  TouchXInputMapTo: Mouse X
 --- !u!114 &1761828462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,3 +1146,17 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1649869003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258984528722112213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6164f852863c184c80767b98b4a0813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivityX: 100
+  TouchXInputMapTo: Mouse X

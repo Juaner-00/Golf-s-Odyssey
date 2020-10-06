@@ -51,7 +51,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         // Mover la cámara
         if (i == 0)
-            virtualCamera.position += InputManager.DeltaMousePos;
+            virtualCamera.position += InputManager1.DeltaMousePos;
         else
             virtualCamera.position += new Vector3(touch.deltaPosition.x, touch.deltaPosition.y);
 

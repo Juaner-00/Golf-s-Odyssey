@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(LineRenderer))]
-public class RayBeam : MonoBehaviour
+public class RayBeam1 : MonoBehaviour
 {
     [SerializeField] int reflections;
     [SerializeField] float maxLenght;
@@ -24,7 +24,7 @@ public class RayBeam : MonoBehaviour
 
     private void Update()
     {
-        ray = new Ray(transform.position, InputManager.Direction);
+        ray = new Ray(transform.position, InputManager1.Direction);
 
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, transform.position);
@@ -32,7 +32,7 @@ public class RayBeam : MonoBehaviour
         float remainingLength = maxLenght;
 
         if (!alwaysVisible)
-            lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
+            lineRenderer.enabled = (InputManager1.CanShoot) ? true : false;
 
         for (int i = 0; i <= reflections; i++)
         {

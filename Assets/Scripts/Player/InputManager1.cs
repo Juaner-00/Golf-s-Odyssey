@@ -170,6 +170,7 @@ public class InputManager1 : MonoBehaviour
             }
         }
 
+
         // Distancia a los bordes
         if (CanShoot)
         {
@@ -221,4 +222,10 @@ public class InputManager1 : MonoBehaviour
     }
 
 
+}
+
+public enum DeviceType
+{
+    PC,
+    Movil
 }

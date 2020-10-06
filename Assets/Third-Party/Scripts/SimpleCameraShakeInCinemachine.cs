@@ -25,11 +25,11 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
 
     private float ShakeElapsedTime = 0f;
 
-    PlayerController playerController;
+    PlayerController1 playerController;
 
     private void Awake()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerController1>();
     }
 
     // Use this for initialization
@@ -39,7 +39,7 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
         if (VirtualCamera != null)
         {
             virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
-            PlayerController.OnStrike += Shake;
+            PlayerController1.OnStrike += Shake;
         }
     }
 

@@ -10,12 +10,12 @@ public class Strike : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerController.OnStrike += UpdateStrikeUI;
+        PlayerController1.OnStrike += UpdateStrikeUI;
     }
 
     void OnDisable()
     {
-        PlayerController.OnStrike -= UpdateStrikeUI;
+        PlayerController1.OnStrike -= UpdateStrikeUI;
     }
 
     void UpdateStrikeUI(int counterText)

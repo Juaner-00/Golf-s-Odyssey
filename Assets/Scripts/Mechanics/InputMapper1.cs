@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class InputMapper : MonoBehaviour
+public class InputMapper1 : MonoBehaviour
 {
     [SerializeField] float sensitivityX = 30f;
 
@@ -23,9 +23,9 @@ public class InputMapper : MonoBehaviour
         // if (InputManager.CanShoot)
         // {
         if (Input.touchCount > 0)
-            return InputManager.DistTurn * sensitivityX / 100;
+            return InputManager1.DistTurn * sensitivityX / 100;
         else if (Input.GetMouseButton(0))
-            return InputManager.DistTurn * sensitivityX / 100;
+            return InputManager1.DistTurn * sensitivityX / 100;
         // }
         // else if (!InputManager.InRange)
         // {

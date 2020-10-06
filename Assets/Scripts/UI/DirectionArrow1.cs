@@ -4,7 +4,7 @@ using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DirectionArrow : MonoBehaviour
+public class DirectionArrow1 : MonoBehaviour
 {
     [SerializeField] Gradient gradiente;
     [SerializeField] RectTransform rot;
@@ -12,8 +12,8 @@ public class DirectionArrow : MonoBehaviour
 
     RectTransform safeZone;
 
-    Slider sliderArrow;
-    PlayerController playerController;
+    [SerializeField] Slider sliderArrow;
+    PlayerController1 playerController;
 
     Vector2 size;
     Vector2 sizeMango;
@@ -21,8 +21,7 @@ public class DirectionArrow : MonoBehaviour
 
     private void Awake()
     {
-        sliderArrow = GetComponentInChildren<Slider>();
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerController1>();
 
         safeZone = GameObject.FindGameObjectWithTag("SafeZone").GetComponent<RectTransform>();
     }
@@ -30,16 +29,16 @@ public class DirectionArrow : MonoBehaviour
     private void Start()
     {
         sliderArrow.maxValue = playerController.maxForce;
-        size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height);
+        size = new Vector2(InputManager1.Instance.porcentajeALaBola / 100 * Screen.height, InputManager1.Instance.porcentajeALaBola / 100 * Screen.height);
     }
 
     private void Update()
     {
         sliderArrow.maxValue = playerController.maxForce;
-        
-        if (PlayerController.isStoped)
+
+        if (PlayerController1.isStoped)
         {
-            if (InputManager.InRange)
+            if (InputManager1.InRange)
             {
                 sliderArrow.gameObject.SetActive(true);
                 sliderArrow.value = playerController.forceMag;
@@ -50,9 +49,9 @@ public class DirectionArrow : MonoBehaviour
                 sliderArrow.gameObject.SetActive(false);
             }
 
-            safeZone.position = InputManager.PlayerPos;
+            safeZone.position = InputManager1.PlayerPos;
 
-            Vector2 sizeDelta = (size - new Vector2(InputManager.Dist * Screen.height, InputManager.Dist * Screen.height)) *8;
+            Vector2 sizeDelta = (size - new Vector2(InputManager1.Dist * Screen.height, InputManager1.Dist * Screen.height)) * 8;
             safeZone.sizeDelta = sizeDelta.x < 0 ? Vector2.zero : sizeDelta;
         }
         else
@@ -63,7 +62,7 @@ public class DirectionArrow : MonoBehaviour
 
         //Rotación
         Vector3 deg = rot.localEulerAngles;
-        rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
+        rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager1.Angle - 180);
     }
 
 }

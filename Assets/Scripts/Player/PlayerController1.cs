@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
     [SerializeField]
-    float multiplicadorFuerza = 0.2f;
+    float multiplicadorFuerza = 50f;
 
-    public float maxForce = 100f;
+    public float maxForce = 15f;
 
     [HideInInspector]
     public float forceMag;
@@ -28,12 +28,12 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        InputManager.OnShoot += Shoot;
+        InputManager1.OnShoot += Shoot;
     }
 
     void OnDisable()
     {
-        InputManager.OnShoot -= Shoot;
+        InputManager1.OnShoot -= Shoot;
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         isStoped = (rb.velocity.sqrMagnitude < 0.1f) ? true : false;
 
         // Clamp a la fuerza
-        forceMag = Mathf.Abs(InputManager.SwipeDist * multiplicadorFuerza);
+        forceMag = Mathf.Abs(InputManager1.SwipeDist * multiplicadorFuerza);
         forceMag = Mathf.Clamp(forceMag, 0, maxForce);
     }
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (isStoped)
         {
             // Vector dirección
-            rb.AddForce(InputManager.Direction.normalized * forceMag, ForceMode.Impulse);
+            rb.AddForce(InputManager1.Direction.normalized * forceMag, ForceMode.Impulse);
 
             // Aumentar el contador de strikes y llamar el evento
             counterStrikes += 1;
