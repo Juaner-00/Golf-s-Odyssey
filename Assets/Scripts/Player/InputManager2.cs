@@ -121,7 +121,7 @@ public class InputManager2 : MonoBehaviour
                     if (!hasMoved)
                     {
                         // Saber hacia cuál dirección mueve primero
-                        if (Mathf.Abs(touch.deltaPosition.y) >= Mathf.Abs(touch.deltaPosition.x))
+                        if (Mathf.Abs(touch.deltaPosition.y) >= Mathf.Abs(touch.deltaPosition.x) * 1.5f)
                             swipeType = SwipeType.Vertival;
                         else
                             swipeType = SwipeType.Horizontal;
