@@ -17,6 +17,8 @@ public class RayBeam : MonoBehaviour
     private RaycastHit hit;
     private Vector3 direction;
 
+    public float MaxLenght { get => maxLenght; set => maxLenght = value; }
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -31,7 +33,7 @@ public class RayBeam : MonoBehaviour
             lineRenderer.positionCount = 1;
             lineRenderer.SetPosition(0, transform.position);
 
-            float remainingLength = maxLenght;
+            float remainingLength = MaxLenght;
 
             if (!alwaysVisible)
                 lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
