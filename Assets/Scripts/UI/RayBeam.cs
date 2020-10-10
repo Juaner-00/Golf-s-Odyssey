@@ -11,6 +11,7 @@ public class RayBeam : MonoBehaviour
     [SerializeField] float maxLenght;
     [SerializeField] LayerMask bouncers;
     [SerializeField] bool alwaysVisible = false;
+    [SerializeField] GameObject ball;
 
     private LineRenderer lineRenderer;
     private Ray ray;
@@ -28,7 +29,7 @@ public class RayBeam : MonoBehaviour
     {
         if (!LevelClearManager.Instance.HasClear)
         {
-            ray = new Ray(transform.position, InputManager.Direction);
+            ray = new Ray(ball.transform.position, InputManager.Direction);
 
             lineRenderer.positionCount = 1;
             lineRenderer.SetPosition(0, transform.position);
