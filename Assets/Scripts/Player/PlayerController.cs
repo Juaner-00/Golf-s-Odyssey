@@ -21,9 +21,19 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    public bool released = false;
+
+
+
+    //private void Start()
+    //{
+    //    debris = GetComponent<GameObject>();
+    //}
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
     void OnEnable()
@@ -51,8 +61,11 @@ public class PlayerController : MonoBehaviour
         // Si está quieto y se le aplica fuerza
         if (isStoped)
         {
+           
             // Vector dirección
             rb.AddForce(InputManager.Direction.normalized * forceMag, ForceMode.Impulse);
+
+            released = true;
 
             // Aumentar el contador de strikes y llamar el evento
             counterStrikes += 1;

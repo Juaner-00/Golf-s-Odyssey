@@ -11,11 +11,14 @@ public class RayBeam : MonoBehaviour
     [SerializeField] float maxLenght;
     [SerializeField] LayerMask bouncers;
     [SerializeField] bool alwaysVisible = false;
+    [SerializeField] GameObject ball;
 
     private LineRenderer lineRenderer;
     private Ray ray;
     private RaycastHit hit;
     private Vector3 direction;
+
+    public float MaxLenght { get => maxLenght; set => maxLenght = value; }
 
     private void Awake()
     {
@@ -26,12 +29,12 @@ public class RayBeam : MonoBehaviour
     {
         if (!LevelClearManager.Instance.HasClear)
         {
-            ray = new Ray(transform.position, InputManager.Direction);
+            ray = new Ray(ball.transform.position, InputManager.Direction);
 
             lineRenderer.positionCount = 1;
             lineRenderer.SetPosition(0, transform.position);
 
-            float remainingLength = maxLenght;
+            float remainingLength = MaxLenght;
 
             if (!alwaysVisible)
                 lineRenderer.enabled = (InputManager.CanShoot) ? true : false;
