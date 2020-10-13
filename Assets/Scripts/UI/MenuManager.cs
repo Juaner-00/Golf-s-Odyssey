@@ -65,8 +65,8 @@ public class MenuManager : MonoBehaviour
 
     public void CloseLoading()
     {
-        // LoadingRec.DOAnchorPosX(900, 0.2f);
-        LoadingRec.DOMoveX(900, 0.2f);
+        LoadingRec.DOAnchorPosX(900, 0.2f);
+        // LoadingRec.DOMoveX(900, 0.2f);
         LoadingMenu.SetActive(false);
     }
 
@@ -86,8 +86,8 @@ public class MenuManager : MonoBehaviour
         if (LoadingMenu != null)
         {
             LoadingMenu.SetActive(loading);
-            LoadingRec.DOMoveX(0, 0.25f);
-            // LoadingRec.DOAnchorPosX(0, 0.25f);
+            // LoadingRec.DOMoveX(0, 0.25f);
+            LoadingRec.DOAnchorPosX(0, 0.25f);
         }
     }
 }

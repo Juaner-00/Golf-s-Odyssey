@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 8076692827915603823}
   m_Layer: 5
   m_Name: Strikes
-  m_TagString: Untagged
+  m_TagString: StrikeText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 8076692827811195053}
   m_Layer: 5
   m_Name: Stars Holder
-  m_TagString: Untagged
+  m_TagString: StarsHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

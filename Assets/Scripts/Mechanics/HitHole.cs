@@ -22,8 +22,6 @@ public class HitHole : MonoBehaviour
     [SerializeField] int limite2Star_inf;
     [SerializeField] int limite2Star_sup;
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
