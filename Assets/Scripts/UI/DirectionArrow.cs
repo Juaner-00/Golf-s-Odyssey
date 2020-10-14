@@ -32,16 +32,22 @@ public class DirectionArrow : MonoBehaviour
     AudioSource src;
 
 
-
-
     private void Awake()
     {
-
         sliderArrow = GetComponentInChildren<Slider>();
         playerController = FindObjectOfType<PlayerController>();
 
         safeZone = GameObject.FindGameObjectWithTag("SafeZone").GetComponent<RectTransform>();
+    }
 
+    private void OnEnable()
+    {
+        PlayerController.OnStrike += ShootFx;
+    }
+
+    private void OnDisable()
+    {
+        PlayerController.OnStrike -= ShootFx;
     }
 
     private void Start()
@@ -51,7 +57,8 @@ public class DirectionArrow : MonoBehaviour
         largoTrayectoria = FindObjectOfType<RayBeam>();
         colorTrayectoria = GetComponentInChildren<LineRenderer>();
         sliderArrow.maxValue = playerController.maxForce;
-        size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height);
+        size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height) * 2;
+        // size = safeZone.sizeDelta;
     }
 
     private void Update()
@@ -73,7 +80,7 @@ public class DirectionArrow : MonoBehaviour
 
             safeZone.position = InputManager.PlayerPos;
 
-            Vector2 sizeDelta = (size - new Vector2(InputManager.Dist * Screen.height, InputManager.Dist * Screen.height)) * 8;
+            Vector2 sizeDelta = (size - new Vector2(InputManager.Dist * Screen.height, InputManager.Dist * Screen.height) * 2);
             safeZone.sizeDelta = sizeDelta.x < 0 ? Vector2.zero : sizeDelta;
         }
         else
@@ -87,56 +94,42 @@ public class DirectionArrow : MonoBehaviour
         rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
 
         // Efecto al disparar
-        disparoFx();
-
-
+        // ShootFx(0);
+        LineLenght();
     }
 
-    void disparoFx()
+    void LineLenght()
     {
+        if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.3f)
+            largoTrayectoria.MaxLenght = 3;
+        else if (sliderArrow.normalizedValue >= 0.3f && sliderArrow.normalizedValue <= 0.7f)
+            largoTrayectoria.MaxLenght = 6;
+        else if (sliderArrow.normalizedValue >= 0.7f)
+            largoTrayectoria.MaxLenght = 11;
+    }
 
+    void ShootFx(int _)
+    {
         if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.3f)
         {
-            largoTrayectoria.MaxLenght = 3;
-            if (playerController.released)
-            {
-                Debug.Log("Suave");
-                Instantiate(hitSuave, transform.position, Quaternion.identity);
-                src.PlayOneShot(espadazoSuave);
-               
-                playerController.released = false;
-            }
+            Debug.Log("Suave");
+            Instantiate(hitSuave, transform.position, Quaternion.identity);
+            src.PlayOneShot(espadazoSuave);
         }
-        if (sliderArrow.normalizedValue >= 0.3f && sliderArrow.normalizedValue <= 0.7f)
+        else if (sliderArrow.normalizedValue >= 0.3f && sliderArrow.normalizedValue <= 0.7f)
         {
-            largoTrayectoria.MaxLenght = 6;
-            if (playerController.released)
-            {
-                Debug.Log("Medio");
-
-                Instantiate(hitMedio, transform.position, Quaternion.identity);
-                src.PlayOneShot(espadazoMedio);
-
-                playerController.released = false;
-            }
+            Debug.Log("Medio");
+            Instantiate(hitMedio, transform.position, Quaternion.identity);
+            src.PlayOneShot(espadazoMedio);
         }
-        if (sliderArrow.normalizedValue >= 0.7f)
+        else if (sliderArrow.normalizedValue >= 0.7f)
         {
-            largoTrayectoria.MaxLenght = 11;
-
-            if (playerController.released)
-            {
-                Debug.Log("Fuerte)");
-
-                Instantiate(debris, transform.position, Quaternion.identity);
-                Instantiate(polvo, transform.position, Quaternion.identity);
-                src.PlayOneShot(espadazoFuerte);
-
-                playerController.released = false;
-            }
-
+            Debug.Log("Fuerte");
+            Instantiate(debris, transform.position, Quaternion.identity);
+            Instantiate(polvo, transform.position, Quaternion.identity);
+            src.PlayOneShot(espadazoFuerte);
         }
-        if (sliderArrow.normalizedValue == 0f)
+        else if (sliderArrow.normalizedValue == 0f)
         {
             Debug.Log("StandBy");
         }

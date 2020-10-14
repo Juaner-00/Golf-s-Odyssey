@@ -6,12 +6,13 @@ using DG.Tweening;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject UIMenu;
+    [SerializeField] GameObject SafeZone;
     [SerializeField] GameObject InventoryMenu;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject DialogMenu;
     [SerializeField] GameObject LoadingMenu;
 
-    RectTransform UIRec, InvRec, PauseRec, DialogRec, LoadingRec;
+    RectTransform UIRec, SafeZoneRec, InvRec, PauseRec, DialogRec, LoadingRec;
 
     private static MenuManager instance;
     public static MenuManager Instance { get => instance; }
@@ -25,6 +26,8 @@ public class MenuManager : MonoBehaviour
 
         if (UIMenu != null)
             UIRec = UIMenu.GetComponent<RectTransform>();
+        if (SafeZone != null)
+            SafeZoneRec = SafeZone.GetComponent<RectTransform>();
         if (InventoryMenu != null)
             InvRec = InventoryMenu.GetComponent<RectTransform>();
         if (PauseMenu != null)
@@ -63,6 +66,7 @@ public class MenuManager : MonoBehaviour
     public void CloseLoading()
     {
         LoadingRec.DOAnchorPosX(900, 0.2f);
+        // LoadingRec.DOMoveX(900, 0.2f);
         LoadingMenu.SetActive(false);
     }
 
@@ -71,7 +75,10 @@ public class MenuManager : MonoBehaviour
         if (PauseMenu != null)
             PauseMenu.SetActive(pause);
         if (UIMenu != null)
+        {
             UIMenu.SetActive(ui);
+            SafeZone.SetActive(ui);
+        }
         if (InventoryMenu != null)
             InventoryMenu.SetActive(inventory);
         if (DialogMenu != null)
@@ -79,6 +86,7 @@ public class MenuManager : MonoBehaviour
         if (LoadingMenu != null)
         {
             LoadingMenu.SetActive(loading);
+            // LoadingRec.DOMoveX(0, 0.25f);
             LoadingRec.DOAnchorPosX(0, 0.25f);
         }
     }
