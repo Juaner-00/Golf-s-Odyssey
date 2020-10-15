@@ -66,6 +66,10 @@ public class InputManager3 : MonoBehaviour
         if (!i)
             device = DeviceType.Movil;
 #endif
+#if UNITY_IOS
+        if (!i)
+            device = DeviceType.Movil;
+#endif
     }
 
     private void Update()
