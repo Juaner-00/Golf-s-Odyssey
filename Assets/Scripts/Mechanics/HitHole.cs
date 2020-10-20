@@ -21,8 +21,8 @@ public class HitHole : MonoBehaviour
     [SerializeField] int limite3Star_sup;
     [SerializeField] int limite2Star_inf;
     [SerializeField] int limite2Star_sup;
-
-
+    [SerializeField] int limite1Star_inf;
+    [SerializeField] int limite1Star_sup;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,9 +55,10 @@ public class HitHole : MonoBehaviour
                 star1.SetActive(true);
                 star2.SetActive(true);
             }
-            else if (count > limite2Star_sup)
+            else if (count >= limite1Star_inf && count <= limite1Star_sup)
             {
                 star1.SetActive(true);
+                
             }
         }
     }

@@ -5,8 +5,12 @@ using TMPro;
 
 public class Strike : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI strikeText;
+    TextMeshProUGUI strikeText;
 
+    private void Awake()
+    {
+        strikeText = GameObject.FindGameObjectWithTag("StrikeText").GetComponent<TextMeshProUGUI>();
+    }
 
     void OnEnable()
     {

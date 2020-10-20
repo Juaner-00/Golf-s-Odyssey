@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject UIMenu;
+    [SerializeField] GameObject SafeZone;
     [SerializeField] GameObject InventoryMenu;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject DialogMenu;
+    [SerializeField] GameObject LoadingMenu;
+
+    RectTransform UIRec, SafeZoneRec, InvRec, PauseRec, DialogRec, LoadingRec;
 
     private static MenuManager instance;
     public static MenuManager Instance { get => instance; }
@@ -18,38 +23,72 @@ public class MenuManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+
+        if (UIMenu != null)
+            UIRec = UIMenu.GetComponent<RectTransform>();
+        if (SafeZone != null)
+            SafeZoneRec = SafeZone.GetComponent<RectTransform>();
+        if (InventoryMenu != null)
+            InvRec = InventoryMenu.GetComponent<RectTransform>();
+        if (PauseMenu != null)
+            PauseRec = PauseMenu.GetComponent<RectTransform>();
+        if (DialogMenu != null)
+            DialogRec = DialogMenu.GetComponent<RectTransform>();
+        if (LoadingMenu != null)
+            LoadingRec = LoadingMenu.GetComponent<RectTransform>();
     }
 
     public void OpenInventory()
     {
-        PauseMenu.SetActive(false);
-        UIMenu.SetActive(false);
-        InventoryMenu.SetActive(true);
-        DialogMenu.SetActive(false);
+        Activate(false, false, true, false, false);
     }
 
     public void OpenUI()
     {
-        PauseMenu.SetActive(false);
-        UIMenu.SetActive(true);
-        InventoryMenu.SetActive(false);
-        DialogMenu.SetActive(false);
+        Activate(false, true, false, false, false);
     }
 
     public void OpenPause()
     {
-        PauseMenu.SetActive(true);
-        UIMenu.SetActive(false);
-        InventoryMenu.SetActive(false);
-        DialogMenu.SetActive(false);
+        Activate(true, false, false, false, false);
     }
 
     public void OpenDialog()
     {
-        PauseMenu.SetActive(false);
-        UIMenu.SetActive(false);
-        InventoryMenu.SetActive(false);
-        DialogMenu.SetActive(true);
+        Activate(false, false, false, true, false);
+    }
+
+    public void OpenLoading()
+    {
+        Activate(false, false, false, false, true);
+    }
+
+    public void CloseLoading()
+    {
+        LoadingRec.DOAnchorPosX(900, 0.2f);
+        // LoadingRec.DOMoveX(900, 0.2f);
+        LoadingMenu.SetActive(false);
+    }
+
+    private void Activate(bool pause, bool ui, bool inventory, bool dialog, bool loading)
+    {
+        if (PauseMenu != null)
+            PauseMenu.SetActive(pause);
+        if (UIMenu != null)
+        {
+            UIMenu.SetActive(ui);
+            SafeZone.SetActive(ui);
+        }
+        if (InventoryMenu != null)
+            InventoryMenu.SetActive(inventory);
+        if (DialogMenu != null)
+            DialogMenu.SetActive(dialog);
+        if (LoadingMenu != null)
+        {
+            LoadingMenu.SetActive(loading);
+            // LoadingRec.DOMoveX(0, 0.25f);
+            LoadingRec.DOAnchorPosX(0, 0.25f);
+        }
     }
 }
 

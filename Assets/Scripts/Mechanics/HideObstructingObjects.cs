@@ -6,6 +6,8 @@ public class HideObstructingObjects : MonoBehaviour
 {
     GameObject player;
     Collider obstruction;
+    [SerializeField]
+    LayerMask layerObstruction;                                               
 
     private void Awake()
     {
@@ -16,7 +18,9 @@ public class HideObstructingObjects : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, 20f))
+        if(Physics.Raycast(transform.position,player.transform.position-transform.position,out hit,20f,layerObstruction))
+
+       /* if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, 20f)*/
         // if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, 4.5f))
         {
             if (!hit.collider.CompareTag("Player") && !hit.collider.CompareTag("Hole"))

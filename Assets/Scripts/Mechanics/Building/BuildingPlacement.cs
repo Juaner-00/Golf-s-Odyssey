@@ -37,23 +37,23 @@ public class BuildingPlacement : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            SetPosition(0);
+            SetPosition(0, new Touch());
         }
         else if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
-                SetPosition(1);
+                SetPosition(1, touch);
         }
     }
 
-    private void SetPosition(int i)
+    private void SetPosition(int i, Touch touch)
     {
         // Mover la cámara
         if (i == 0)
-            virtualCamera.position += InputManager.deltaMousePos;
+            virtualCamera.position += InputManager.DeltaMousePos;
         else
-            virtualCamera.position += InputManager.deltaTouchPos;
+            virtualCamera.position += new Vector3(touch.deltaPosition.x, touch.deltaPosition.y);
 
         if (isBuilding)
         {
@@ -78,7 +78,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         building = Instantiate(obj, Vector3.zero, Quaternion.identity);
         isBuilding = true;
-        SetPosition(0);
+        SetPosition(0, new Touch());
         buildBtn.SetActive(false);
     }
 

@@ -12,6 +12,10 @@ TagManager:
   - Enemy
   - Bouncers
   - Axe
+  - SafeZone
+  - Mango
+  - StrikeText
+  - StarsHolder
   layers:
   - Default
   - TransparentFX
