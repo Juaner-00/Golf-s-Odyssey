@@ -23,6 +23,7 @@ public class ButtonObject : MonoBehaviour
     private void LateUpdate()
     {
         canvas.transform.LookAt(transform.position + cam.transform.forward);
+
     }
 
     public void Place()
