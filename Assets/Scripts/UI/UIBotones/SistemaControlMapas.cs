@@ -42,4 +42,8 @@ public class SistemaControlMapas : MonoBehaviour
 
         contador -= 1;
     }
+    public void MapTroya()
+    {
+
+    }
 }
