@@ -71,4 +71,86 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Clear();
     }
 
+    public void LoadLvl1()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_01"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl2()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_02"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl3()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_03"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl4()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_04"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl5()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_05"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl6()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_06"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl7()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_07"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl8()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_08"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+    public void LoadLvl9()
+    {
+        MenuManager.Instance.OpenLoading();
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Tutorial Level_09"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
+
+        StartCoroutine(GetSceneLoadProgress());
+
+    }
+
 }
