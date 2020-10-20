@@ -54,7 +54,7 @@ MonoBehaviour:
     serializedVersion: 2
     key0: {r: 0.7122642, g: 1, b: 0.84305316, a: 1}
     key1: {r: 0.30838373, g: 0.8490566, b: 0.76591605, a: 1}
-    key2: {r: 0.2784314, g: 0.72156864, b: 0.9622642, a: 0}
+    key2: {r: 0.33481666, g: 0.58300394, b: 0.7169812, a: 0}
     key3: {r: 0.04889083, g: 1, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -289,7 +289,6 @@ Transform:
   m_Children:
   - {fileID: 8076692829006016840}
   - {fileID: 8076692827133016581}
-  - {fileID: 8661177430831706845}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3057,6 +3056,7 @@ RectTransform:
   - {fileID: 8076692828338844876}
   - {fileID: 8076692829125790299}
   - {fileID: 3708117175131175279}
+  - {fileID: 8661177430831706845}
   m_Father: {fileID: 336843509820967632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4172,6 +4172,7 @@ GameObject:
   - component: {fileID: 6702127122890201795}
   - component: {fileID: 1245069119519664005}
   - component: {fileID: 1220233124365186837}
+  - component: {fileID: 1466342204223101348}
   m_Layer: 0
   m_Name: FingerTut
   m_TagString: Untagged
@@ -4186,16 +4187,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476717440725405379}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 336843509820967632}
-  m_RootOrder: 2
+  m_Father: {fileID: 8076692829006016840}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 18, y: -115}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6702127122890201795
@@ -4248,6 +4249,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1466342204223101348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476717440725405379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99f70b510697bdd42a94af7b88de9e7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8722983727951308041
 GameObject:
   m_ObjectHideFlags: 0
