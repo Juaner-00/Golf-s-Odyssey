@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
     [SerializeField] float porcentajeALosBordes = 30f;
     [SerializeField] public float porcentajeALaBola = 4f;
+    [SerializeField] GameObject feedTutorial;
 
     private Vector3 vectorSwipe;
 
@@ -41,6 +43,12 @@ public class InputManager : MonoBehaviour
 
     public static InputManager Instance { get; private set; }
 
+
+    Tutorial tuto;
+    AudioSource feedtutoSnd;
+    bool tutoCompleto;
+
+
     private void Awake()
     {
         if (Instance != null)
@@ -56,6 +64,16 @@ public class InputManager : MonoBehaviour
         posIni = posFin = PlayerPos;
 
         InRange = false;
+
+        tuto = FindObjectOfType<Tutorial>();
+        feedtutoSnd = GetComponent<AudioSource>();
+        tutoCompleto = false;
+        
+
+
+       
+
+
 
         bool i = false;
 #if UNITY_EDITOR
@@ -92,7 +110,16 @@ public class InputManager : MonoBehaviour
                     Dist = Vector3.Distance(PlayerPos, posIni) / Screen.height;
 
                     if (Dist <= porcentajeALaBola / 100)
+                    {
                         InRange = true;
+
+                        if (!tutoCompleto)
+                        {
+                            StartCoroutine("DesactivarDedo");
+                        }
+                       
+
+                    }
                     else
                         InRange = false;
                 }
@@ -138,10 +165,18 @@ public class InputManager : MonoBehaviour
 
                         Dist = Vector3.Distance(PlayerPos, posIni) / Screen.height;
 
-                        if (Dist <= porcentajeALaBola / 100)
+                        if (Dist <= porcentajeALaBola / 100) {
                             InRange = true;
-                        else
-                            InRange = false;
+
+                            if (!tutoCompleto)
+                            {
+                                StartCoroutine("DesactivarDedo");
+                            }
+                            
+
+                        }
+                    else
+                        InRange = false;
                     }
                 }
 
@@ -223,6 +258,21 @@ public class InputManager : MonoBehaviour
         vectorSwipe = new Vector3(swipe.x, 0, swipe.y);
     }
 
+    IEnumerator DesactivarDedo()
+    {
+        
+        
+       // feedtutoSnd.Play();
+        Instantiate(feedTutorial, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        tuto.gameObject.SetActive(false);       
+        tutoCompleto = true;
+       
+
+
+
+    }
+    
 
 }
 

@@ -27,6 +27,7 @@ public class RayBeam : MonoBehaviour
 
     private void Update()
     {
+        
         if (!LevelClearManager.Instance.HasClear)
         {
             ray = new Ray(ball.transform.position, InputManager.Direction);
@@ -62,4 +63,5 @@ public class RayBeam : MonoBehaviour
             }
         }
     }
+    
 }
