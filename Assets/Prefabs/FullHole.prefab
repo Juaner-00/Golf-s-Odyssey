@@ -192,6 +192,8 @@ MonoBehaviour:
   limite3Star_sup: 1
   limite2Star_inf: 2
   limite2Star_sup: 2
+  limite1Star_inf: 0
+  limite1Star_sup: 0
 --- !u!1 &974915012517183867
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +376,8 @@ MonoBehaviour:
   limite3Star_sup: 1
   limite2Star_inf: 2
   limite2Star_sup: 2
+  limite1Star_inf: 0
+  limite1Star_sup: 0
 --- !u!1 &5678321280601775024
 GameObject:
   m_ObjectHideFlags: 0

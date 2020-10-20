@@ -102,7 +102,7 @@ public class DirectionArrow : MonoBehaviour
         }
 
         //Rotación
-        Vector3 deg = rot.localEulerAngles;
+        Vector3 deg = rot.gameObject.transform.localEulerAngles;
         rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
 
         // Efecto al disparar
@@ -120,23 +120,23 @@ public class DirectionArrow : MonoBehaviour
 
     void ShootFx(int _)
     {
-        if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.3f)
+        if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.4f)
         {
             Debug.Log("Suave");
-            Instantiate(hitSuave, transform.position, Quaternion.identity);
+            Instantiate(hitSuave, playerController.transform.position, Quaternion.identity);
             src.PlayOneShot(espadazoSuave);
         }
-        else if (sliderArrow.normalizedValue >= 0.3f && sliderArrow.normalizedValue <= 0.7f)
+        else if (sliderArrow.normalizedValue >= 0.4f && sliderArrow.normalizedValue <= 0.7f)
         {
             Debug.Log("Medio");
-            Instantiate(hitMedio, transform.position, Quaternion.identity);
+            Instantiate(hitMedio, playerController.transform.position, Quaternion.identity);
             src.PlayOneShot(espadazoMedio);
         }
         else if (sliderArrow.normalizedValue >= 0.7f)
         {
             Debug.Log("Fuerte");
-            Instantiate(debris, transform.position, Quaternion.identity);
-            Instantiate(polvo, transform.position, Quaternion.identity);
+            Instantiate(debris, playerController.transform.position, Quaternion.identity);
+            Instantiate(polvo, playerController.transform.position, Quaternion.identity);
             src.PlayOneShot(espadazoFuerte);
         }
         else if (sliderArrow.normalizedValue == 0f)
