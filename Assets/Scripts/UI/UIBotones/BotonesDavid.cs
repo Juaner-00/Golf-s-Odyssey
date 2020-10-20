@@ -15,7 +15,7 @@ public class BotonesDavid : MonoBehaviour
     [SerializeField]
     RectTransform logo,play,exit;
     [SerializeField]
-    GameObject barco;
+    GameObject barco,menuTroya,menuBruja,menuCiclope,menuSirena,menuItaca;
     [SerializeField]
     GameObject camaraIsla, camaraBarco,camTroya,camBruja,camCiclope,camSirena,camItaca;
     [SerializeField]
@@ -68,8 +68,77 @@ public class BotonesDavid : MonoBehaviour
         _SceneManager.Instance.Quit();
     }
 
+    //botones troya
     public void ClickTroya()
     {
-
+        camTroya.SetActive(true);
+        camaraIsla.SetActive(false);
+        
+        
+        menuTroya.GetComponent<RectTransform>().DOAnchorPosX(0,0.5f).SetDelay(2f);
     }
+    public void DesactivarTroya()
+    {
+        camTroya.SetActive(false);
+        camaraIsla.SetActive(true);
+        
+        menuTroya.GetComponent<RectTransform>().DOAnchorPosX(-1000, 0.5f);
+    }
+
+    //botones brujas
+    public void ClickBruja()
+    {
+        camBruja.SetActive(true);
+        camaraIsla.SetActive(false);
+        menuBruja.GetComponent<RectTransform>().DOAnchorPosX(0, 0.5f).SetDelay(2f);
+    }
+    public void DesactivarBruja()
+    {
+        camBruja.SetActive(false);
+        camaraIsla.SetActive(true);
+        menuBruja.GetComponent<RectTransform>().DOAnchorPosX(-1000, 0.5f);
+    }
+
+    //botones Ciclopes
+    public void ClickCiclope()
+    {
+        camCiclope.SetActive(true);
+        camaraIsla.SetActive(false);
+        menuCiclope.GetComponent<RectTransform>().DOAnchorPosX(0, 0.5f).SetDelay(2f);
+    }
+    public void DesactivarCiclope()
+    {
+        camCiclope.SetActive(false);
+        camaraIsla.SetActive(true);
+        menuCiclope.GetComponent<RectTransform>().DOAnchorPosX(-1000, 0.5f);
+    }
+
+    //botones Sirena
+    public void ClickSirena()
+    {
+        camSirena.SetActive(true);
+        camaraIsla.SetActive(false);
+        menuSirena.GetComponent<RectTransform>().DOAnchorPosX(0, 0.5f).SetDelay(2f);
+    }
+    public void DesactivarSirena()
+    {
+        camSirena.SetActive(false);
+        camaraIsla.SetActive(true);
+        menuSirena.GetComponent<RectTransform>().DOAnchorPosX(-1000, 0.5f);
+    }
+
+    //botones Itica
+    public void ClickItaca()
+    {
+        camItaca.SetActive(true);
+        camaraIsla.SetActive(false);
+        menuItaca.GetComponent<RectTransform>().DOAnchorPosX(0, 0.5f).SetDelay(2f);
+    }
+    public void DesactivarItaca()
+    {
+        camItaca.SetActive(false);
+        camaraIsla.SetActive(true);
+        menuItaca.GetComponent<RectTransform>().DOAnchorPosX(-1000, 0.5f);
+    }
+
 }
