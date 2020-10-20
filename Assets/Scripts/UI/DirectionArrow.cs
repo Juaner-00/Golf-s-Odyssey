@@ -26,11 +26,15 @@ public class DirectionArrow : MonoBehaviour
     [SerializeField] GameObject polvo;
     [SerializeField] GameObject hitMedio;
     [SerializeField] GameObject hitSuave;
-    [SerializeField] GameObject Sword;
     [SerializeField] AudioClip espadazoFuerte, espadazoMedio, espadazoSuave;
 
     AudioSource src;
 
+    float forceToLength;
+    [SerializeField] Slider charForce;
+
+    float ini;
+    float fin;
 
     private void Awake()
     {
@@ -38,6 +42,7 @@ public class DirectionArrow : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
 
         safeZone = GameObject.FindGameObjectWithTag("SafeZone").GetComponent<RectTransform>();
+
     }
 
     private void OnEnable()
@@ -59,10 +64,17 @@ public class DirectionArrow : MonoBehaviour
         sliderArrow.maxValue = playerController.maxForce;
         size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height) * 2;
         // size = safeZone.sizeDelta;
+
+        ini = charForce.minValue;
+
     }
 
     private void Update()
     {
+
+        fin = InputManager.SwipeDist * 10;
+        forceToLength = InputManager.SwipeDist * 10;
+
         sliderArrow.maxValue = playerController.maxForce;
 
         if (PlayerController.isStoped)
@@ -100,12 +112,10 @@ public class DirectionArrow : MonoBehaviour
 
     void LineLenght()
     {
-        if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.3f)
-            largoTrayectoria.MaxLenght = 3;
-        else if (sliderArrow.normalizedValue >= 0.3f && sliderArrow.normalizedValue <= 0.7f)
-            largoTrayectoria.MaxLenght = 6;
-        else if (sliderArrow.normalizedValue >= 0.7f)
-            largoTrayectoria.MaxLenght = 11;
+
+
+        largoTrayectoria.MaxLenght = Mathf.Lerp(ini, 10, forceToLength);
+
     }
 
     void ShootFx(int _)
