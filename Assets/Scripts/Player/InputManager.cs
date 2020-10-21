@@ -1,6 +1,4 @@
-﻿using Cinemachine;
-using DG.Tweening;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,7 +9,6 @@ public class InputManager : MonoBehaviour
     [SerializeField] float porcentajeALosBordes = 30f;
     [SerializeField] public float porcentajeALaBola = 4f;
     [SerializeField] GameObject feedTutorial;
-  
 
     private Vector3 vectorSwipe;
 
@@ -91,7 +88,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (!LevelClearManager.Instance.HasClear && !PauseMenu.IsPaused )
+        if (!LevelClearManager.Instance.HasClear)
         {
             PlayerPos = camera.WorldToScreenPoint(transform.position);
 
@@ -109,7 +106,6 @@ public class InputManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     posIni = Input.mousePosition;
-                   
 
                     Dist = Vector3.Distance(PlayerPos, posIni) / Screen.height;
 
@@ -251,8 +247,6 @@ public class InputManager : MonoBehaviour
 
         //Rotación
         Angle = Vector3.SignedAngle(vectorSwipe, Vector3.forward, Vector3.up) + 180;
-       // Angle = Vector3.SignedAngle(transform.position, vectorSwipe, Vector3.up) + 180;
-       
         float angle = Angle - camera.transform.localEulerAngles.y;
         Direction = new Vector3(Mathf.Sin(angle * Mathf.PI / 180), 0, Mathf.Cos(angle * Mathf.PI / 180 + (float)Math.PI));
     }
@@ -283,6 +277,7 @@ public class InputManager : MonoBehaviour
 }
 
 public enum DeviceType
-{    PC,
+{
+    PC,
     Movil
 }

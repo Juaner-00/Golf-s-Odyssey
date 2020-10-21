@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool IsPaused { get; private set; } = false;
-
+    public static bool paused = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (IsPaused == true)
+            if (paused == true)
             	Resume();
             else
                 Pause();
@@ -22,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     {
         MenuManager.Instance.OpenUI();
         Time.timeScale = 1;
-        IsPaused = false;
+        paused = false;
 
     }
 
@@ -30,6 +29,6 @@ public class PauseMenu : MonoBehaviour
     {
         MenuManager.Instance.OpenPause();
         Time.timeScale = 0;
-        IsPaused = true;
+        paused = true;
     }
 }
