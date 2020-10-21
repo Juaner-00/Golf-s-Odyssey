@@ -40,7 +40,7 @@ public class _SceneManager : MonoBehaviour
     public void LoadMainMenu()
     {
         MenuManager.Instance.OpenLoading();
-        levelsLoading.Add(SceneManager.LoadSceneAsync("Pinicio"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.LoadSceneAsync("PinicioDavid"/* , LoadSceneMode.Additive */));
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
