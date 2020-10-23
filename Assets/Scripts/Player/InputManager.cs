@@ -88,7 +88,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (!LevelClearManager.Instance.HasClear)
+        if (!LevelClearManager.Instance.HasClear && !PauseMenu.paused)
         {
             PlayerPos = camera.WorldToScreenPoint(transform.position);
 

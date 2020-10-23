@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c479540fc062b3d4f88f925419ad6282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1Name: Level_1
+  nextLevelName: Tutorial Level_02
