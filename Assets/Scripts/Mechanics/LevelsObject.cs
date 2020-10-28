@@ -16,5 +16,5 @@ public class LevelsObject : ScriptableObject
 
 public enum Island
 {
-    Troya, Sirena, Ciclipe, Bruja, Itaca
+    None, Troya, Sirena, Ciclipe, Bruja, Itaca
 }
