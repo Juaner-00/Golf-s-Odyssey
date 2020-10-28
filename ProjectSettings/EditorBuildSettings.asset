@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/PinicioDavid.unity
+    path: Assets/Scenes/PrototypeV2/Islands.unity
     guid: 966c3f27797fc404792a340fbeea6e8b
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Tutorial Level_01.unity

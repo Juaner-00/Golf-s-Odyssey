@@ -18,6 +18,7 @@ public class LevelsSystem : MonoBehaviour
     Camera cam;
     RectTransform troyaRect, brujaRect, ciclopeRect, sirenaRect, itacaRect;
 
+    static bool first = true;
 
     private void Awake()
     {
@@ -32,12 +33,37 @@ public class LevelsSystem : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        barco.transform.position = inicial.position;
-        barco.transform.DOMove(medio.position, 2.5f);
-        logo.DOAnchorPosY(600, 2f).SetDelay(1f).SetEase(izi);
-        play.DOAnchorPosY(-500, 3f).SetDelay(1f).SetEase(izi);
-        exit.DOAnchorPosY(-650, 3f).SetDelay(1f).SetEase(izi);
+        if (first)
+        {
+            camaraBarco.SetActive(true);
+            Inicio();
+            first = false;
+        }
+
+        switch (LevelSelector.lastIsland)
+        {
+            case Island.Troya:
+                ClickTroya(0);
+                break;
+            case Island.Bruja:
+                ClickBruja(0);
+                break;
+            case Island.Ciclipe:
+                ClickCiclope(0);
+                break;
+            case Island.Sirena:
+                ClickSirena(0);
+                break;
+            case Island.Itaca:
+                ClickItaca(0);
+                break;
+
+            default:
+                Inicio();
+                break;
+        }
     }
+
 
     private void LateUpdate()
     {
@@ -45,8 +71,19 @@ public class LevelsSystem : MonoBehaviour
             c.transform.LookAt(c.transform.position + cam.transform.forward);
     }
 
+    public void Inicio()
+    {
+        barco.transform.position = inicial.position;
+        barco.transform.DOMove(medio.position, 2.5f);
+        logo.DOAnchorPosY(600, 2f).SetDelay(1f).SetEase(izi);
+        play.DOAnchorPosY(-500, 3f).SetDelay(1f).SetEase(izi);
+        exit.DOAnchorPosY(-650, 3f).SetDelay(1f).SetEase(izi);
+    }
+
     public void ClickPlay()
     {
+        LevelSelector.lastIsland = Island.None;
+
         logo.DOAnchorPosY(1500, 2f);
         play.DOAnchorPosY(-1200, 1.5f);
         exit.DOAnchorPosY(-1200, 1.5f);
@@ -61,12 +98,14 @@ public class LevelsSystem : MonoBehaviour
     }
 
     //* Botones troya
-    public void ClickTroya()
+    public void ClickTroya(float delay = 2)
     {
+        LevelSelector.lastIsland = Island.Troya;
+
         camTroya.SetActive(true);
         camaraIsla.SetActive(false);
 
-        troyaRect.DOAnchorPosX(0, 0.5f).SetDelay(2f);
+        troyaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
     }
 
     public void DesactivarTroya()
@@ -78,11 +117,13 @@ public class LevelsSystem : MonoBehaviour
     }
 
     //* Botones brujas
-    public void ClickBruja()
+    public void ClickBruja(float delay = 2)
     {
+        LevelSelector.lastIsland = Island.Bruja;
+
         camBruja.SetActive(true);
         camaraIsla.SetActive(false);
-        brujaRect.DOAnchorPosX(0, 0.5f).SetDelay(2f);
+        brujaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
     }
 
     public void DesactivarBruja()
@@ -93,11 +134,13 @@ public class LevelsSystem : MonoBehaviour
     }
 
     //* Botones Ciclopes
-    public void ClickCiclope()
+    public void ClickCiclope(float delay = 2)
     {
+        LevelSelector.lastIsland = Island.Ciclipe;
+
         camCiclope.SetActive(true);
         camaraIsla.SetActive(false);
-        ciclopeRect.DOAnchorPosX(0, 0.5f).SetDelay(2f);
+        ciclopeRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
     }
 
     public void DesactivarCiclope()
@@ -108,11 +151,13 @@ public class LevelsSystem : MonoBehaviour
     }
 
     //* Botones Sirena
-    public void ClickSirena()
+    public void ClickSirena(float delay = 2)
     {
+        LevelSelector.lastIsland = Island.Sirena;
+
         camSirena.SetActive(true);
         camaraIsla.SetActive(false);
-        sirenaRect.DOAnchorPosX(0, 0.5f).SetDelay(2f);
+        sirenaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
     }
 
     public void DesactivarSirena()
@@ -123,11 +168,13 @@ public class LevelsSystem : MonoBehaviour
     }
 
     //* Botones Itica
-    public void ClickItaca()
+    public void ClickItaca(float delay = 2)
     {
+        LevelSelector.lastIsland = Island.Itaca;
+
         camItaca.SetActive(true);
         camaraIsla.SetActive(false);
-        itacaRect.DOAnchorPosX(0, 0.5f).SetDelay(2f);
+        itacaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
     }
 
     public void DesactivarItaca()
