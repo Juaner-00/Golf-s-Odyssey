@@ -28,10 +28,14 @@ public class HitHole : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("Bola en Hoyo");
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
             Invoke("ShowVictoryPanel", time);
+            FindObjectOfType<AudioManager>().Play("Win");
         }
     }
+
+   
 
     private void SceneChanger()
     {
@@ -68,7 +72,7 @@ public class HitHole : MonoBehaviour
         CalculateScore(strikeText);
 
         // Instantiate(obStar, transform.position + offset, Quaternion.identity);
-
+        
         LevelClearManager.Instance.ShowLevelDialog("Level Cleared", strikeText.text.ToString());
     }
 }
