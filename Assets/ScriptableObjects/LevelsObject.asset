@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd007a7bac25c548bdef27f0fa88901, type: 3}
+  m_Name: LevelsObject
+  m_EditorClassIdentifier: 
+  starsLevel1: 0
+  starsLevel2: 0
+  starsLevel3: 0
+  starsLevel4: 0
+  starsLevel5: 0
+  starsLevel6: 0
+  starsLevel7: 0
+  starsLevel8: 0
+  starsLevel9: 0
+  starsLevel10: 0
+  starsLevel11: 0
+  starsLevel12: 0
+  starsLevel13: 0
+  starsLevel14: 0
+  starsLevel15: 0

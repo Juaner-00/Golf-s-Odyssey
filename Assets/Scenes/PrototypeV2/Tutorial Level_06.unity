@@ -18795,7 +18795,7 @@ PrefabInstance:
     - target: {fileID: 683100536365316485, guid: 66551c2c333e686419a8c39d99b2599b,
         type: 3}
       propertyPath: nextLevelName
-      value: Tutorial Level_07
+      value: Islands
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66551c2c333e686419a8c39d99b2599b, type: 3}
@@ -47182,7 +47182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640762495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3460007, y: -16.3, z: 8.556417}
+  m_LocalPosition: {x: -3.3460007, y: -9.23, z: 8.556417}
   m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children: []
   m_Father: {fileID: 1464452379}
@@ -47220,7 +47220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d06b77a1362fe634db12d0b280fbff81, type: 2}
+  - {fileID: 2100000, guid: 785c9c46a19eb614e9879c47a8b90d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
