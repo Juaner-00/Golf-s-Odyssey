@@ -171,6 +171,7 @@ public class LevelsSystem : MonoBehaviour
     {
         camSirena.SetActive(false);
         camaraIsla.SetActive(true);
+        sirenaRect.DOAnchorPosX(-1000, 0.5f);
         back.DOAnchorPosX(-300, 0.5f);
     }
 
