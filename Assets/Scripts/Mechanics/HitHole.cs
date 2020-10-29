@@ -53,16 +53,21 @@ public class HitHole : MonoBehaviour
                 star1.SetActive(true);
                 star2.SetActive(true);
                 star3.SetActive(true);
+
+              //  FindObjectOfType<AudioManager>().Play("Win");
             }
             else if (count >= limite2Star_inf && count <= limite2Star_sup)
             {
                 star1.SetActive(true);
                 star2.SetActive(true);
+
+               // FindObjectOfType<AudioManager>().Play("Win");
             }
             else if (count >= limite1Star_inf && count <= limite1Star_sup)
             {
                 star1.SetActive(true);
-                
+               // FindObjectOfType<AudioManager>().Play("BadWin");
+
             }
         }
     }

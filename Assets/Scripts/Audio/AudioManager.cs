@@ -4,8 +4,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
-    bool isPinicio;
+   
+    
     public Sound[] sounds;
 
     public static AudioManager instance;
@@ -24,8 +24,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if(!isPinicio)
-        DontDestroyOnLoad(gameObject);
+      
 
         foreach (Sound s in sounds)
         {
