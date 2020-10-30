@@ -2,41 +2,82 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+
 
 public class ReproduceAudioOnClick : MonoBehaviour
 {
-	[SerializeField]
-	float finalValuePlay;
-	[SerializeField]
-	float durationPlay;
-
-	[SerializeField]
-	float finalValueDown;
-	[SerializeField]
-	float durationDown;
-
-
+	
 	public void Play(string source)
 	{
 		AudioManager.instance.Play(source);
 	}
 
-	public void PlayAndFade(AudioSource source)
+
+	public void AccessCiclope()
 	{
-		source.Play();
-		source.DOFade(finalValuePlay, durationPlay);
+		if (LockManager.accederCiclope)
+		{
+			AudioManager.instance.Play("SelectForward");
+			FadeIn("Ciclopes");
+			FadeOut("Odisea Principal");
+
+		}
+			
+		else
+		{
+			AudioManager.instance.Play("SelectBack");
+		}
 	}
 
-	public void ContinuePlaying(AudioSource source)
+	public void AccessSirenas()
 	{
-		source.DOFade(finalValuePlay, durationPlay);
+		if (LockManager.accederSirenas)
+		{
+			AudioManager.instance.Play("SelectForward");
+			FadeIn("Sirenas");
+			FadeOut("Odisea Principal");
+		}
+			
+		else
+		{
+			AudioManager.instance.Play("SelectBack");
+		}
 	}
 
-	public void DownAndFade(AudioSource source)
+	public void AccessItaca()
 	{
-		source.DOFade(finalValueDown, durationDown);
+		if (LockManager.accederItaca)
+		{
+			AudioManager.instance.Play("SelectForward");
+			FadeIn("Itaca");
+			FadeOut("Odisea Principal");
+		}
+			
+
+		else
+		{
+			AudioManager.instance.Play("SelectBack");
+		}
 	}
 
+	public void FadeIn(string audio)
+	{
+		AudioManager.instance.FadeIn(audio);
+	}
 
+	public void ContinuePlaying(string audio)
+	{
+		AudioManager.instance.ContinuePlaying(audio);
+
+	}
+
+	public void FadeOut(string audio)
+	{
+		AudioManager.instance.FadeOut(audio);
+	}
+
+	public void Stop()
+	{
+		AudioManager.instance.Stop();
+	}
 }

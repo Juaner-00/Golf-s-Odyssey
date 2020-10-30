@@ -6277,6 +6277,28 @@ MonoBehaviour:
           m_StringArgument: SelectBack
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 28634590}
+        m_MethodName: ContinuePlaying
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2066623133}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 28634590}
+        m_MethodName: DownAndFade
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 844769743}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1175924190
 MonoBehaviour:
   m_ObjectHideFlags: 0

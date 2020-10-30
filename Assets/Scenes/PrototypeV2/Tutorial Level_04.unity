@@ -43979,6 +43979,8 @@ MonoBehaviour:
   limite2Star_sup: 3
   limite1Star_inf: 0
   limite1Star_sup: 0
+  lvlObjects: {fileID: 0}
+  posLvl: 0
 --- !u!136 &1628596520
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58006,6 +58008,16 @@ PrefabInstance:
     - target: {fileID: 6149126726610615431, guid: 183ed3161aad0c34da2c6529ddc9fab7,
         type: 3}
       propertyPath: limite1Star_sup
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149126726610615431, guid: 183ed3161aad0c34da2c6529ddc9fab7,
+        type: 3}
+      propertyPath: lvlObjects
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149126726610615431, guid: 183ed3161aad0c34da2c6529ddc9fab7,
+        type: 3}
+      propertyPath: posLvl
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8222204367896500166, guid: 183ed3161aad0c34da2c6529ddc9fab7,
