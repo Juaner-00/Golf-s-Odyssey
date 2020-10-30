@@ -25,10 +25,14 @@ public class LockManager : MonoBehaviour
     [SerializeField]
     LevelsObject lvlObject;
 
+<<<<<<< Updated upstream
     [SerializeField]
     Transform menuTroya, menuCiclope, menuSirenas, menuItaca;
 
     GameObject[] esNivel;
+=======
+
+>>>>>>> Stashed changes
     public static bool accederCiclope, accederSirenas, accederItaca, accederBrujas;
 
     // Start is called before the first frame update
