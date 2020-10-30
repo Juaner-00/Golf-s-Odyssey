@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd007a7bac25c548bdef27f0fa88901, type: 3}
   m_Name: LevelsObject
   m_EditorClassIdentifier: 
-  starsLevel1: 0
-  starsLevel2: 0
-  starsLevel3: 0
-  starsLevel4: 0
-  starsLevel5: 0
-  starsLevel6: 0
-  starsLevel7: 0
-  starsLevel8: 0
-  starsLevel9: 0
-  starsLevel10: 0
-  starsLevel11: 0
-  starsLevel12: 0
+  starsLevel1: 3
+  starsLevel2: 1
+  starsLevel3: 3
+  starsLevel4: 2
+  starsLevel5: 3
+  starsLevel6: 3
+  starsLevel7: 3
+  starsLevel8: 2
+  starsLevel9: 3
+  starsLevel10: 2
+  starsLevel11: 3
+  starsLevel12: 2

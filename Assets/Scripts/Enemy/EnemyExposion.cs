@@ -12,7 +12,9 @@ public class EnemyExposion : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(explo, transform.position + offset, Quaternion.identity);
+            AudioManager.instance.Play("Boom Enemy");
             Invoke("DeathEnemy", 0);
+
         }
       
     }
