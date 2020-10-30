@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
 {
-    [SerializeField, Expandable] private LevelsObject levelsObject;
+    [ Expandable] public  LevelsObject levelsObject;
 
     public static Island lastIsland;
 
     public static LevelSelector Instance { get; private set; }
 
-    public LevelsObject LevelsObject { get; }
 
 
     private void Awake()
