@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153699004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.001345, z: -11.85519}
+  m_LocalPosition: {x: -0.0007974228, y: 8.001345, z: -11.855191}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 477893800}
@@ -174,8 +174,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477893798}
-  m_LocalRotation: {x: 0.29250795, y: 3e-45, z: -1e-45, w: 0.9562631}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.29250798, y: 0.0000321444, z: -0.0000098325345, w: 0.9562631}
+  m_LocalPosition: {x: 0, y: 0.00000019073487, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 999529283}
@@ -374,8 +374,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321387917}
-  m_LocalRotation: {x: 0.29250795, y: -3e-45, z: 1e-45, w: 0.9562631}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.29250798, y: 0.0000321444, z: -0.0000098325345, w: 0.9562631}
+  m_LocalPosition: {x: 0, y: 0.00000019073487, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1908692884}
@@ -866,8 +866,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966092765}
-  m_LocalRotation: {x: 0.29250795, y: -1.4772962e-30, z: 1.599254e-30, w: 0.9562631}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.29250798, y: 0.000032177304, z: -0.000009842601, w: 0.9562631}
+  m_LocalPosition: {x: 0, y: 0.00000076293946, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1790999898}
@@ -1064,6 +1064,7 @@ MonoBehaviour:
   multiplicadorFuerza: 90
   maxForce: 10
   forceMag: 0
+  fuego: {fileID: 0}
   released: 0
 --- !u!114 &760755686
 MonoBehaviour:
@@ -1097,7 +1098,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1de66e5f4e86e2e4cb564890916f7a9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1118,7 +1119,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.6
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1.1445359

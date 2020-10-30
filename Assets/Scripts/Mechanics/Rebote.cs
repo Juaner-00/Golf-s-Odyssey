@@ -14,6 +14,7 @@ public class Rebote : MonoBehaviour
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 vel = rb.velocity;
             rb.AddForce(new Vector3(vel.x * forceMultX, vel.y * forceMultY, vel.z * forceMultZ), ForceMode.Impulse);
+            AudioManager.instance.Play("Escudo Jump");
         }
     }
 }

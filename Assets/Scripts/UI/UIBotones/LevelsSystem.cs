@@ -19,6 +19,8 @@ public class LevelsSystem : MonoBehaviour
     RectTransform troyaRect, brujaRect, ciclopeRect, sirenaRect, itacaRect;
 
 
+    
+    
 
     private void Awake()
     {
@@ -70,7 +72,10 @@ public class LevelsSystem : MonoBehaviour
         barco.transform.DOMove(medio.position, 2.5f);
         logo.DOAnchorPosY(600, 2f).SetDelay(1f).SetEase(izi);
         play.DOAnchorPosY(-500, 3f).SetDelay(1f).SetEase(izi);
+       
+
         exit.DOAnchorPosY(-680, 3f).SetDelay(1f).SetEase(izi);
+
     }
 
     public void ClickPlay()

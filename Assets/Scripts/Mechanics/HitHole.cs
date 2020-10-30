@@ -97,6 +97,9 @@ public class HitHole : MonoBehaviour
                 StartCoroutine(ShowStars(1));
             }
 
+            else
+                StartCoroutine(ShowStars(0));
+
 
         }
     }
@@ -115,45 +118,57 @@ public class HitHole : MonoBehaviour
         star1Rec.DOScale(Vector3.zero, 0);
         star2Rec.DOScale(Vector3.zero, 0);
         star3Rec.DOScale(Vector3.zero, 0);
-
+       
+        if(stars>=2)
+            AudioManager.instance.Play("Win");
+        else
+        
+            AudioManager.instance.Play("Bad Win");
         yield return new WaitForSeconds(timeStars * 1.5f);
 
         switch (stars)
         {
             case 3:
+
                 // audio star
-                star1Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
+          //      AudioManager.instance.Play("Star1");
+                star1Rec.DOScale(Vector3.one, timeStars).SetEase(ease);                
                 yield return new WaitForSeconds(timeStars * 1.5f);
 
                 // audio star
-                star2Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
+             //   AudioManager.instance.Play("Star2");
+                star2Rec.DOScale(Vector3.one, timeStars).SetEase(ease);                
                 yield return new WaitForSeconds(timeStars * 1.5f);
 
                 // audio star
+         //       AudioManager.instance.Play("Star3");
                 star3Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
 
                 // audioWin
-                yield return new WaitForSeconds(timeStars * 1.5f);
-                AudioManager.instance.Play("Win");
+                yield return new WaitForSeconds(timeStars * 0f);
+                
                 break;
             case 2:
                 // audio star
+           //     AudioManager.instance.Play("Star1");
                 star1Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
                 yield return new WaitForSeconds(timeStars * 1.5f);
 
                 // audio star
+          //      AudioManager.instance.Play("Star2");
                 star2Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
 
                 // audioWin
                 yield return new WaitForSeconds(timeStars * 1.5f);
-                AudioManager.instance.Play("Win");
+                //AudioManager.instance.Play("Win");
                 break;
             case 1:
                 // audio star
+            //    AudioManager.instance.Play("Star1");
                 star1Rec.DOScale(Vector3.one, timeStars).SetEase(ease);
 
                 // adioWin
-                AudioManager.instance.Play("Bad Win");
+             // AudioManager.instance.Play("Bad Win");
                 break;
         }
 
