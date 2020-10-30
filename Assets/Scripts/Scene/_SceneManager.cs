@@ -40,16 +40,7 @@ public class _SceneManager : MonoBehaviour
     public void LoadMainMenu()
     {
         MenuManager.Instance.OpenLoading();
-        levelsLoading.Add(SceneManager.LoadSceneAsync("PinicioDavid"/* , LoadSceneMode.Additive */));
-        levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
-
-        StartCoroutine(GetSceneLoadProgress());
-    }
-
-    public void MapMenu()
-    {
-        MenuManager.Instance.OpenLoading();
-        levelsLoading.Add(SceneManager.LoadSceneAsync("MapLvls"/* , LoadSceneMode.Additive */));
+        levelsLoading.Add(SceneManager.LoadSceneAsync("Islands"/* , LoadSceneMode.Additive */));
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
@@ -78,8 +69,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl2()
     {
         MenuManager.Instance.OpenLoading();
@@ -87,8 +78,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl3()
     {
         MenuManager.Instance.OpenLoading();
@@ -96,8 +87,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl4()
     {
         MenuManager.Instance.OpenLoading();
@@ -123,8 +114,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl7()
     {
         MenuManager.Instance.OpenLoading();
@@ -132,8 +123,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl8()
     {
         MenuManager.Instance.OpenLoading();
@@ -141,8 +132,8 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
+
     public void LoadLvl9()
     {
         MenuManager.Instance.OpenLoading();
@@ -150,7 +141,6 @@ public class _SceneManager : MonoBehaviour
         levelsLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex));
 
         StartCoroutine(GetSceneLoadProgress());
-
     }
 
 }

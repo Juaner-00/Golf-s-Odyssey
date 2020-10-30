@@ -10,8 +10,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused == true)
-            	Resume();
+            if (paused)
+                Resume();
             else
                 Pause();
         }
