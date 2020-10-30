@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Clouds : MonoBehaviour
 {
-   Transform cloud;
+   
     public float speed;
+    [SerializeField]GameObject initialPos;
+   
+    
 
 
-    private void Start()
-    {
-        cloud = GetComponent<Transform>();
-    }
     private void Update()
     {
-        cloud.transform.position = new Vector3(cloud.transform.position.x + speed * Time.deltaTime, cloud.transform.position.y, cloud.transform.position.z);    
+        transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Cloud"))
+        {
+            Debug.Log("Nube reiniciada");
+            transform.position = new Vector3(initialPos.transform.position.x, transform.position.y, transform.position.z);
+        }
     }
 
 }

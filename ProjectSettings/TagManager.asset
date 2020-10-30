@@ -16,6 +16,7 @@ TagManager:
   - Mango
   - StrikeText
   - StarsHolder
+  - Cloud
   layers:
   - Default
   - TransparentFX
