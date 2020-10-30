@@ -28,10 +28,25 @@ public class HitHole : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FindObjectOfType<AudioManager>().Play("Bola en Hoyo");
+            int count = int.Parse(strikeText.text);
+            AudioManager.instance.Play("Bola en Hoyo");
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
+
+            if (count <= limite3Star_sup)
+                AudioManager.instance.Play("Win");
+
+            else if (count >= limite2Star_inf && count <= limite2Star_sup)
+                AudioManager.instance.Play("Win");
+
+            else if (count >= limite1Star_inf && count <= limite1Star_sup)
+                AudioManager.instance.Play("Bad Win");
+
+            else if (count > limite1Star_sup)
+                AudioManager.instance.Play("Bad Win");
+
+
             Invoke("ShowVictoryPanel", time);
-            AudioManager.instance.Play("Win");
+            
         }
     }
 
@@ -53,22 +68,21 @@ public class HitHole : MonoBehaviour
                 star1.SetActive(true);
                 star2.SetActive(true);
                 star3.SetActive(true);
-
-              //  AudioManager.instance.Play("Win");
+              
             }
             else if (count >= limite2Star_inf && count <= limite2Star_sup)
             {
                 star1.SetActive(true);
                 star2.SetActive(true);
 
-                //  AudioManager.instance.Play("Win");
             }
             else if (count >= limite1Star_inf && count <= limite1Star_sup)
             {
                 star1.SetActive(true);
-               // AudioManager.instance("BadWin");
-
+               
             }
+
+            
         }
     }
 
