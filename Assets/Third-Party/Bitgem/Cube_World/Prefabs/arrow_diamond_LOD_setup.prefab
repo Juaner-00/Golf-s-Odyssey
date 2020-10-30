@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4643473863413180}
   - component: {fileID: 205317712640110872}
-  m_Layer: 0
+  - component: {fileID: 941220119}
+  m_Layer: 10
   m_Name: arrow_diamond_LOD_setup
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082527104651818}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -58,6 +59,20 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!136 &941220119
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082527104651818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.12129582
+  m_Height: 1.0585374
+  m_Direction: 1
+  m_Center: {x: -0.017103843, y: -0.029267013, z: 0}
 --- !u!1 &1345255206946160
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +84,7 @@ GameObject:
   - component: {fileID: 4344754266479316}
   - component: {fileID: 33460737734814250}
   - component: {fileID: 23624021655949000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arrow_diamond_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +163,7 @@ GameObject:
   - component: {fileID: 4217649692782412}
   - component: {fileID: 33902609172592848}
   - component: {fileID: 23831518583596980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arrow_diamond_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +242,7 @@ GameObject:
   - component: {fileID: 4283551433536474}
   - component: {fileID: 33620037584043436}
   - component: {fileID: 23443727043633668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arrow_diamond_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

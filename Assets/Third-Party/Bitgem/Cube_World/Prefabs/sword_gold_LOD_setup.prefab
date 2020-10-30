@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4464727170593144}
   - component: {fileID: 33706097517304854}
   - component: {fileID: 23848604596345786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sword_gold_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4799052324041424}
   - component: {fileID: 33637553276564522}
   - component: {fileID: 23692860523988320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sword_gold_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4034922326878476}
   - component: {fileID: 33121770155861784}
   - component: {fileID: 23520566668416452}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sword_gold_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,9 +247,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4927250151555100}
   - component: {fileID: 205039650905810062}
-  m_Layer: 0
+  - component: {fileID: 1376639007}
+  m_Layer: 10
   m_Name: sword_gold_LOD_setup
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +262,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674250226014654}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -298,3 +299,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23692860523988320}
   m_Enabled: 1
+--- !u!136 &1376639007
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674250226014654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15853076
+  m_Height: 1.069117
+  m_Direction: 1
+  m_Center: {x: 0.01464948, y: -0.034558475, z: 0.059531122}
