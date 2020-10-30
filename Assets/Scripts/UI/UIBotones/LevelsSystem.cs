@@ -18,6 +18,8 @@ public class LevelsSystem : MonoBehaviour
     Camera cam;
     RectTransform troyaRect, brujaRect, ciclopeRect, sirenaRect, itacaRect;
 
+    
+    
 
     private void Awake()
     {
@@ -71,6 +73,7 @@ public class LevelsSystem : MonoBehaviour
         logo.DOAnchorPosY(600, 2f).SetDelay(1f).SetEase(izi);
         play.DOAnchorPosY(-500, 3f).SetDelay(1f).SetEase(izi);
         exit.DOAnchorPosY(-650, 3f).SetDelay(1f).SetEase(izi);
+        
     }
 
     public void ClickPlay()
