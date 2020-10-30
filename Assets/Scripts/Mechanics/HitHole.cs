@@ -31,7 +31,7 @@ public class HitHole : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Bola en Hoyo");
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
             Invoke("ShowVictoryPanel", time);
-            FindObjectOfType<AudioManager>().Play("Win");
+            AudioManager.instance.Play("Win");
         }
     }
 
@@ -54,19 +54,19 @@ public class HitHole : MonoBehaviour
                 star2.SetActive(true);
                 star3.SetActive(true);
 
-              //  FindObjectOfType<AudioManager>().Play("Win");
+              //  AudioManager.instance.Play("Win");
             }
             else if (count >= limite2Star_inf && count <= limite2Star_sup)
             {
                 star1.SetActive(true);
                 star2.SetActive(true);
 
-               // FindObjectOfType<AudioManager>().Play("Win");
+                //  AudioManager.instance.Play("Win");
             }
             else if (count >= limite1Star_inf && count <= limite1Star_sup)
             {
                 star1.SetActive(true);
-               // FindObjectOfType<AudioManager>().Play("BadWin");
+               // AudioManager.instance("BadWin");
 
             }
         }
