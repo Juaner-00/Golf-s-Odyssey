@@ -128,7 +128,7 @@ public class DirectionArrow : MonoBehaviour
     {
         if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.4f)
         {
-            Debug.Log("Suave");
+            // Debug.Log("Suave");
             Instantiate(hitSuave, playerController.transform.position, Quaternion.identity);
             // src.PlayOneShot(espadazoSuave);
             AudioManager.instance.Play("Espadazo Suave");
@@ -136,14 +136,14 @@ public class DirectionArrow : MonoBehaviour
         }
         else if (sliderArrow.normalizedValue >= 0.4f && sliderArrow.normalizedValue <= 0.7f)
         {
-            Debug.Log("Medio");
+            // Debug.Log("Medio");
             Instantiate(hitMedio, playerController.transform.position, Quaternion.identity);
             //src.PlayOneShot(espadazoMedio);
             AudioManager.instance.Play("Espadazo Medio");
         }
         else if (sliderArrow.normalizedValue >= 0.7f)
         {
-            Debug.Log("Fuerte");
+            // Debug.Log("Fuerte");
             Instantiate(debris, playerController.transform.position, Quaternion.identity);
             Instantiate(polvo, playerController.transform.position, Quaternion.identity);
             // src.PlayOneShot(espadazoFuerte);
@@ -151,7 +151,7 @@ public class DirectionArrow : MonoBehaviour
         }
         else if (sliderArrow.normalizedValue == 0f)
         {
-            Debug.Log("StandBy");
+            // Debug.Log("StandBy");
         }
 
     }

@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/Grass/Ciclopes.meta
 guid: 70c4e8fbe8a9e9945ad5337e1aa3e707
 folderAsset: yes
 DefaultImporter:
+=======
+guid: c9303a4a2d0129047ac79db778715a44
+NativeFormatImporter:
+>>>>>>> master:Assets/Sprites/SistemaParticulas/Fuego.mat.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
