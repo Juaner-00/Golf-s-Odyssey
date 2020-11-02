@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class DirectionArrow : MonoBehaviour
 {
     [SerializeField] Gradient gradiente;
-    [SerializeField] GameObject rot;
+    [SerializeField] RectTransform rot;
     [SerializeField] Image arrowImage;
 
     RectTransform safeZone;
@@ -35,8 +35,6 @@ public class DirectionArrow : MonoBehaviour
     [SerializeField] Slider charForce;
 
     float ini;
-  
-
     float fin;
 
 
@@ -67,7 +65,7 @@ public class DirectionArrow : MonoBehaviour
         colorTrayectoria = GetComponentInChildren<LineRenderer>();
         sliderArrow.maxValue = playerController.maxForce;
         size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height) * 2;
-        size = safeZone.sizeDelta;
+       // size = safeZone.sizeDelta;
          ini = charForce.minValue;
        // rot = gameObject.transform.position;
     
@@ -77,8 +75,8 @@ public class DirectionArrow : MonoBehaviour
     private void Update()
     {
 
-        //  fin = InputManager.SwipeDist * 10;
-        fin = InputManager.PlayerPos;
+          //fin = InputManager.SwipeDist * 10;
+       // fin = InputManager.PlayerPos;
         forceToLength = InputManager.SwipeDist * 10;
 
         sliderArrow.maxValue = playerController.maxForce;
@@ -109,8 +107,8 @@ public class DirectionArrow : MonoBehaviour
 
         //Rotación
         Vector3 deg = rot.gameObject.transform.eulerAngles;
-       // rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
-       rot.transform.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
+        rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
+    
 
         // Efecto al disparar
         // ShootFx(0);

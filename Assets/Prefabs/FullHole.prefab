@@ -207,11 +207,13 @@ MonoBehaviour:
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
-  limite3Star_sup: 1
-  limite2Star_inf: 2
-  limite2Star_sup: 2
-  limite1Star_inf: 0
-  limite1Star_sup: 0
+  limite3Star_sup: 2
+  limite2Star_inf: 3
+  limite2Star_sup: 3
+  limite1Star_inf: 4
+  limite1Star_sup: 4
+  lvlObjects: {fileID: 11400000, guid: b76d34e845ce308439f89a5c983199d3, type: 2}
+  posLvl: 2
 --- !u!1 &8222204367896500169
 GameObject:
   m_ObjectHideFlags: 0
