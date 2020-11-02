@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PrototypeV2/Tutorial Level_04.unity
     guid: 5bfac064ffde09940b83d4c2e1a45d77
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_07.unity
+    path: Assets/Scenes/PrototypeV2/Tutorial Level_10.unity
     guid: 799dae20e7d0fb4488bddbd19d45deeb
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Tutorial Level_08.unity
@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PrototypeV2/Tutorial Level_09.unity
     guid: ffdaefe15897d114f87014ca09cf1d7e
   - enabled: 1
-    path: Assets/Scenes/PrototypeV2/Tutorial Level_10.unity
+    path: Assets/Scenes/PrototypeV2/Tutorial Level_07.unity
     guid: 4147dfe6c61db3149a2d98fb93d39194
   - enabled: 1
     path: Assets/Scenes/PrototypeV2/Tutorial Level_11.unity
