@@ -15,14 +15,14 @@ public class LevelsSystem : MonoBehaviour
     [SerializeField] Transform inicial, medio, islas;
     [SerializeField] Ease izi;
     [SerializeField] Button butroya, busirena, buitaca, buciclope;
-   
+
 
     Camera cam;
     RectTransform troyaRect, brujaRect, ciclopeRect, sirenaRect, itacaRect;
 
 
-    
-    
+
+
 
     private void Awake()
     {
@@ -31,6 +31,8 @@ public class LevelsSystem : MonoBehaviour
         ciclopeRect = menuCiclope.GetComponent<RectTransform>();
         sirenaRect = menuSirena.GetComponent<RectTransform>();
         itacaRect = menuItaca.GetComponent<RectTransform>();
+
+        SaveAndLoad.Instance.Load();
     }
 
     // Start is called before the first frame update
@@ -60,6 +62,7 @@ public class LevelsSystem : MonoBehaviour
                 Inicio();
                 break;
         }
+
     }
 
     // private void LateUpdate()
@@ -82,7 +85,7 @@ public class LevelsSystem : MonoBehaviour
         barco.transform.DOMove(medio.position, 2.5f);
         logo.DOAnchorPosY(600, 2f).SetDelay(1f).SetEase(izi);
         play.DOAnchorPosY(-500, 3f).SetDelay(1f).SetEase(izi);
-       
+
 
         exit.DOAnchorPosY(-680, 3f).SetDelay(1f).SetEase(izi);
 
@@ -116,7 +119,7 @@ public class LevelsSystem : MonoBehaviour
     public void ClickTroya(float delay = 2)
     {
         LevelSelector.lastIsland = Island.Troya;
-        ActivarBut(false,false,true,false);
+        ActivarBut(false, false, true, false);
         camTroya.SetActive(true);
         camaraIsla.SetActive(false);
 
@@ -186,7 +189,7 @@ public class LevelsSystem : MonoBehaviour
         if (LockManager.accederSirenas)
         {
             LevelSelector.lastIsland = Island.Sirena;
-            ActivarBut(false,true, false,false);
+            ActivarBut(false, true, false, false);
 
             camSirena.SetActive(true);
             camaraIsla.SetActive(false);
@@ -210,8 +213,8 @@ public class LevelsSystem : MonoBehaviour
         if (LockManager.accederItaca)
         {
             LevelSelector.lastIsland = Island.Itaca;
-            ActivarBut(true,false, false,false);
-            
+            ActivarBut(true, false, false, false);
+
 
             camItaca.SetActive(true);
             camaraIsla.SetActive(false);
