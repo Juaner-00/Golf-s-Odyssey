@@ -85,7 +85,7 @@ public class LevelsSystem : MonoBehaviour
         logo.DOAnchorPosY(1500, 2f);
         play.DOAnchorPosY(-1200, 1.5f);
         exit.DOAnchorPosY(-1200, 1.5f);
-        back.DOAnchorPosX(-327, 1f).SetDelay(2f);
+        back.DOAnchorPosX(-327, 1f).SetDelay(1f);
         camaraIsla.SetActive(true);
         camaraBarco.SetActive(false);
         barco.transform.DOMove(islas.position, 3.5f);
@@ -111,7 +111,7 @@ public class LevelsSystem : MonoBehaviour
         camaraIsla.SetActive(false);
 
         troyaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
-        back.DOAnchorPosX(900, 0.5f).SetDelay(delay);
+        back.DOAnchorPosX(900, 0.5f);
     }
 
     public void DesactivarTroya()
@@ -133,7 +133,7 @@ public class LevelsSystem : MonoBehaviour
             camBruja.SetActive(true);
             camaraIsla.SetActive(false);
             brujaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
-            back.DOAnchorPosX(900, 0.5f).SetDelay(delay);
+            back.DOAnchorPosX(900, 0.5f);
         }
     }
 
@@ -155,7 +155,7 @@ public class LevelsSystem : MonoBehaviour
             camCiclope.SetActive(true);
             camaraIsla.SetActive(false);
             ciclopeRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
-            back.DOAnchorPosX(900, 0.5f).SetDelay(delay);
+            back.DOAnchorPosX(900, 0.5f);
         }
     }
 
@@ -177,7 +177,7 @@ public class LevelsSystem : MonoBehaviour
             camSirena.SetActive(true);
             camaraIsla.SetActive(false);
             sirenaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
-            back.DOAnchorPosX(900, 0.5f).SetDelay(delay);
+            back.DOAnchorPosX(900, 0.5f);
         }
     }
 
@@ -199,7 +199,7 @@ public class LevelsSystem : MonoBehaviour
             camItaca.SetActive(true);
             camaraIsla.SetActive(false);
             itacaRect.DOAnchorPosX(0, 0.5f).SetDelay(delay);
-            back.DOAnchorPosX(900, 0.5f).SetDelay(delay);
+            back.DOAnchorPosX(900, 0.5f);
         }
     }
 
