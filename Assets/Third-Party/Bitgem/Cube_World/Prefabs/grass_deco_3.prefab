@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4966188766721302}
   - component: {fileID: 205773514070830526}
-  m_Layer: 0
+  - component: {fileID: 1248721238}
+  m_Layer: 10
   m_Name: grass_deco_3
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432917312716190}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -61,6 +62,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23870977840113618}
   m_Enabled: 1
+--- !u!64 &1248721238
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432917312716190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1696634945239122
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +87,7 @@ GameObject:
   - component: {fileID: 4911683212595650}
   - component: {fileID: 33273851115943120}
   - component: {fileID: 23594727540707276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grass1_v3_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +166,7 @@ GameObject:
   - component: {fileID: 4015908535902908}
   - component: {fileID: 33886478779540014}
   - component: {fileID: 23752275342516860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grass1_v3_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +245,7 @@ GameObject:
   - component: {fileID: 4589864569080148}
   - component: {fileID: 33852324684380608}
   - component: {fileID: 23870977840113618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grass1_v3_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

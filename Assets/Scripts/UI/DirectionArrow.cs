@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using UnityEditor.Android;
 using UnityEngine;
 using UnityEngine.UI;
 //using UnityEngine.XR.WSA.Input;
@@ -36,6 +37,7 @@ public class DirectionArrow : MonoBehaviour
     float ini;
     float fin;
 
+
     private void Awake()
     {
         sliderArrow = GetComponentInChildren<Slider>();
@@ -63,16 +65,18 @@ public class DirectionArrow : MonoBehaviour
         colorTrayectoria = GetComponentInChildren<LineRenderer>();
         sliderArrow.maxValue = playerController.maxForce;
         size = new Vector2(InputManager.Instance.porcentajeALaBola / 100 * Screen.height, InputManager.Instance.porcentajeALaBola / 100 * Screen.height) * 2;
-        // size = safeZone.sizeDelta;
-
-        ini = charForce.minValue;
+       // size = safeZone.sizeDelta;
+         ini = charForce.minValue;
+       // rot = gameObject.transform.position;
+    
 
     }
 
     private void Update()
     {
 
-        fin = InputManager.SwipeDist * 10;
+          //fin = InputManager.SwipeDist * 10;
+       // fin = InputManager.PlayerPos;
         forceToLength = InputManager.SwipeDist * 10;
 
         sliderArrow.maxValue = playerController.maxForce;
@@ -102,19 +106,21 @@ public class DirectionArrow : MonoBehaviour
         }
 
         //Rotación
-        Vector3 deg = rot.gameObject.transform.localEulerAngles;
+        Vector3 deg = rot.gameObject.transform.eulerAngles;
         rot.localEulerAngles = new Vector3(deg.x, deg.y, InputManager.Angle - 180);
+    
 
         // Efecto al disparar
         // ShootFx(0);
-        LineLenght();
+       LineLenght();
     }
 
     void LineLenght()
     {
 
 
-        largoTrayectoria.MaxLenght = Mathf.Lerp(ini, 10, forceToLength);
+      largoTrayectoria.MaxLenght = Mathf.Lerp(ini, 10, forceToLength);
+      
 
     }
 
@@ -122,7 +128,7 @@ public class DirectionArrow : MonoBehaviour
     {
         if (sliderArrow.normalizedValue >= 0f && sliderArrow.normalizedValue <= 0.4f)
         {
-            // Debug.Log("Suave");
+            Debug.Log("Suave");
             Instantiate(hitSuave, playerController.transform.position, Quaternion.identity);
             // src.PlayOneShot(espadazoSuave);
             AudioManager.instance.Play("Espadazo Suave");
@@ -130,14 +136,14 @@ public class DirectionArrow : MonoBehaviour
         }
         else if (sliderArrow.normalizedValue >= 0.4f && sliderArrow.normalizedValue <= 0.7f)
         {
-            // Debug.Log("Medio");
+            Debug.Log("Medio");
             Instantiate(hitMedio, playerController.transform.position, Quaternion.identity);
             //src.PlayOneShot(espadazoMedio);
             AudioManager.instance.Play("Espadazo Medio");
         }
         else if (sliderArrow.normalizedValue >= 0.7f)
         {
-            // Debug.Log("Fuerte");
+            Debug.Log("Fuerte");
             Instantiate(debris, playerController.transform.position, Quaternion.identity);
             Instantiate(polvo, playerController.transform.position, Quaternion.identity);
             // src.PlayOneShot(espadazoFuerte);
@@ -145,7 +151,7 @@ public class DirectionArrow : MonoBehaviour
         }
         else if (sliderArrow.normalizedValue == 0f)
         {
-            // Debug.Log("StandBy");
+            Debug.Log("StandBy");
         }
 
     }

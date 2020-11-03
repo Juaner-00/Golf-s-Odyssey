@@ -22,17 +22,12 @@ public class PauseMenu : MonoBehaviour
         MenuManager.Instance.OpenUI();
         Time.timeScale = 1;
         paused = false;
+
     }
 
     public void Pause()
     {
         MenuManager.Instance.OpenPause();
-        StartCoroutine(Delay());
-    }
-
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(MenuManager.Instance.time * 1.5f);
         Time.timeScale = 0;
         paused = true;
     }

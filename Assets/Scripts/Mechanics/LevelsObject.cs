@@ -21,20 +21,20 @@ public class LevelsObject : ScriptableObject
             + starsLevel10 + starsLevel11 + starsLevel12;
         }
     }
-
     public int[] lista
     {
         get
         {
             return new int[] {starsLevel1, starsLevel2, starsLevel3
-                            , starsLevel4, starsLevel5, starsLevel6
-                            , starsLevel7, starsLevel8, starsLevel9
-                            , starsLevel10, starsLevel11, starsLevel12
+                     , starsLevel4, starsLevel5, starsLevel6
+                  , starsLevel7, starsLevel8, starsLevel9
+                  , starsLevel10, starsLevel11, starsLevel12
             };
         }
-
+        
+            
+        
     }
-
     public void AsignarEstrellas(int nivel, int cEstrellas)
     {
         switch (nivel)
@@ -76,18 +76,13 @@ public class LevelsObject : ScriptableObject
             case 12:
                 if (cEstrellas > starsLevel12) starsLevel12 = cEstrellas;
                 break;
+
+               
+                
+
         }
     }
-
-    public void ReCreate()
-    {
-        starsLevel1 = starsLevel2 = starsLevel3
-        = starsLevel4 = starsLevel5 = starsLevel6
-        = starsLevel7 = starsLevel8 = starsLevel9
-        = starsLevel10 = starsLevel11 = starsLevel12 = 0;
-    }
 }
-
 
 public enum Island
 {

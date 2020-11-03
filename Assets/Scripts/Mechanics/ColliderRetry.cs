@@ -16,7 +16,6 @@ public class ColliderRetry : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioManager.instance.Play("Splash");
             sceneManager.Reset();
         }
     }
