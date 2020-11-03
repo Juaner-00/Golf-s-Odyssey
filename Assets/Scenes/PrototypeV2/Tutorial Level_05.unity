@@ -5236,6 +5236,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: SelectBack
       objectReference: {fileID: 0}
+    - target: {fileID: 8076692828988098585, guid: 2c24444727324484cb74e2f59f63bf2b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8076692829049377567, guid: 2c24444727324484cb74e2f59f63bf2b,
         type: 3}
       propertyPath: m_textInfo.characterCount

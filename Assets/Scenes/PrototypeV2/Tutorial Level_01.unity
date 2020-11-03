@@ -101,7 +101,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 23ca0b47697c68448a466e4a701c1c0d,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13888,23 +13888,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33737156
+      value: 0.2925031
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.005459995
+      value: -0.0055464045
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.001956806
+      value: 0.0016965702
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000001335144
+      value: -0.3497015
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.94135374
+      value: 0.95624703
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37071,10 +37071,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1572716969}
-    - target: {fileID: 8476717440725405379, guid: 2c24444727324484cb74e2f59f63bf2b,
+    - target: {fileID: 8076692828988098585, guid: 2c24444727324484cb74e2f59f63bf2b,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 97090044}
+    - target: {fileID: 8076692828988098585, guid: 2c24444727324484cb74e2f59f63bf2b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1572716969}
+    - target: {fileID: 8076692828988098585, guid: 2c24444727324484cb74e2f59f63bf2b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8519574123653275051, guid: 2c24444727324484cb74e2f59f63bf2b,
         type: 3}
