@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public static event OnStrikeEvent OnStrike;
     public delegate void OnStrikeEvent(int count);
 
+    [SerializeField]
+    ParticleSystem fuego;
+
     int counterStrikes;
 
     Rigidbody rb;
@@ -48,6 +51,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(forceMag == maxForce)
+        {
+            fuego.Play();
+            fuego.transform.position = transform.position;
+        }
+        else { fuego.Stop(); }
         //Poner true si está quieto, sino falso
         isStoped = (rb.velocity.sqrMagnitude < 0.1f) ? true : false;
 
