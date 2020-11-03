@@ -85,6 +85,8 @@ public class LevelsObject : ScriptableObject
         = starsLevel4 = starsLevel5 = starsLevel6
         = starsLevel7 = starsLevel8 = starsLevel9
         = starsLevel10 = starsLevel11 = starsLevel12 = 0;
+
+        SaveAndLoad.Clear();
     }
 }
 
