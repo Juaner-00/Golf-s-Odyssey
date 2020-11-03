@@ -26,7 +26,7 @@ public class HitHole : MonoBehaviour
     [SerializeField] int limite2Star_sup;
     [SerializeField] int limite1Star_inf;
     [SerializeField] int limite1Star_sup;
-
+    [SerializeField] ParticleSystem confeti;
     [SerializeField] LevelsObject lvlObjects;
 
     int posLvl;
@@ -51,6 +51,7 @@ public class HitHole : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            confeti.Play();
             int count = int.Parse(strikeText.text);
             AudioManager.instance.Play("Bola en Hoyo");
             Instantiate(obStar, transform.position + offset, Quaternion.identity);
