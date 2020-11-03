@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4277095621026494}
   - component: {fileID: 33939516073430758}
   - component: {fileID: 23973261079734006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: box_wooden_3_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4964482996414692}
   - component: {fileID: 33898957144764872}
   - component: {fileID: 23003603931472896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: box_wooden_3_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4231641395306498}
   - component: {fileID: 33969670498363858}
   - component: {fileID: 23648374066370810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: box_wooden_3_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,9 +247,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4708329260527186}
   - component: {fileID: 205735702546305434}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wooden_box_3
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984197563326602}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

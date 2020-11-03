@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4936621680551698}
   - component: {fileID: 33016781567940544}
   - component: {fileID: 23607670018197422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rail3_stone1_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4797376693400898}
   - component: {fileID: 205344491882625412}
-  m_Layer: 0
+  - component: {fileID: 690081400}
+  m_Layer: 10
   m_Name: rail_stone_3
-  m_TagString: Enviroment
+  m_TagString: Bouncers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542571462352766}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -140,6 +141,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23566933099698700}
   m_Enabled: 1
+--- !u!65 &690081400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542571462352766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.82030797, z: 1}
+  m_Center: {x: 0, y: 0.33762825, z: 0}
 --- !u!1 &1895537445505068
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +165,7 @@ GameObject:
   - component: {fileID: 4882279646298192}
   - component: {fileID: 33647562295337374}
   - component: {fileID: 23566933099698700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rail3_stone1_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +244,7 @@ GameObject:
   - component: {fileID: 4436631974099358}
   - component: {fileID: 33785785040192014}
   - component: {fileID: 23916429654290318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rail3_stone1_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

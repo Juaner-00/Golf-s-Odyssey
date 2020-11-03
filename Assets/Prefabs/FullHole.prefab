@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 3379232601881045405}
   - component: {fileID: 3741188892755108406}
   m_Layer: 0
-  m_Name: Confeti
+  m_Name: confeti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

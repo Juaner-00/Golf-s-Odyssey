@@ -265,6 +265,7 @@ public class InputManager : MonoBehaviour
        // feedtutoSnd.Play();
         Instantiate(feedTutorial, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
+        if(tuto != null)
         tuto.gameObject.SetActive(false);       
         tutoCompleto = true;
        

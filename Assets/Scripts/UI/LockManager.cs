@@ -36,21 +36,21 @@ public class LockManager : MonoBehaviour
     {
         esNivel = new GameObject[12];
         
-        esNivel[0] = menuTroya.GetChild(5).gameObject;
-        esNivel[1] = menuTroya.GetChild(6).gameObject;
-        esNivel[2] = menuTroya.GetChild(7).gameObject;
+        esNivel[0] = menuTroya.GetChild(6).gameObject;
+        esNivel[1] = menuTroya.GetChild(7).gameObject;
+        esNivel[2] = menuTroya.GetChild(8).gameObject;
 
-        esNivel[3]= menuCiclope.GetChild(5).gameObject;
-        esNivel[4] = menuCiclope.GetChild(6).gameObject;
-        esNivel[5] = menuCiclope.GetChild(7).gameObject;
+        esNivel[3]= menuCiclope.GetChild(6).gameObject;
+        esNivel[4] = menuCiclope.GetChild(7).gameObject;
+        esNivel[5] = menuCiclope.GetChild(8).gameObject;
 
-        esNivel[6] = menuSirenas.GetChild(5).gameObject;
-        esNivel[7] = menuSirenas.GetChild(6).gameObject;
-        esNivel[8] = menuSirenas.GetChild(7).gameObject;
+        esNivel[6] = menuSirenas.GetChild(6).gameObject;
+        esNivel[7] = menuSirenas.GetChild(7).gameObject;
+        esNivel[8] = menuSirenas.GetChild(8).gameObject;
 
-        esNivel[9] = menuItaca.GetChild(5).gameObject;
-        esNivel[10] = menuItaca.GetChild(6).gameObject;
-        esNivel[11] = menuItaca.GetChild(7).gameObject;
+        esNivel[9] = menuItaca.GetChild(6).gameObject;
+        esNivel[10] = menuItaca.GetChild(7).gameObject;
+        esNivel[11] = menuItaca.GetChild(8).gameObject;
 
 
 
