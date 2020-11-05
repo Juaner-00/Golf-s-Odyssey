@@ -68,15 +68,15 @@ public class InputManager : MonoBehaviour
         tuto = FindObjectOfType<Tutorial>();
         feedtutoSnd = GetComponent<AudioSource>();
         tutoCompleto = false;
-        
 
 
-       
+
+
 
 
 
         bool i = false;
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_WEBGL
         i = true;
         device = DeviceType.PC;
 #endif
@@ -117,7 +117,7 @@ public class InputManager : MonoBehaviour
                         {
                             StartCoroutine("DesactivarDedo");
                         }
-                       
+
 
                     }
                     else
@@ -131,7 +131,7 @@ public class InputManager : MonoBehaviour
                         posFin = Input.mousePosition;
 
                         // if (CanShoot)
-                            CalcularDistancia();
+                        CalcularDistancia();
                         // else
                         //     vectorSwipe = Vector3.zero;
                     }
@@ -165,18 +165,19 @@ public class InputManager : MonoBehaviour
 
                         Dist = Vector3.Distance(PlayerPos, posIni) / Screen.height;
 
-                        if (Dist <= porcentajeALaBola / 100) {
+                        if (Dist <= porcentajeALaBola / 100)
+                        {
                             InRange = true;
 
                             if (!tutoCompleto)
                             {
                                 StartCoroutine("DesactivarDedo");
                             }
-                            
+
 
                         }
-                    else
-                        InRange = false;
+                        else
+                            InRange = false;
                     }
                 }
 
@@ -187,9 +188,9 @@ public class InputManager : MonoBehaviour
                         posFin = touch.position;
 
                         // if (CanShoot)
-                            CalcularDistancia();
+                        CalcularDistancia();
                         // else
-                            // vectorSwipe = Vector3.zero;
+                        // vectorSwipe = Vector3.zero;
                     }
 
                     if (touch.phase == TouchPhase.Ended)
@@ -260,20 +261,20 @@ public class InputManager : MonoBehaviour
 
     IEnumerator DesactivarDedo()
     {
-        
-        
-       // feedtutoSnd.Play();
+
+
+        // feedtutoSnd.Play();
         Instantiate(feedTutorial, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
-        if(tuto != null)
-        tuto.gameObject.SetActive(false);       
+        if (tuto != null)
+            tuto.gameObject.SetActive(false);
         tutoCompleto = true;
-       
+
 
 
 
     }
-    
+
 
 }
 
