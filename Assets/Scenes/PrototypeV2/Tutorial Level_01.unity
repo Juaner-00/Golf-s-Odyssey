@@ -13888,23 +13888,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2925031
+      value: 0.3373715
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0055464045
+      value: -0.005460045
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0016965702
+      value: 0.0019568237
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3497015
+      value: 0.000001335144
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.95624703
+      value: 0.94135374
       objectReference: {fileID: 0}
     - target: {fileID: 1966092767, guid: 22b6cf1099441b4419e3b572197ccf41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37086,6 +37086,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8476717440725405379, guid: 2c24444727324484cb74e2f59f63bf2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8519574123653275051, guid: 2c24444727324484cb74e2f59f63bf2b,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -37100,6 +37105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661177430831706845, guid: 2c24444727324484cb74e2f59f63bf2b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c24444727324484cb74e2f59f63bf2b, type: 3}
